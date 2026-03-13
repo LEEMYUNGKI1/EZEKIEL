@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EZEKIEL | Premium Cosmetics OEM/ODM</title>
+  
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', 'sans-serif'],
+          },
+          colors: {
+            brand: '#111111',
+            accent: '#BCA37F',
+            surface: '#FAFAFA'
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 1s ease-out forwards',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: 0, transform: 'translateY(30px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-15px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .glass-header {
+        @apply bg-white/80 backdrop-blur-md border-b border-gray-200/50 shadow-sm transition-all duration-300;
+      }
+      .transparent-header {
+        @apply bg-transparent border-b border-white/20 transition-all duration-300;
+      }
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #FAFAFA;
+      color: #111111;
+    }
+  </style>
+
+  <!-- Lucide Icons mapping for simple usage -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect, createContext, useContext } = React;
+
+    // Translation Data
+    const translations = {
+      KOR: {
+        company: "회사소개", business: "사업소개", rnd: "R&D", infra: "생산인프라", pr: "홍보센터", contact: "문의하기",
+        lang: "KOR", close: "닫기",
+        hero_sub: "PREMIUM OEM/ODM MANUFACTURING", hero_title: "Innovating Beauty,<br/>Engineering Perfection.", hero_desc: "글로벌 수준의 R&D 기술력과 첨단 생산 인프라를 통해<br className=\"hidden md:block\"/>고객사의 브랜드 가치를 실현하는 최고의 뷰티 파트너", discover: "Discover More", scroll: "Scroll",
+        comp_title: "아름다움의 혁신을<br/>창조하는 파트너.", comp_desc: "EZEKIEL는 20여 년의 축적된 노하우와 압도적인 R&D 기술력을 바탕으로, 고객사의 브랜드 가치를 극대화하는 프리미엄 화장품 ODM/OEM 전문 기업입니다. 기초 피부과학부터 고기능성 마스크팩/패드까지 전 영역을 아우르는 토탈 솔루션을 제공합니다.",
+        biz_title: "TOTAL BEAUTY SOLUTION",
+        biz_1: "기초 스킨케어", biz_1_d: "안티에이징, 미백, 보습 등 고효능 기초 화장품 개발",
+        biz_2: "마스크팩 / 패드", biz_2_d: "독보적인 밀착력과 고보습 에센스를 담아낸 스페셜 케어 솔루션",
+        biz_3: "프리미엄 헤어/바디", biz_3_d: "자연 유래 성분의 안전하고 효과적인 퍼스널 케어",
+        rnd_title: "미래 뷰티 산업을<br/>선도하는 기술력.", rnd_desc: "업계 최고 수준의 연구진과 최첨단 분석 장비를 구축하여 독자적인 신소재 개발부터 처방, 임상까지 원스톱 R&D 솔루션을 제공합니다. 끝없는 한계에 도전하며 독창적인 텍스처와 효능을 만들어냅니다.",
+        rnd_1: "독자적인 특허 원료 150여 건 보유", rnd_2: "효능 및 안전성 검증을 위한 In-Vitro 시험 시설", rnd_3: "글로벌 트렌드 선도 제형 개발 연구소",
+        infra_title: "안전하고 완벽한<br/>글로벌 허브.", infra_desc: "CGMP(우수화장품 제조/품질 관리기준), ISO 국제 인증을 획득한 스마트 팩토리에서 철저한 품질 관리를 통해 가장 안전하고 우수한 제품만을 생산합니다.",
+        pr_title: "EZEKIEL News", pr_more: "View All News",
+        contact_title: "프로젝트 문의", contact_ph1: "회사명 / 이름", contact_ph2: "이메일 주소", contact_ph3: "문의 내용 (제품 분류, 수량, 일정 등)", contact_btn: "Send Message",
+        footer_desc: "글로벌 뷰티 산업을 이끄는 프리미엄 코스메틱 제조 전문 기업.<br/>혁신적인 가치로 고객과 함께 성장합니다.",
+        footer_q: "Quick Links", footer_c: "Contact Us", footer_a: "경기도 김포시 양촌읍 황금3로 7번길 53(학운리)", footer_p1: "개인정보처리방침", footer_p2: "이용약관", footer_p3: "윤리경영"
+      },
+      ENG: {
+        company: "Company", business: "Business", rnd: "R&D", infra: "Infra", pr: "PR Center", contact: "Contact",
+        lang: "ENG", close: "Close",
+        hero_sub: "PREMIUM OEM/ODM MANUFACTURING", hero_title: "Innovating Beauty,<br/>Engineering Perfection.", hero_desc: "A premier beauty partner realizing your brand's value<br className=\"hidden md:block\"/>through world-class R&D and advanced manufacturing.", discover: "Discover More", scroll: "Scroll",
+        comp_title: "A Partner Creating<br/>Beauty Innovations.", comp_desc: "Based on 20+ years of expertise and formidable R&D capabilities, EZEKIEL is a premium cosmetic ODM/OEM company that maximizes client brand value. We provide total solutions from basic skincare to highly functional mask packs and pads.",
+        biz_title: "TOTAL BEAUTY SOLUTION",
+        biz_1: "Basic Skincare", biz_1_d: "High-efficacy cosmetics like anti-aging, whitening, and moisturizing",
+        biz_2: "Mask Packs & Pads", biz_2_d: "Special care solutions encapsulating unrivaled adhesion and high-moisture essences",
+        biz_3: "Premium Hair/Body", biz_3_d: "Safe and effective personal care with natural ingredients",
+        rnd_title: "Technology Leading<br/>Future Beauty.", rnd_desc: "With top-tier researchers and advanced analytical equipment, we provide one-stop R&D solutions from novel ingredients to clinical trials. We create original textures and efficacies by challenging limits.",
+        rnd_1: "Holds over 150 proprietary patented ingredients", rnd_2: "In-Vitro testing facilities for efficacy & safety", rnd_3: "Global trend-leading formulation laboratory",
+        infra_title: "Safe and Perfect<br/>Global Hub.", infra_desc: "We produce only the safest and finest products through strict quality control in our CGMP and ISO certified smart factory.",
+        pr_title: "EZEKIEL News", pr_more: "View All News",
+        contact_title: "Project Inquiry", contact_ph1: "Company / Name", contact_ph2: "Email Address", contact_ph3: "Inquiry Details (Category, Quantity, Schedule, etc.)", contact_btn: "Send Message",
+        footer_desc: "A premium cosmetics manufacturing leader driving the global beauty industry.<br/>Growing with customers through innovative values.",
+        footer_q: "Quick Links", footer_c: "Contact Us", footer_a: "53, Hwanggeum 3-ro 7beon-gil, Yangchon-eup,<br/>Gimpo-si, Gyeonggi-do", footer_p1: "Privacy Policy", footer_p2: "Terms of Use", footer_p3: "Ethics Management"
+      },
+      CHN: {
+        company: "公司介绍", business: "业务领域", rnd: "研发中心", infra: "生产基础设施", pr: "公关中心", contact: "联系我们",
+        lang: "中文", close: "关闭",
+        hero_sub: "高级 OEM/ODM 制造", hero_title: "创新美学,<br/>铸就完美.", hero_desc: "通过世界级的研发技术和先进的生产设备<br className=\"hidden md:block\"/>实现客户品牌价值的最佳美妆合作伙伴", discover: "了解更多", scroll: "滚动",
+        comp_title: "创造美丽创新的<br/>合作伙伴.", comp_desc: "基于20多年的专业知识和强大的研发能力，EZEKIEL 是一家最大化客户品牌价值的高级化妆品 ODM/OEM 公司。我们提供从基础护肤到高功能面膜与护肤垫的全面解决方案。",
+        biz_title: "全面美容解决方案",
+        biz_1: "基础护肤", biz_1_d: "抗衰老、美白、保湿等高效基础化妆品开发",
+        biz_2: "面膜与护肤垫", biz_2_d: "蕴含卓越贴合力与高保湿精华的特别护理方案",
+        biz_3: "高级洗护", biz_3_d: "采用天然成分的安全有效个人护理",
+        rnd_title: "引领未来美业的<br/>技术实力.", rnd_desc: "拥有顶尖研究人员和先进分析设备，提供从新原料开发到临床试验的一站式研发解决方案。我们不断挑战极限，创造独创的质地和功效。",
+        rnd_1: "拥有150多项独家专利原料", rnd_2: "用于功效和安全性验证的体外测试设施", rnd_3: "引领全球趋势的配方开发实验室",
+        infra_title: "安全完美的<br/>全球枢纽.", infra_desc: "在获得 CGMP 和 ISO 国际认证的智能工厂中，通过严格的质量控制，只生产最安全、最优质的产品。",
+        pr_title: "EZEKIEL 新闻", pr_more: "查看所有新闻",
+        contact_title: "项目咨询", contact_ph1: "公司名称 / 姓名", contact_ph2: "电子邮件", contact_ph3: "咨询内容（产品类别、数量、时间表等）", contact_btn: "发送信息",
+        footer_desc: "引领全球美容行业的优质化妆品制造企业。<br/>通过创新价值与客户共同成长。",
+        footer_q: "快速链接", footer_c: "联系我们", footer_a: "京畿道金浦市阳村邑黄金3路7街53(鹤云里)", footer_p1: "隐私政策", footer_p2: "使用条款", footer_p3: "道德管理"
+      }
+    };
+
+    const AppContext = createContext();
+
+    const scrollToSection = (id) => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
+    const Header = () => {
+      const [scrolled, setScrolled] = useState(false);
+      const [menuOpen, setMenuOpen] = useState(false);
+      const { lang, setLang, view, setView, heroBg } = useContext(AppContext);
+      const t = translations[lang];
+
+      useEffect(() => {
+        const handleScroll = () => {
+          setScrolled(window.scrollY > 50);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+      }, []);
+
+      const navItems = [
+        { label: t.company, key: "회사소개", subMenu: ["회사개요", "기업이념", "CEO메시지", "조직도", "주요연혁", "협력사", "오시는 길"] },
+        { label: t.business, key: "사업소개", subMenu: ["기초 스킨케어", "색조 메이크업", "프리미엄 헤어/바디", "의약외품", "연구개발"] },
+        { label: t.rnd, key: "R&D", subMenu: ["연구소 소개", "보유 특허", "핵심 기술", "임상 센터"] },
+        { label: t.infra, key: "생산인프라", subMenu: ["스마트 팩토리", "품질 관리 인증", "생산 플로우", "글로벌 허브"] },
+        { label: t.pr, key: "홍보센터", subMenu: ["EZEKIEL News", "언론보도", "브랜드 홍보 영상", "CI/BI 가이드"] },
+        { label: t.contact, key: "문의하기", subMenu: ["프로젝트 문의", "고객 센터", "오시는 길"] }
+      ];
+
+      const handleLogoClick = () => {
+        if (view !== 'home') {
+          setView('home');
+          setTimeout(() => window.scrollTo({top: 0, behavior: 'smooth'}), 50);
+        } else {
+          window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+      };
+
+      const handleNavAction = (targetView, sectionId) => {
+        if (view !== targetView) {
+          setView(targetView);
+          if (targetView === 'home' && sectionId) {
+            setTimeout(() => scrollToSection(sectionId), 100);
+          } else {
+            window.scrollTo(0, 0);
+          }
+        } else if (sectionId) {
+          scrollToSection(sectionId);
+        }
+        setMenuOpen(false);
+      };
+
+      return (
+        <header className={`fixed w-full top-0 z-50 ${scrolled ? 'glass-header py-4' : 'transparent-header py-6'} text-${scrolled ? 'black' : 'white'}`}>
+          {(!scrolled && view !== 'home') && (
+            <div className="absolute inset-0 z-0 overflow-hidden bg-black">
+               <img src={heroBg} alt="" className="absolute inset-0 w-full h-[100vh] object-cover object-top" />
+               <div className="absolute inset-0 bg-black/10 z-10"></div>
+               <div className="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-black/80 to-transparent z-20"></div>
+            </div>
+          )}
+          <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-10">
+            {/* Logo */}
+            <div className="cursor-pointer flex items-center h-12" onClick={handleLogoClick}>
+              <img 
+                src={scrolled ? "./logo-black.png" : "./logo-white.png"} 
+                alt="Company Logo" 
+                className="h-full w-auto object-contain transition-opacity duration-300" 
+              />
+            </div>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex space-x-12 text-lg font-bold items-center">
+              {navItems.map((item, idx) => (
+                <div key={idx} className="relative group">
+                  <a 
+                    href={`#${item.key}`} 
+                    className="hover:text-accent transition-colors py-2 block relative"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavAction('home', item.key);
+                    }}
+                  >
+                    {item.label}
+                    <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+                  </a>
+                  {item.subMenu && (
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 w-48 z-50">
+                      <div className="bg-white/95 backdrop-blur-md rounded-xl shadow-xl border border-gray-100 py-3 flex flex-col items-center">
+                        {item.subMenu.map((sub, i) => (
+                          <a key={i} 
+                             href={`#${sub}`} 
+                             className="text-sm font-light text-brand/80 hover:text-accent hover:bg-gray-50/50 w-full px-6 py-2.5 transition-colors text-center"
+                             onClick={(e) => {
+                               e.preventDefault();
+                               handleNavAction(sub === "오시는 길" ? "directions" : (sub === "협력사" ? "partners" : (sub === "CEO메시지" ? "ceo" : (sub === "기업이념" ? "philosophy" : (sub === "주요연혁" ? "history" : (sub === "조직도" ? "organization" : (sub === "회사개요" ? "overview" : "home")))))), sub);
+                             }}
+                          >
+                            {sub}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </nav>
+
+            {/* Right Group: Language & Hamburger */}
+            <div className="flex items-center space-x-8 relative group/lang">
+              <div className="hidden md:flex items-center space-x-2 cursor-pointer hover:text-accent transition-colors py-4">
+                <i data-lucide="globe" className="w-5 h-5"></i>
+                <span className="text-base font-bold">{t.lang}</span>
+                <i data-lucide="chevron-down" className="w-5 h-5"></i>
+              </div>
+              
+              {/* Language Dropdown */}
+              <div className="absolute top-full right-10 pt-2 opacity-0 invisible group-hover/lang:opacity-100 group-hover/lang:visible transition-all duration-300 w-24">
+                 <div className="bg-white/95 backdrop-blur text-brand rounded shadow-lg border border-gray-100 py-2 flex flex-col">
+                    <button className="text-sm py-2 hover:bg-gray-50 hover:text-accent" onClick={()=>setLang('KOR')}>KOR</button>
+                    <button className="text-sm py-2 hover:bg-gray-50 hover:text-accent" onClick={()=>setLang('ENG')}>ENG</button>
+                    <button className="text-sm py-2 hover:bg-gray-50 hover:text-accent" onClick={()=>setLang('CHN')}>中文</button>
+                 </div>
+              </div>
+              
+              {/* Hamburger Icon for "메뉴전체보기" */}
+              <button 
+                className="flex items-center space-x-2 group" 
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label="메뉴 전체보기"
+              >
+                <div className={`flex flex-col space-y-2 w-8 ${scrolled ? 'group-hover:opacity-70' : 'group-hover:opacity-80'} transition-opacity`}>
+                  <span className={`block h-[2px] w-full ${scrolled ? 'bg-brand' : 'bg-white'} transition-all ${menuOpen ? 'transform rotate-45 translate-y-[8px]' : ''}`}></span>
+                  <span className={`block h-[2px] w-full ${scrolled ? 'bg-brand' : 'bg-white'} transition-all ${menuOpen ? 'opacity-0' : ''}`}></span>
+                  <span className={`block h-[2px] w-full ${scrolled ? 'bg-brand' : 'bg-white'} transition-all ${menuOpen ? 'transform -rotate-45 -translate-y-[8px]' : ''}`}></span>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          {/* Mega Menu Dropdown */}
+          <div className={`absolute top-full left-0 w-full bg-white text-brand shadow-xl border-t border-gray-100 transition-all duration-300 ease-in-out ${menuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-4'}`}>
+            <div className="max-w-7xl mx-auto px-6 py-12 flex justify-between">
+              {/* Left Side Info / Title */}
+              <div className="w-1/4 pr-10 border-r border-gray-100 hidden md:block">
+                <h3 className="text-3xl font-light mb-4">
+                  <img src="./logo-black.png" alt="Company Logo" className="h-10 w-auto mb-2 object-contain" /><br/>
+                  Total<br/>Beauty<br/>Solution
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed">아름다움의 혁신을 창조하는<br/>글로벌 프리미엄 뷰티 파트너.</p>
+              </div>
+
+               {/* Right Side Mega Menu Columns */}
+               <div className="flex-1 pl-0 md:pl-16 grid grid-cols-2 md:grid-cols-6 gap-8">
+                {navItems.map((item, idx) => (
+                  <div key={idx} className="flex flex-col">
+                    <a 
+                      href={`#${item.key}`} 
+                      className="text-lg font-bold mb-6 hover:text-accent transition-colors" 
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavAction('home', item.key);
+                      }}
+                    >
+                      {item.label}
+                    </a>
+                    {item.subMenu && (
+                      <div className="flex flex-col space-y-3">
+                        {item.subMenu.map((sub, i) => (
+                          <a 
+                            key={i} 
+                            href={`#${sub}`} 
+                            className="text-[14px] text-gray-500 hover:text-accent transition-colors block" 
+                            onClick={(e) => {
+                              e.preventDefault();
+                              handleNavAction(sub === "오시는 길" ? "directions" : (sub === "협력사" ? "partners" : (sub === "CEO메시지" ? "ceo" : (sub === "기업이념" ? "philosophy" : (sub === "주요연혁" ? "history" : (sub === "조직도" ? "organization" : (sub === "회사개요" ? "overview" : "home")))))), sub);
+                            }}
+                          >
+                            {sub}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Mega Menu Footer Actions */}
+            <div className="bg-surface py-6">
+               <div className="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm font-medium text-gray-500">
+                  <div className="flex space-x-8">
+                     <a href="#" className="hover:text-brand transition-colors">고객지원 031.990.4120</a>
+                     <a href="#" className="hover:text-brand transition-colors">프로젝트 브로슈어 다운로드</a>
+                  </div>
+                  <button className="flex items-center space-x-2 text-accent hover:text-brand transition-colors" onClick={() => setMenuOpen(false)}>
+                    <span>{t.close}</span>
+                    <i data-lucide="x" className="w-4 h-4"></i>
+                  </button>
+               </div>
+            </div>
+          </div>
+        </header>
+      );
+    }
+
+    const Hero = () => {
+      const { lang, setHeroBg } = useContext(AppContext);
+      const t = translations[lang];
+      const [currentSlide, setCurrentSlide] = useState(0);
+      const [prevSlideIndex, setPrevSlideIndex] = useState(0);
+
+      const [dragStart, setDragStart] = useState(null);
+      const [dragEnd, setDragEnd] = useState(null);
+      const [isDragging, setIsDragging] = useState(false);
+
+      const minSwipeDistance = 50;
+
+      const handleDragStart = (e) => {
+        setIsDragging(true);
+        setDragEnd(null);
+        setDragStart(e.type.includes('mouse') ? e.clientX : e.touches[0].clientX);
+      };
+
+      const handleDragMove = (e) => {
+        if (!isDragging) return;
+        setDragEnd(e.type.includes('mouse') ? e.clientX : e.touches[0].clientX);
+      };
+
+      const handleDragEnd = () => {
+        setIsDragging(false);
+        if (!dragStart || !dragEnd) return;
+        const distance = dragStart - dragEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+
+        if (isLeftSwipe) {
+          nextSlide();
+        } else if (isRightSwipe) {
+          prevSlide();
+        }
+        setDragStart(null);
+        setDragEnd(null);
+      };
+
+      const slides = [
+        {
+          bg: "./hero-bg.png",
+          sub: t.hero_sub,
+          title: t.hero_title,
+          desc: t.hero_desc
+        },
+        {
+          bg: "./hero-bg-2.png",
+          sub: lang === 'KOR' ? "ADVANCED TECHNOLOGY" : (lang === 'CHN' ? "先进技术" : "ADVANCED TECHNOLOGY"),
+          title: lang === 'KOR' ? "The Science of<br/>Skincare Excellence." : (lang === 'CHN' ? "护肤卓越的<br/>科学." : "The Science of<br/>Skincare Excellence."),
+          desc: lang === 'KOR' ? "최첨단 연구 시설과 독자적인 처방 기술로<br className=\"hidden md:block\"/>새로운 차원의 뷰티 솔루션을 제안합니다." : (lang === 'CHN' ? "凭借最先进的研究设施和独特的配方技术<br className=\"hidden md:block\"/>提出全新维度的美容解决方案。" : "Providing next-level beauty solutions<br className=\"hidden md:block\"/>with state-of-the-art research and unique formulations.")
+        },
+        {
+          bg: "./hero-bg-3.png",
+          sub: lang === 'KOR' ? "ART OF FORMULATION" : (lang === 'CHN' ? "配方艺术" : "ART OF FORMULATION"),
+          title: lang === 'KOR' ? "Crafting the Future<br/>of Beauty." : (lang === 'CHN' ? "打造美学<br/>未来." : "Crafting the Future<br/>of Beauty."),
+          desc: lang === 'KOR' ? "섬세한 텍스처와 압도적인 효능이 만나는 지점,<br className=\"hidden md:block\"/>EZEKIEL만의 프리미엄 코스메틱을 경험하세요." : (lang === 'CHN' ? "细腻质地与卓越功效的完美结合，<br className=\"hidden md:block\"/>体验 EZEKIEL 独有的高级化妆品。" : "Where delicate textures meet overwhelming efficacy,<br className=\"hidden md:block\"/>experience EZEKIEL's exclusive premium cosmetics.")
+        },
+        {
+          bg: "./hero-bg-4.png",
+          sub: lang === 'KOR' ? "GLOBAL BEAUTY LEADER" : (lang === 'CHN' ? "全球美容领导者" : "GLOBAL BEAUTY LEADER"),
+          title: lang === 'KOR' ? "A New Standard<br/>of Beauty." : (lang === 'CHN' ? "美容的新<br/>标准." : "A New Standard<br/>of Beauty."),
+          desc: lang === 'KOR' ? "글로벌 스탠다드를 뛰어넘는 무결점 품질로<br className=\"hidden md:block\"/>전 세계 파트너와 함께 아름다움의 내일을 그립니다." : (lang === 'CHN' ? "以超越全球标准的无瑕品质，<br className=\"hidden md:block\"/>与全球合作伙伴共绘美丽的明天。" : "Drawing the future of beauty with partners worldwide,<br className=\"hidden md:block\"/>with flawless quality that transcends global standards.")
+        }
+      ];
+
+      useEffect(() => {
+        const timer = setTimeout(() => {
+          setPrevSlideIndex(currentSlide);
+          setCurrentSlide((prev) => (prev + 1) % slides.length);
+        }, 10000);
+        return () => clearTimeout(timer);
+      }, [currentSlide, slides.length]);
+
+      useEffect(() => {
+        setHeroBg(slides[currentSlide].bg);
+      }, [currentSlide, slides, setHeroBg]);
+
+      const nextSlide = () => {
+        setPrevSlideIndex(currentSlide);
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+      };
+      
+      const prevSlide = () => {
+        setPrevSlideIndex(currentSlide);
+        setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+      };
+
+      return (
+        <section 
+          className="relative h-screen flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing select-none"
+          onMouseDown={handleDragStart}
+          onMouseMove={handleDragMove}
+          onMouseUp={handleDragEnd}
+          onMouseLeave={handleDragEnd}
+          onTouchStart={handleDragStart}
+          onTouchMove={handleDragMove}
+          onTouchEnd={handleDragEnd}
+        >
+          <div className="relative w-full h-full">
+            {slides.map((slide, index) => {
+               let offset = index - currentSlide;
+               if (currentSlide === 0 && index === slides.length - 1) offset = -1;
+               else if (currentSlide === slides.length - 1 && index === 0) offset = 1;
+
+               let zIndex = 1;
+               if (index === currentSlide) zIndex = 10;
+               else if (index === prevSlideIndex) zIndex = 5;
+
+               return (
+                 <div 
+                   key={index} 
+                   className="absolute inset-0 w-full h-full"
+                   style={{
+                     transform: `translateX(${offset * 100}%)`,
+                     transition: 'transform 2000ms cubic-bezier(0.25,1,0.5,1)',
+                     zIndex: zIndex
+                   }}
+                 >
+                <div className="absolute inset-0 z-0 bg-black overflow-hidden">
+                   <img src={slide.bg} alt={`Hero Background ${index + 1}`} className="absolute inset-0 w-full h-full object-cover pointer-events-none z-10" draggable="false" />
+                   <div className="absolute inset-0 bg-black/10 pointer-events-none z-20"></div>
+                   {/* Top gradient specifically for header text visibility */}
+                   <div className="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-black/80 to-transparent pointer-events-none z-20"></div>
+                </div>
+                
+                <div 
+                  className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4 max-w-5xl mx-auto pt-20"
+                  style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0px 4px 12px rgba(0,0,0,0.8)' }}
+                >
+                  <div className={`${index === currentSlide ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                    <h2 className="text-sm md:text-lg font-medium tracking-[0.2em] mb-4 text-accent" style={{animationDelay: '0.2s'}}>
+                      {slide.sub}
+                    </h2>
+                    <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 uppercase" dangerouslySetInnerHTML={{__html: slide.title}} style={{animationDelay: '0.4s'}}>
+                    </h1>
+                    <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto font-light mb-12" dangerouslySetInnerHTML={{__html: slide.desc}} style={{animationDelay: '0.6s'}}>
+                    </p>
+                  </div>
+                </div>
+                 </div>
+               );
+            })}
+          </div>
+
+          {/* Navigation Arrows */}
+          <button 
+            onClick={(e) => { e.stopPropagation(); prevSlide(); }} 
+            className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full border border-white/20 text-white hover:bg-white hover:text-brand transition-all backdrop-blur-sm group"
+          >
+             <i data-lucide="chevron-left" className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform"></i>
+          </button>
+          <button 
+            onClick={(e) => { e.stopPropagation(); nextSlide(); }} 
+            className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full border border-white/20 text-white hover:bg-white hover:text-brand transition-all backdrop-blur-sm group"
+          >
+             <i data-lucide="chevron-right" className="w-6 h-6 group-hover:translate-x-0.5 transition-transform"></i>
+          </button>
+
+          {/* Pagination Indicators */}
+          <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
+             {slides.map((_, index) => (
+                <button 
+                  key={index} 
+                  onClick={(e) => { 
+                    e.stopPropagation(); 
+                    if (currentSlide !== index) {
+                      setPrevSlideIndex(currentSlide);
+                      setCurrentSlide(index); 
+                    }
+                  }} 
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-accent w-8' : 'bg-white/50 hover:bg-white'}`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+             ))}
+          </div>
+
+
+        </section>
+      );
+    };
+
+    const SectionCompany = () => {
+      const { lang } = useContext(AppContext);
+      const t = translations[lang];
+      return (
+      <section id="회사소개" className="py-32 bg-white relative">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.company}</h3>
+            <h2 className="text-4xl font-bold mb-8 leading-tight" dangerouslySetInnerHTML={{__html: t.comp_title}}></h2>
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              {t.comp_desc}
+            </p>
+            <div className="flex space-x-12 mt-10 text-center md:text-left">
+              <div>
+                <div className="text-4xl font-light text-brand mb-1">20<span className="text-accent text-2xl font-bold">+</span></div>
+                <div className="text-xs tracking-widest text-gray-400 uppercase">Years History</div>
+              </div>
+              <div>
+                <div className="text-4xl font-light text-brand mb-1">150<span className="text-accent text-2xl font-bold">+</span></div>
+                <div className="text-xs tracking-widest text-gray-400 uppercase">Global Partners</div>
+              </div>
+              <div>
+                <div className="text-4xl font-light text-brand mb-1">5K<span className="text-accent text-2xl font-bold">+</span></div>
+                <div className="text-xs tracking-widest text-gray-400 uppercase">Formulas</div>
+              </div>
+            </div>
+          </div>
+          <div className="relative h-[600px] w-full mt-10 md:mt-0">
+             <div className="absolute inset-0 bg-brand rounded-tr-[100px] rounded-bl-[100px] transform translate-x-4 translate-y-4 opacity-5"></div>
+             <div className="relative h-full w-full rounded-tr-[100px] rounded-bl-[100px] overflow-hidden shadow-2xl">
+               <img src="./product-bg.png" alt="Company Product" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+             </div>
+          </div>
+        </div>
+      </section>
+      );
+    };
+
+    const SectionBusiness = () => {
+      const { lang } = useContext(AppContext);
+      const t = translations[lang];
+      const businesses = [
+        { title: t.biz_1, desc: t.biz_1_d, icon: "droplets", img: "./biz-1.png" },
+        { title: t.biz_2, desc: t.biz_2_d, icon: "layers", img: "./biz-2.png" },
+        { title: t.biz_3, desc: t.biz_3_d, icon: "sparkles", img: "./biz-3.png" },
+      ];
+      return (
+        <section id="사업소개" className="py-32 bg-surface">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-20">
+              <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.business}</h3>
+              <h2 className="text-4xl font-bold">{t.biz_title}</h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-10">
+              {businesses.map((biz, idx) => (
+                <div key={idx} className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-2xl transition-all duration-700 border border-gray-100 group overflow-hidden transform hover:-translate-y-2">
+                  <div className="h-72 overflow-hidden relative bg-gray-100">
+                    <img src={biz.img} alt={biz.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-in-out mix-blend-multiply" style={{filter: 'contrast(1.05)'}} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-700"></div>
+                  </div>
+                  <div className="p-8 relative">
+                    <div className="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center mb-6 group-hover:bg-brand transition-colors duration-500 absolute -top-10 left-8 border border-gray-50">
+                      <i data-lucide={biz.icon} className="w-7 h-7 text-brand group-hover:text-white transition-colors duration-500"></i>
+                    </div>
+                    <div className="pt-4">
+                      <h4 className="text-2xl font-bold mb-4 text-gray-800">{biz.title}</h4>
+                      <p className="text-gray-500 leading-relaxed font-light">{biz.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    const SectionRnD = () => {
+      const { lang } = useContext(AppContext);
+      const t = translations[lang];
+      return (
+      <section id="R&D" className="py-32 bg-brand text-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-0">
+          <div className="pr-12 md:pr-24 py-12 flex flex-col justify-center">
+            <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.rnd}</h3>
+            <h2 className="text-4xl font-bold mb-8 leading-tight" dangerouslySetInnerHTML={{__html: t.rnd_title}}></h2>
+            <p className="text-gray-400 mb-10 leading-relaxed text-lg">
+              {t.rnd_desc}
+            </p>
+            <ul className="space-y-4">
+              {[t.rnd_1, t.rnd_2, t.rnd_3].map((item, i) => (
+                <li key={i} className="flex items-center space-x-3">
+                  <i data-lucide="check-circle" className="w-5 h-5 text-accent"></i>
+                  <span className="text-gray-200">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="h-[400px] md:h-[600px] relative w-full">
+            <img src="./rnd-bg.png" alt="R&D Lab" className="w-full h-full object-cover" />
+          </div>
+        </div>
+      </section>
+      );
+    };
+
+    const SectionInfra = () => {
+      const { lang } = useContext(AppContext);
+      const t = translations[lang];
+      return (
+      <section id="생산인프라" className="py-0 relative bg-brand text-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2">
+          <div className="h-[400px] md:h-[600px] order-2 md:order-1 relative w-full">
+            <img src="./infra-bg.png" alt="Production Infrastructure" className="w-full h-full object-cover" />
+          </div>
+          <div className="p-12 md:p-24 flex flex-col justify-center order-1 md:order-2">
+             <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.infra}</h3>
+             <h2 className="text-4xl font-bold mb-8" dangerouslySetInnerHTML={{__html: t.infra_title}}></h2>
+             <p className="text-gray-300 leading-relaxed text-lg mb-8">
+               {t.infra_desc}
+             </p>
+             <div className="grid grid-cols-2 gap-8 mt-4 border-t border-white/10 pt-8">
+               <div>
+                  <div className="text-xs uppercase tracking-widest mb-1 text-accent">Annual Capacity</div>
+                  <div className="text-3xl font-light">150M<span className="text-xl">+</span></div>
+               </div>
+               <div>
+                  <div className="text-xs uppercase tracking-widest mb-1 text-accent">Certifications</div>
+                  <div className="text-xl font-light tracking-wide mt-1">CGMP, ISO</div>
+               </div>
+             </div>
+          </div>
+        </div>
+      </section>
+      );
+    };
+
+    const SectionDirections = () => {
+      const { lang, setView } = useContext(AppContext);
+      const t = translations[lang];
+      return (
+        <section id="오시는 길" className="bg-surface relative overflow-hidden pt-28">
+
+          <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
+             <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; Directions</p>
+             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+                <i data-lucide="arrow-left" className="w-4 h-4"></i>
+                <span>{lang === 'KOR' ? '뒤로가기' : (lang === 'CHN' ? '返回' : 'Back')}</span>
+             </button>
+          </div>
+
+          {/* Directions Content Block - HQ */}
+          <div className="py-12 max-w-7xl mx-auto px-6 border-b border-gray-100">
+             <div className="grid md:grid-cols-2 gap-16">
+                {/* Map Side with Actual Image */}
+                <div className="bg-gray-50 border border-gray-100 shadow-sm overflow-hidden rounded-sm h-[500px] relative">
+                   <img src="./map-gimpo.png" alt="Naver Map Location" className="w-full h-full object-cover" />
+                   <a 
+                      href="https://naver.me/FaeQVgxf" 
+                      target="_blank" 
+                      className="absolute bottom-6 right-6 bg-white text-brand px-6 py-3 shadow-lg font-bold text-sm flex items-center space-x-2 hover:bg-black hover:text-white transition-all rounded-full border border-gray-100"
+                   >
+                      <i data-lucide="map-pin" className="w-4 h-4"></i>
+                      <span>네이버 지도에서 크게 보기</span>
+                   </a>
+                </div>
+
+                {/* Address Side */}
+                <div className="flex flex-col justify-center">
+                   <h2 className="text-3xl font-bold mb-8 text-black border-l-4 border-[#662E40] pl-6 uppercase tracking-tight">김포 본사 / 공장</h2>
+                   
+                   <div className="space-y-10 pl-6">
+                      <div>
+                         <h3 className="text-xs uppercase tracking-[0.2em] text-[#662E40] font-bold mb-4">Address</h3>
+                         <p className="text-xl text-gray-700 leading-relaxed font-light">
+                            경기도 김포시 양촌읍 황금3로 7번길 53<br/>
+                            (학운리 3540)
+                         </p>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-8 pt-6 border-t border-gray-100">
+                         <div>
+                            <h3 className="text-xs uppercase tracking-[0.2em] text-[#662E40] font-bold mb-3">Tel</h3>
+                            <p className="text-lg text-gray-800">031.990.4120</p>
+                         </div>
+                         <div>
+                            <h3 className="text-xs uppercase tracking-[0.2em] text-[#662E40] font-bold mb-3">Fax</h3>
+                            <p className="text-lg text-gray-800">031.991.4130</p>
+                         </div>
+                      </div>
+
+                      <div className="pt-6">
+                         <h3 className="text-xs uppercase tracking-[0.2em] text-[#662E40] font-bold mb-3">Email</h3>
+                         <p className="text-lg text-gray-800">ezekielcos1@naver.com</p>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+
+          {/* Directions Content Block - R&D */}
+          <div className="py-12 max-w-7xl mx-auto px-6 mb-24">
+             <div className="grid md:grid-cols-2 gap-16">
+                {/* Map Side with Actual Image */}
+                <div className="bg-gray-50 border border-gray-100 shadow-sm overflow-hidden rounded-sm h-[500px] relative">
+                   <img src="./연구소.png" alt="R&D Center Location" className="w-full h-full object-cover" />
+                   <a 
+                      href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%20%EC%84%A0%EC%9C%A0%EB%A1%9C9%EA%B8%B8%2010" 
+                      target="_blank" 
+                      className="absolute bottom-6 right-6 bg-white text-brand px-6 py-3 shadow-lg font-bold text-sm flex items-center space-x-2 hover:bg-black hover:text-white transition-all rounded-full border border-gray-100"
+                   >
+                      <i data-lucide="map-pin" className="w-4 h-4"></i>
+                      <span>네이버 지도에서 크게 보기</span>
+                   </a>
+                </div>
+
+                {/* Address Side */}
+                <div className="flex flex-col justify-center">
+                   <h2 className="text-3xl font-bold mb-8 text-black border-l-4 border-[#662E40] pl-6 uppercase tracking-tight">연구소</h2>
+                   
+                   <div className="space-y-10 pl-6">
+                      <div>
+                         <h3 className="text-xs uppercase tracking-[0.2em] text-[#662E40] font-bold mb-4">Address</h3>
+                         <p className="text-xl text-gray-700 leading-relaxed font-light">
+                            서울시 영등포구 선유로9길 10<br/>
+                            문래 SK V1 CENTER sk v1센터 716호
+                         </p>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+        </section>
+      );
+    };
+
+    const SectionPartners = () => {
+      const { lang, setView } = useContext(AppContext);
+      const t = translations[lang];
+      return (
+        <section id="협력사" className="bg-surface relative overflow-hidden min-h-screen pt-28">
+
+          <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
+             <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; Partners</p>
+             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+                <i data-lucide="arrow-left" className="w-4 h-4"></i>
+                <span>{lang === 'KOR' ? '뒤로가기' : (lang === 'CHN' ? '返回' : 'Back')}</span>
+             </button>
+          </div>
+
+          <div className="py-12 max-w-7xl mx-auto px-6 mb-24">
+             <div className="text-center mb-16">
+                <h2 className="text-3xl font-bold mb-4 text-black uppercase tracking-tight">협력사</h2>
+                <p className="text-gray-500">EZEKIEL와 함께하는 소중한 파트너입니다.</p>
+             </div>
+             <div className="flex justify-center bg-white p-10 md:p-16 rounded-xl shadow-sm border border-gray-100">
+                 <img src="./협력사.png" alt="Partners" className="w-full max-w-5xl object-contain min-h-[300px]" />
+             </div>
+          </div>
+        </section>
+      );
+    };
+
+    const SectionCEOMessage = () => {
+      const { lang, setView } = useContext(AppContext);
+      return (
+        <section id="CEO메시지" className="bg-surface relative overflow-hidden pt-28">
+          <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
+             <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; CEO Message</p>
+             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+                <i data-lucide="arrow-left" className="w-4 h-4"></i>
+                <span>{lang === 'KOR' ? '뒤로가기' : (lang === 'CHN' ? '返回' : 'Back')}</span>
+             </button>
+          </div>
+
+          <div className="py-20 max-w-4xl mx-auto px-6 mb-24 bg-white shadow-xl rounded-2xl relative mt-12 border border-gray-100">
+             <div className="absolute top-0 right-10 -translate-y-1/2 w-20 h-20 bg-accent rounded-full flex items-center justify-center shadow-lg">
+                <i data-lucide="quote" className="w-8 h-8 text-white"></i>
+             </div>
+             
+             <div className="text-center mb-16 px-4 md:px-12 flex flex-col items-center">
+                <h2 className="text-3xl md:text-5xl font-bold mb-10 text-brand leading-tight text-center relative z-10 border-b-2 border-accent pb-8 inline-block">
+                   신뢰와 기술로 빚는 뷰티의 미래
+                </h2>
+                <p className="text-xl md:text-2xl text-accent font-medium leading-relaxed italic mt-4 max-w-3xl">
+                  "정직한 마음(Ethic Mind)과 독보적인 기술력으로<br className="hidden md:block"/>귀사의 브랜드 가치를 완성합니다."
+                </p>
+             </div>
+             
+             <div className="space-y-8 text-gray-700 leading-relaxed text-lg px-4 md:px-12 font-light">
+                <p className="text-xl font-medium text-brand border-l-4 border-brand pl-4">안녕하십니까, <strong className="font-bold">EZEKIEL COSMETIC</strong>입니다.</p>
+                <p className="pl-5">저희는 단순한 화장품 제조를 넘어, 파트너사의 성공을 함께 설계하는 OEM · ODM 전문 파트너입니다.<br/>EZEKIEL COSMETIC은 고객사에게 다음의 핵심 가치를 약속드립니다.</p>
+                
+                <div className="bg-gray-50 p-8 rounded-xl space-y-8 mt-10 border border-gray-100 shadow-inner">
+                   <div className="flex items-start">
+                     <div className="bg-brand text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-5 mt-1 flex-shrink-0 shadow-md text-sm">1</div>
+                     <div>
+                       <h3 className="text-xl font-bold text-brand mb-2">Strong R&D & Cosmeceutical</h3>
+                       <p className="text-gray-600">탄탄한 R&D 역량을 바탕으로 화장품과 의약품의 기술력을 결합한 고기능성 코스메슈티컬(Cosmeceutical) 솔루션을 제공합니다.</p>
+                     </div>
+                   </div>
+                   
+                   <div className="flex items-start">
+                     <div className="bg-brand text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-5 mt-1 flex-shrink-0 shadow-md text-sm">2</div>
+                     <div>
+                       <h3 className="text-xl font-bold text-brand mb-2">Ethic Mind</h3>
+                       <p className="text-gray-600">기업의 윤리적 책임인 Ethic Mind를 최우선으로 하여, 정직한 원료와 투명한 공정으로 가장 안전한 제품을 만듭니다.</p>
+                     </div>
+                   </div>
+                   
+                   <div className="flex items-start">
+                     <div className="bg-brand text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-5 mt-1 flex-shrink-0 shadow-md text-sm">3</div>
+                     <div>
+                       <h3 className="text-xl font-bold text-brand mb-2">Satisfactory Service</h3>
+                       <p className="text-gray-600">기획부터 생산, 완제품 출하까지 파트너사가 감동할 수 있는 <strong className="font-bold text-brand text-lg">만족스러운 서비스(Satisfactory Service)</strong>를 실현하겠습니다.</p>
+                     </div>
+                   </div>
+                </div>
+                
+                <div className="mt-16 pt-10 text-center border-t border-gray-200">
+                  <p className="text-xl font-medium text-gray-800">
+                    귀사의 아이디어가 전 세계인의 사랑을 받는 제품이 될 수 있도록,<br className="hidden md:block"/>
+                    <strong className="text-accent text-2xl mt-4 block">EZEKIEL COSMETIC이 최고의 기술과 정성으로 함께하겠습니다.</strong>
+                  </p>
+                </div>
+             </div>
+          </div>
+        </section>
+      );
+    };
+
+    const SectionPhilosophy = () => {
+      const { lang, setView } = useContext(AppContext);
+      return (
+        <section id="기업이념" className="bg-surface relative overflow-hidden pt-28">
+          <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
+             <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; Corporate Philosophy</p>
+             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+                <i data-lucide="arrow-left" className="w-4 h-4"></i>
+                <span>{lang === 'KOR' ? '뒤로가기' : (lang === 'CHN' ? '返回' : 'Back')}</span>
+             </button>
+          </div>
+
+          <div className="py-20 max-w-5xl mx-auto px-6 mb-24">
+             {/* Title & Vision */}
+             <div className="text-center mb-20 animate-fade-in-up">
+                <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Corporate Philosophy</h2>
+                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">기업이념</h1>
+                <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+                <p className="text-2xl md:text-3xl text-gray-800 font-light leading-relaxed">
+                  "새로운 비전을 제시하고 미와 건강의 케어를 제공하는<br className="hidden md:block"/> <strong className="font-bold text-brand">글로벌 프리미엄 기업</strong>"
+                </p>
+                <p className="text-gray-500 mt-6 text-lg max-w-2xl mx-auto border-t border-gray-200 pt-6">
+                  독자적인 기술력과 노하우를 바탕으로 상품기획에서부터 개발, 생산, 품질관리 및 출하에 이르기까지 전 과정에 대한 토탈 서비스를 실현합니다.
+                </p>
+             </div>
+
+             {/* Core Values grid */}
+             <div className="grid md:grid-cols-3 gap-8">
+                {/* Value 1 */}
+                <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                   <div className="w-16 h-16 bg-brand/5 group-hover:bg-brand text-brand group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
+                     <i data-lucide="shield-check" className="w-8 h-8"></i>
+                   </div>
+                   <h3 className="text-2xl font-bold mb-4 text-brand">ETHIC Mind</h3>
+                   <div className="w-10 h-0.5 bg-accent mb-6 transition-all duration-300 group-hover:w-full"></div>
+                   <p className="text-gray-600 leading-relaxed font-light">
+                     기업의 윤리적 책임(Ethic Mind)을 최우선으로 투명하고 정직하게 경영하며, 파트너사와 고객에게 신뢰받는 안전한 제품을 개발합니다.
+                   </p>
+                </div>
+
+                {/* Value 2 */}
+                <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                   <div className="w-16 h-16 bg-brand/5 group-hover:bg-brand text-brand group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
+                     <i data-lucide="flask-conical" className="w-8 h-8"></i>
+                   </div>
+                   <h3 className="text-2xl font-bold mb-4 text-brand">Strong R&D</h3>
+                   <div className="w-10 h-0.5 bg-accent mb-6 transition-all duration-300 group-hover:w-full"></div>
+                   <p className="text-gray-600 leading-relaxed font-light">
+                     코스메슈티컬(Cosmeceutical) 솔루션과 독자적인 연구 개발 역량을 통해 글로벌 시장을 선도하는 고기능성 혁신 제품을 만듭니다.
+                   </p>
+                </div>
+
+                {/* Value 3 */}
+                <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                   <div className="w-16 h-16 bg-brand/5 group-hover:bg-brand text-brand group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
+                     <i data-lucide="heart-handshake" className="w-8 h-8"></i>
+                   </div>
+                   <h3 className="text-2xl font-bold mb-4 text-brand">Satisfactory Service</h3>
+                   <div className="w-10 h-0.5 bg-accent mb-6 transition-all duration-300 group-hover:w-full"></div>
+                   <p className="text-gray-600 leading-relaxed font-light">
+                     상품 기획부터 개발, 제조, 관리 전 과정에 걸친 OEM/ODM 토탈 솔루션으로 파트너사가 깊이 감동할 수 있는 최상의 서비스를 제공합니다.
+                   </p>
+                </div>
+             </div>
+          </div>
+        </section>
+      );
+    };
+
+    const SectionHistory = () => {
+      const { lang, setView } = useContext(AppContext);
+      
+      const historyData = [
+        {
+          year: "2023",
+          events: [
+            { period: "상반기", desc: "국내 인기 인플루언서 브랜드 제품 기획/개발 및 생산 (폴라탐, 247벨, 247챠르, 쉬가이아 등)" }
+          ]
+        },
+        {
+          year: "2022",
+          events: [
+            { period: "10월", desc: "브래비티(Brævity) 국내 및 중국 상표 등록 완료" }
+          ]
+        },
+        {
+          year: "2021",
+          events: [
+            { period: "10월", desc: "위생용품 제조업 허가 및 영업신고 취득 / 중소기업(외감대상) 우수업체 선정" },
+            { period: "09월", desc: "4노즐 충진기기 특허 신청 / 프리미엄 라인 인셀덤 액티브 크림 EX 연구 및 제조" },
+            { period: "04월", desc: "브이플랫폼 회사 설립 및 전략적 투자 (연예인/인플루언서 뷰티 비즈니스 개시)" },
+            { period: "03월", desc: "프랑스 EVE VEGAN (이브 비건) 공식 인증 취득" }
+          ]
+        },
+        {
+          year: "2020",
+          events: [
+            { period: "12월", desc: "마이크로 바이옴 국제 생물자원국 정식 등재 / 일반의약외품 제조 허가증 취득" },
+            { period: "07월", desc: "동물용 의약외품 제조 허가증 획득" },
+            { period: "05월", desc: "더마코스메틱 셀라피(Cellapy) 주요 홈쇼핑 런칭" },
+            { period: "03월", desc: "중국 타오바오 전용 10종 제품 개발 (플랫폼 내 화장품 전체 매출 2위 달성)" },
+            { period: "01월", desc: "SNP 마스크 시트팩 라인 (5종) 개발 및 독점 생산 개시" }
+          ]
+        },
+        {
+          year: "2019",
+          events: [
+            { period: "05월", desc: "AZH 프리미엄 헤어 케어 신제품 라인 출시 및 홈쇼핑 방송" },
+            { period: "03월", desc: "중국 전용 FHD 고기능성 마스크 팩 본격 출시" }
+          ]
+        },
+        {
+          year: "2018",
+          events: [
+            { period: "11월", desc: "코리아코스팩 뷰티핏 아이브로우 듀얼볼륨틴트 홈쇼핑 성공적 런칭" },
+            { period: "10월", desc: "SNP 프리미엄 기초 스킨케어 라인 연구개발 및 제조생산" },
+            { period: "08월", desc: "원진 성형외과 그룹 공식 코스메틱 기초라인 연구개발 및 전담 제조" },
+            { period: "07월", desc: "이지함 피부과, 청담 CDC MOU 전략적 제휴 체결 (면세점 전용 기초라인 제조)" },
+            { period: "05월", desc: "뽀로로 유아용 코스메틱 중국 현지 제조 라인 생산 가동" },
+            { period: "04월", desc: "테디베어 코스메틱 국내 주요 백화점 입점 및 글로벌 8개국 수출 쾌거" },
+            { period: "03월", desc: "리더스코스메틱 기초라인 연구 및 체계적 제조생산 / 비벌리힐즈 폴로 클럽 라이센스 단독 취득" },
+            { period: "02월", desc: "글로벌 더마 브랜드 닥터자르트(Dr.Jart+) 핵심 제품 생산" },
+            { period: "01월", desc: "전통 한방 화장품 백옥생 비안채 라인 GS 홈쇼핑 런칭" }
+          ]
+        },
+        {
+          year: "2017",
+          events: [
+            { period: "08월", desc: "백옥생 인연 프리미엄 라인 라이센스 취득" },
+            { period: "05월", desc: "국내 최대 규모 용산 HDC 신라면세점 공식 입점 / 식약처 우수화장품제조기준(CGMP) 최종 인증 확정" },
+            { period: "04월", desc: "글로벌 패션 매거진 브랜드 마리끌레르 코스메틱 라이센스 취득" },
+            { period: "02월", desc: "CJ 오쇼핑(홈쇼핑) 런칭 및 완판 기록" },
+            { period: "01월", desc: "글로벌 인기 캐릭터 뽀로로 코스메틱 부문 라이센스 공식 취득" }
+          ]
+        },
+        {
+          year: "2016",
+          events: [
+            { period: "04월", desc: "글로벌 캐릭터 테디베어 코스메틱 부문 라이센스 단독 취득" },
+            { period: "03월", desc: "말레이시아 GS 홈쇼핑 런칭으로 동남아시아 시장 진출 본격화" },
+            { period: "01월", desc: "ISO 22716 국제 우수화장품 제조 및 원료 규격 인증 획득" }
+          ]
+        },
+        {
+          year: "2015",
+          events: [
+            { period: "11월", desc: "㈜에스겔코스메틱 법인 설립 및 김포 학운4일반산업단지 대규모 최신식 공장 준공 완료" }
+          ]
+        }
+      ];
+
+      return (
+        <section id="주요연혁" className="bg-surface relative overflow-hidden pt-28">
+          <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
+             <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; History</p>
+             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+                <i data-lucide="arrow-left" className="w-4 h-4"></i>
+                <span>{lang === 'KOR' ? '뒤로가기' : (lang === 'CHN' ? '返回' : 'Back')}</span>
+             </button>
+          </div>
+
+          <div className="py-20 max-w-5xl mx-auto px-6 mb-24 relative">
+             <div className="text-center mb-24 animate-fade-in-up">
+                <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Company History</h2>
+                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">주요연혁</h1>
+                <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+                <p className="text-2xl text-gray-800 font-light leading-relaxed max-w-3xl mx-auto">
+                  "세계를 향한 힘찬 비상, ㈜에스겔코스메틱의 꿈은 <br className="hidden md:block"/><strong className="text-brand font-bold">100년 앞을 내다보는 글로벌 뷰티 기업</strong>으로 도약하는 것입니다."
+                </p>
+             </div>
+
+             {/* Timeline Container */}
+             <div className="relative border-l border-gray-200 ml-4 md:ml-12">
+                {historyData.map((data, idx) => (
+                  <div key={idx} className="mb-20 pl-8 md:pl-16 relative">
+                     {/* Timeline Dot (Year) */}
+                     <div className="absolute top-0 -left-6 md:-left-8 w-12 h-12 md:w-16 md:h-16 bg-white border-4 border-brand rounded-full flex items-center justify-center shadow-lg z-10">
+                        <span className="text-brand font-bold text-lg md:text-xl">{data.year}</span>
+                     </div>
+                     
+                     {/* Year Events list */}
+                     <div className="pt-2 md:pt-4 space-y-8 animate-fade-in-up" style={{animationDelay: `${idx * 0.1}s`}}>
+                        {data.events.map((ev, i) => (
+                           <div key={i} className="flex flex-col md:flex-row group">
+                              <div className="text-accent font-bold w-full md:w-24 flex-shrink-0 text-xl md:text-2xl tracking-tighter mb-2 md:mb-0">
+                                {ev.period}
+                              </div>
+                              <div className="flex-1 text-gray-600 font-light text-[17px] leading-relaxed group-hover:text-brand transition-colors">
+                                {ev.desc}
+                              </div>
+                           </div>
+                        ))}
+                     </div>
+                  </div>
+                ))}
+                
+                {/* Timeline Start Point */}
+                <div className="absolute -bottom-4 -left-3 w-6 h-6 bg-gray-200 rounded-full border-4 border-white shadow-sm"></div>
+             </div>
+          </div>
+        </section>
+      );
+    };
+
+    const SectionOrganization = () => {
+      const { lang, setView } = useContext(AppContext);
+      
+      return (
+        <section id="조직도" className="bg-surface relative overflow-hidden pt-28">
+          <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
+             <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; Organization Chart</p>
+             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+                <i data-lucide="arrow-left" className="w-4 h-4"></i>
+                <span>{lang === 'KOR' ? '뒤로가기' : (lang === 'CHN' ? '返回' : 'Back')}</span>
+             </button>
+          </div>
+
+          <div className="py-20 max-w-6xl mx-auto px-6 mb-24 relative">
+             <div className="text-center mb-24 animate-fade-in-up">
+                <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Organization</h2>
+                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">조직도</h1>
+                <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+                <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto">
+                  전문적이고 체계적인 시스템을 갖추어<br className="hidden md:block"/>가장 신뢰할 수 있는 뷰티 솔루션을 제공합니다.
+                </p>
+             </div>
+
+             {/* Organization Chart Container */}
+             <div className="max-w-[70rem] mx-auto flex flex-col items-center animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+                
+                {/* Top Executive */}
+                <div className="flex flex-col items-center">
+                   <div className="bg-brand text-white text-lg md:text-xl font-bold px-12 py-5 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] border border-brand/20">
+                     총괄대표
+                   </div>
+                   <div className="w-1 h-10 bg-gray-300"></div>
+                   <div className="bg-white text-brand border-2 border-brand text-lg font-bold px-10 py-4 rounded-xl shadow-sm z-10 relative">
+                     부대표
+                   </div>
+                   <div className="w-1 h-12 bg-gray-300"></div>
+                </div>
+
+                {/* Horizontal Branching */}
+                <div className="relative w-full mt-0">
+                   {/* Continuous horizontal line (visible on large screens) */}
+                   {/* With 5 equal columns and 0 gap, center of col 1 is 10%, center of col 5 is 90% */}
+                   <div className="absolute top-0 left-[10%] lg:left-[10%] right-[10%] lg:right-[10%] h-1 bg-gray-300 hidden lg:block rounded-full"></div>
+                   
+                   <div className="grid grid-cols-1 lg:grid-cols-5 pt-0 lg:pt-8 text-center">
+                      
+                      {/* Dept 1 */}
+                      <div className="relative flex flex-col items-center group px-3 mb-10 lg:mb-0">
+                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
+                         <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-4 lg:py-5 rounded-xl font-bold text-gray-800 hover:border-accent hover:shadow-lg transition-all flex items-center justify-center space-x-2 z-10 relative">
+                            <span className="text-sm xl:text-base whitespace-nowrap">기업부설연구소</span>
+                         </div>
+                      </div>
+
+                      {/* Dept 2 */}
+                      <div className="relative flex flex-col items-center group px-3 mb-10 lg:mb-0">
+                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
+                         <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-4 lg:py-5 rounded-xl font-bold text-gray-800 hover:border-accent hover:shadow-lg transition-all flex items-center justify-center space-x-2 z-10 relative">
+                            <span className="text-sm xl:text-base whitespace-nowrap">품질관리부</span>
+                         </div>
+                      </div>
+
+                      {/* Dept 3 */}
+                      <div className="relative flex flex-col items-center px-3 mb-10 lg:mb-0">
+                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
+                         <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-4 lg:py-5 rounded-xl font-bold text-gray-800 hover:border-accent hover:shadow-lg transition-all flex items-center justify-center space-x-2 z-10 relative">
+                            <span className="text-sm xl:text-base whitespace-nowrap">생산 운영</span>
+                         </div>
+                         <div className="w-full flex flex-col items-center mt-6 space-y-6 relative">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-6 w-1 h-[calc(100%-40px)] bg-gray-300 hidden lg:block"></div>
+                            <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-4 lg:py-5 rounded-xl font-bold text-gray-800 hover:border-accent hover:shadow-lg transition-all flex items-center justify-center space-x-2 z-10 relative">
+                               <span className="text-sm xl:text-base whitespace-nowrap">제조부</span>
+                            </div>
+                            <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-4 lg:py-5 rounded-xl font-bold text-gray-800 hover:border-accent hover:shadow-lg transition-all flex items-center justify-center space-x-2 z-10 relative">
+                               <span className="text-sm xl:text-base whitespace-nowrap">생산부</span>
+                            </div>
+                            <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-4 lg:py-5 rounded-xl font-bold text-gray-800 hover:border-accent hover:shadow-lg transition-all flex items-center justify-center space-x-2 z-10 relative">
+                               <span className="text-sm xl:text-base whitespace-nowrap">자재물류부</span>
+                            </div>
+                         </div>
+                      </div>
+
+                      {/* Dept 4 */}
+                      <div className="relative flex flex-col items-center px-3 mb-10 lg:mb-0">
+                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
+                         <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-4 lg:py-5 rounded-xl font-bold text-gray-800 hover:border-accent hover:shadow-lg transition-all flex items-center justify-center space-x-2 z-10 relative">
+                            <span className="text-sm xl:text-base whitespace-nowrap">경영관리부</span>
+                         </div>
+                         <div className="w-full flex flex-col items-center mt-6 space-y-6 relative">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-6 w-1 h-[calc(100%-40px)] bg-gray-300 hidden lg:block"></div>
+                            <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-4 lg:py-5 rounded-xl font-bold text-gray-800 hover:border-accent hover:shadow-lg transition-all flex items-center justify-center space-x-2 z-10 relative">
+                               <span className="text-sm xl:text-base whitespace-nowrap">경리부</span>
+                            </div>
+                            <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-4 lg:py-5 rounded-xl font-bold text-gray-800 hover:border-accent hover:shadow-lg transition-all flex items-center justify-center space-x-2 z-10 relative">
+                               <span className="text-sm xl:text-base whitespace-nowrap">미화부</span>
+                            </div>
+                         </div>
+                      </div>
+
+                      {/* Dept 5 */}
+                      <div className="relative flex flex-col items-center group px-3 mb-10 lg:mb-0">
+                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
+                         <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-4 lg:py-5 rounded-xl font-bold text-gray-800 hover:border-accent hover:shadow-lg transition-all flex items-center justify-center space-x-2 z-10 relative">
+                            <span className="text-sm xl:text-base whitespace-nowrap">디자인부</span>
+                         </div>
+                      </div>
+
+                   </div>
+                </div>
+
+             </div>
+          </div>
+        </section>
+      );
+    };
+
+    const SectionOverview = () => {
+      const { lang, setView } = useContext(AppContext);
+      
+      const overviewData = [
+          { icon: "building", label: "회사명", value: "㈜에스겔코스메틱" },
+          { icon: "user", label: "대표이사", value: "우승원" },
+          { icon: "wallet", label: "자본금", value: "5,000만원" },
+          { icon: "briefcase", label: "Category", value: "OEM, ODM Cosmetic Manufacturing" },
+          { icon: "globe-2", label: "Clients", value: "More than 300 파트너사" },
+          { icon: "users", label: "임직원 수 (정규 및 외주)", value: "250명" },
+          { icon: "factory", label: "생산능력 (일/월)", value: "기초 50g 기준 (일) 30만개 / 씨트팩 (월) 3천만장", full: true },
+          { icon: "map-pin", label: "본사 공장 주소", value: "경기 김포시 양촌읍 황금3로7번길 53", full: true },
+          { icon: "phone", label: "고객 지원", value: "T. +82-31-990-4120 / F. +82-31-991-4130" },
+          { icon: "mail", label: "이메일", value: "ezekielcos@hanmail.net" },
+          { icon: "monitor", label: "홈페이지", value: "http://ezekielcos.com/ (현재 보수중)" }
+      ];
+
+      return (
+        <section id="회사개요" className="bg-surface relative overflow-hidden pt-28 pb-32">
+          <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
+             <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; Overview</p>
+             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+                <i data-lucide="arrow-left" className="w-4 h-4"></i>
+                <span>{lang === 'KOR' ? '뒤로가기' : (lang === 'CHN' ? '返回' : 'Back')}</span>
+             </button>
+          </div>
+
+          <div className="max-w-6xl mx-auto px-6 mt-16 relative">
+             <div className="text-center mb-20 animate-fade-in-up">
+                <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Overview</h2>
+                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">회사개요</h1>
+                <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+                <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep">
+                  독보적인 기술력과 최고의 생산 인프라를 바탕으로<br className="hidden md:block"/>가장 혁신적인 뷰티 솔루션을 실현합니다.
+                </p>
+             </div>
+
+             {/* Clean Grid Data Layout */}
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+                {overviewData.map((item, idx) => (
+                    <div key={idx} className={`bg-white rounded-2xl p-8 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 group ${item.full ? 'md:col-span-2 lg:col-span-3' : ''}`}>
+                        <div className="flex items-start space-x-6">
+                            <div className="w-14 h-14 rounded-xl bg-gray-50 flex items-center justify-center shrink-0 group-hover:bg-brand transition-colors">
+                                <i data-lucide={item.icon} className="w-6 h-6 text-brand group-hover:text-white transition-colors"></i>
+                            </div>
+                            <div className="flex flex-col flex-1 justify-center min-h-[56px]">
+                                <span className="text-sm font-medium text-gray-400 mb-1 tracking-wider">{item.label}</span>
+                                <span className="text-lg font-bold text-gray-800 break-keep leading-snug">{item.value}</span>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+             </div>
+          </div>
+         </section>
+      );
+    };
+
+    const SectionPRAndContact = () => {
+      const { lang, view, setView } = useContext(AppContext);
+      const t = translations[lang];
+
+      const handleMailSubmit = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const content = formData.get('content');
+        
+        const subject = `[EZEKIEL] 프로젝트 문의 - ${name}`;
+        const body = `회사명/이름: ${name}\n이메일: ${email}\n\n문의내용:\n${content}`;
+        
+        window.location.href = `mailto:ezekielcos@daum.net?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      };
+      return (
+      <section className="py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20">
+          <div id="홍보센터">
+            <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.pr}</h3>
+            <h2 className="text-4xl font-bold mb-10">{t.pr_title}</h2>
+            <div className="space-y-6">
+              {[
+                { date: "2026.03", title: "비건 화장품 인증 획득 및 친환경 라인 런칭" },
+                { date: "2026.01", title: "글로벌 뷰티 엑스포 '최고 혁신상' 수상" },
+                { date: "2025.11", title: "제2 스마트 팩토리 완공 및 본격 가동" },
+                { date: "2025.08", title: "지속가능한 패키징 솔루션 파트너십 체결" }
+              ].map((news, i) => (
+                <div key={i} className="flex justify-between items-center border-b border-gray-100 pb-6 group cursor-pointer hover:border-black transition-colors">
+                  <div>
+                    <div className="text-sm text-accent mb-2">{news.date}</div>
+                    <h4 className="text-lg font-medium group-hover:text-brand text-gray-700 transition-colors">{news.title}</h4>
+                  </div>
+                  <i data-lucide="arrow-up-right" className="text-gray-300 group-hover:text-brand transition-colors w-5 h-5"></i>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8">
+                <button className="text-sm font-medium tracking-widest uppercase border-b border-black pb-1 hover:text-accent hover:border-accent transition-colors">{t.pr_more}</button>
+            </div>
+          </div>
+
+          <div id="문의하기" className="bg-surface p-10 md:p-14 rounded-3xl shadow-sm border border-gray-50">
+            <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.contact}</h3>
+            <h2 className="text-3xl font-bold mb-8">{t.contact_title}</h2>
+            <form className="space-y-5" onSubmit={handleMailSubmit}>
+              <div>
+                <input name="name" type="text" placeholder={t.contact_ph1} required className="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all text-sm" />
+              </div>
+              <div>
+                <input name="email" type="email" placeholder={t.contact_ph2} required className="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all text-sm" />
+              </div>
+              <div>
+                <textarea name="content" rows="4" placeholder={t.contact_ph3} required className="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all resize-none text-sm"></textarea>
+              </div>
+              <button type="submit" className="w-full bg-brand text-white py-5 font-medium tracking-widest uppercase text-sm hover:bg-black/90 transition-colors rounded-lg flex justify-center items-center space-x-2 group">
+                <span>문의하기</span>
+                <i data-lucide="arrow-right" className="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      );
+    };
+
+    const Footer = () => {
+      const { lang, view, setView } = useContext(AppContext);
+      const t = translations[lang];
+
+      const handleNavAction = (targetView, sectionId) => {
+        if (view !== targetView) {
+          setView(targetView);
+          if (targetView === 'home' && sectionId) {
+            setTimeout(() => scrollToSection(sectionId), 100);
+          } else {
+            window.scrollTo(0, 0);
+          }
+        } else if (sectionId) {
+          scrollToSection(sectionId);
+        }
+      };
+      return (
+      <footer className="bg-brand text-white/50 py-20 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
+          <div className="col-span-1 md:col-span-2">
+            <div className="mb-6 flex space-x-4">
+               <img src="./logo-white.png" alt="Company Logo" className="h-12 w-auto object-contain" />
+            </div>
+            <p className="text-sm leading-relaxed max-w-sm mb-8 text-white/60" dangerouslySetInnerHTML={{__html: t.footer_desc}}>
+            </p>
+            <div className="flex space-x-4">
+               <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand transition-all">
+                 <i data-lucide="instagram" className="w-4 h-4"></i>
+               </a>
+               <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand transition-all">
+                 <i data-lucide="linkedin" className="w-4 h-4"></i>
+               </a>
+               <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand transition-all">
+                 <i data-lucide="youtube" className="w-4 h-4"></i>
+               </a>
+            </div>
+          </div>
+          <div>
+            <h4 className="text-white font-medium mb-6 uppercase tracking-widest text-sm">{t.footer_q}</h4>
+            <ul className="space-y-4 text-sm text-white/60">
+              <li><a href="#회사소개" className="hover:text-accent hover:translate-x-1 inline-block transition-all" onClick={(e) => { e.preventDefault(); handleNavAction('home', '회사소개'); }}>{t.company}</a></li>
+              <li><a href="#사업소개" className="hover:text-accent hover:translate-x-1 inline-block transition-all" onClick={(e) => { e.preventDefault(); handleNavAction('home', '사업소개'); }}>{t.business}</a></li>
+              <li><a href="#R&D" className="hover:text-accent hover:translate-x-1 inline-block transition-all" onClick={(e) => { e.preventDefault(); handleNavAction('home', 'R&D'); }}>{t.rnd}</a></li>
+              <li><a href="#오시는 길" className="hover:text-accent hover:translate-x-1 inline-block transition-all" onClick={(e) => { e.preventDefault(); handleNavAction('directions'); }}>오시는 길</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-white font-medium mb-6 uppercase tracking-widest text-sm">{t.footer_c}</h4>
+            <ul className="space-y-4 text-sm text-white/60">
+              <li className="flex items-start space-x-3"><i data-lucide="phone" className="w-4 h-4 mt-0.5 opacity-70"></i><span>회사. 031.990.4120 (팩스. 031.991.4130)</span></li>
+              <li className="flex items-start space-x-3"><i data-lucide="smartphone" className="w-4 h-4 mt-0.5 opacity-70"></i><span>핸드폰. 010.9444.3432</span></li>
+              <li className="flex items-start space-x-3"><i data-lucide="mail" className="w-4 h-4 mt-0.5 opacity-70"></i><span>ezekielcos1@naver.com</span></li>
+              <li className="flex items-start space-x-3 pt-2">
+                <i data-lucide="map-pin" className="w-4 h-4 mt-0.5 opacity-70 flex-shrink-0"></i>
+                <span className="leading-relaxed" dangerouslySetInnerHTML={{__html: t.footer_a}}></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-white/10 text-xs flex flex-col md:flex-row justify-between items-center text-white/40">
+          <div>&copy; 2026 EZEKIEL Cosmetics Co., Ltd. All rights reserved.</div>
+          <div className="mt-4 md:mt-0 flex space-x-6">
+            <a href="#" className="hover:text-white transition-colors">{t.footer_p1}</a>
+            <a href="#" className="hover:text-white transition-colors">{t.footer_p2}</a>
+            <a href="#" className="hover:text-white transition-colors">{t.footer_p3}</a>
+          </div>
+        </div>
+      </footer>
+      );
+    };
+    
+    const App = () => {
+      const [lang, setLang] = useState('KOR');
+      const [view, setView] = useState('home');
+      const [heroBg, setHeroBg] = useState('./hero-bg.png');
+
+      useEffect(() => {
+        lucide.createIcons();
+      }, [lang]);
+
+      return (
+        <AppContext.Provider value={{ lang, setLang, view, setView, heroBg, setHeroBg }}>
+          <div className="scroll-smooth font-sans">
+            <Header />
+            {view === 'home' && (
+              <React.Fragment>
+                <Hero />
+                <SectionCompany />
+                <SectionBusiness />
+                <SectionRnD />
+                <SectionInfra />
+                <SectionPRAndContact />
+              </React.Fragment>
+            )}
+            {view === 'directions' && <SectionDirections />}
+            {view === 'partners' && <SectionPartners />}
+            {view === 'ceo' && <SectionCEOMessage />}
+            {view === 'philosophy' && <SectionPhilosophy />}
+            {view === 'history' && <SectionHistory />}
+            {view === 'overview' && <SectionOverview />}
+            {view === 'organization' && <SectionOrganization />}
+            <Footer />
+          </div>
+        </AppContext.Provider>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
