@@ -116,7 +116,7 @@
         ov_subtitle: "독보적인 기술력과 최고의 생산 인프라를 바탕으로<br className=\"hidden md:block\"/>가장 혁신적인 뷰티 솔루션을 실현합니다.",
         ov_name: "회사명", ov_ceo_l: "대표이사", ov_capital: "자본금", ov_cat: "Category", ov_clients: "Clients", ov_staff: "임직원 수 (정규 및 외주)", ov_capa: "생산능력 (일/월)", ov_addr: "본사 공장 주소", ov_support: "고객 지원",
         ov_val_name: "㈜에스겔코스메틱", ov_val_ceo: "우승원", ov_val_cap: "5,000만원", ov_val_cli: "More than 300 파트너사", ov_val_staff: "250명", ov_val_capa: "기초 50g 기준 (일) 30만개 / 씨트팩 (월) 3천만장",
-        ov_main_addr: "경기 김포시 양촌읍 황금3로7번길 53", maintenance: "(현재 보수중)", tel: "회사.", fax: "팩스."
+        ov_main_addr: "경기 김포시 양촌읍 황금3로7번길 53", maintenance: "(현재 보수중)", tel: "전화.", fax: "팩스."
       },
       ENG: {
         company: "Company", business: "Business", rnd: "R&D", infra: "Infra", pr: "PR Center", contact: "Contact",
@@ -206,7 +206,7 @@
         ov_subtitle: "凭借卓越的技术力和顶级生产设施，<br className=\"hidden md:block\"/>实现最具创新性的美容解决方案。",
         ov_name: "公司名称", ov_ceo_l: "代表理事", ov_capital: "注册资本", ov_cat: "业务领域", ov_clients: "主要客户", ov_staff: "员工人数", ov_capa: "生产能力", ov_addr: "总部工厂地址", ov_support: "客户支持",
         ov_val_name: "㈜EZEKIEL COSMETIC", ov_val_ceo: "禹承远", ov_val_cap: "5,000万韩元", ov_val_cli: "超过 300 家合作伙伴", ov_val_staff: "250名 (正式及外包)", ov_val_capa: "基础护肤50g基准 (日) 30万个 / 面膜 (月) 3千万张",
-        ov_main_addr: "京畿道金浦市阳村邑黄金3路7街53", maintenance: "(维护中)", tel: "公司.", fax: "传真."
+        ov_main_addr: "京畿道金浦市阳村邑黄金3路7街53", maintenance: "(维护中)", tel: "电话.", fax: "传真."
       }
     };
 
@@ -1385,14 +1385,14 @@
               <li><a href="#회사소개" className="hover:text-accent hover:translate-x-1 inline-block transition-all" onClick={(e) => { e.preventDefault(); handleNavAction('home', '회사소개'); }}>{t.company}</a></li>
               <li><a href="#사업소개" className="hover:text-accent hover:translate-x-1 inline-block transition-all" onClick={(e) => { e.preventDefault(); handleNavAction('home', '사업소개'); }}>{t.business}</a></li>
               <li><a href="#R&D" className="hover:text-accent hover:translate-x-1 inline-block transition-all" onClick={(e) => { e.preventDefault(); handleNavAction('home', 'R&D'); }}>{t.rnd}</a></li>
-              <li><a href="#오시는 길" className="hover:text-accent hover:translate-x-1 inline-block transition-all" onClick={(e) => { e.preventDefault(); handleNavAction('directions'); }}>오시는 길</a></li>
+              <li><a href="#오시는 길" className="hover:text-accent hover:translate-x-1 inline-block transition-all" onClick={(e) => { e.preventDefault(); handleNavAction('directions'); }}>{t.menu_directions}</a></li>
             </ul>
           </div>
           <div>
             <h4 className="text-white font-medium mb-6 uppercase tracking-widest text-sm">{t.footer_c}</h4>
             <ul className="space-y-4 text-sm text-white/60">
-              <li className="flex items-start space-x-3"><i data-lucide="phone" className="w-4 h-4 mt-0.5 opacity-70"></i><span>회사. 031.990.4120</span></li>
-              <li className="flex items-start space-x-3"><i data-lucide="printer" className="w-4 h-4 mt-0.5 opacity-70"></i><span>팩스. 031.991.4130</span></li>
+              <li className="flex items-start space-x-3"><i data-lucide="phone" className="w-4 h-4 mt-0.5 opacity-70"></i><span>{t.tel} 031.990.4120</span></li>
+              <li className="flex items-start space-x-3"><i data-lucide="printer" className="w-4 h-4 mt-0.5 opacity-70"></i><span>{t.fax} 031.991.4130</span></li>
               <li className="flex items-start space-x-3"><i data-lucide="mail" className="w-4 h-4 mt-0.5 opacity-70"></i><span>ezekielcos1@naver.com</span></li>
               <li className="flex items-start space-x-3 pt-2">
                 <i data-lucide="map-pin" className="w-4 h-4 mt-0.5 opacity-70 flex-shrink-0"></i>
