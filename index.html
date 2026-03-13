@@ -151,7 +151,7 @@
 
       const navItems = [
         { label: t.company, key: "회사소개", subMenu: ["회사개요", "기업이념", "CEO메시지", "조직도", "주요연혁", "협력사", "오시는 길"] },
-        { label: t.business, key: "사업소개", subMenu: ["기초 스킨케어", "색조 메이크업", "프리미엄 헤어/바디", "의약외품", "연구개발"] },
+        { label: t.business, key: "사업소개", subMenu: ["기초 스킨케어", "마스크팩/패드", "프리미엄 헤어/바디"] },
         { label: t.rnd, key: "R&D", subMenu: ["연구소 소개", "보유 특허", "핵심 기술", "임상 센터"] },
         { label: t.infra, key: "생산인프라", subMenu: ["스마트 팩토리", "품질 관리 인증", "생산 플로우", "글로벌 허브"] },
         { label: t.pr, key: "홍보센터", subMenu: ["EZEKIEL News", "언론보도", "브랜드 홍보 영상", "CI/BI 가이드"] },
@@ -574,8 +574,8 @@
               {businesses.map((biz, idx) => (
                 <div key={idx} className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-2xl transition-all duration-700 border border-gray-100 group overflow-hidden transform hover:-translate-y-2">
                   <div className="h-72 overflow-hidden relative bg-gray-100">
-                    <img src={biz.img} alt={biz.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-in-out mix-blend-multiply" style={{filter: 'contrast(1.05)'}} />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-700"></div>
+                    <img src={biz.img} alt={biz.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-in-out" style={{filter: 'contrast(1.05)'}} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-700"></div>
                   </div>
                   <div className="p-8 relative">
                     <div className="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center mb-6 group-hover:bg-brand transition-colors duration-500 absolute -top-10 left-8 border border-gray-50">
