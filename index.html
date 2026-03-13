@@ -770,6 +770,119 @@
       );
     };
 
+    const SectionDirections = () => {
+      const { lang, setView } = useContext(AppContext);
+      const t = translations[lang];
+      return (
+        <section id="오시는길" className="bg-surface relative overflow-hidden pt-28">
+
+          <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
+             <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; {t.menu_directions}</p>
+             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+                <i data-lucide="arrow-left" className="w-4 h-4"></i>
+                <span>{t.back}</span>
+             </button>
+          </div>
+
+          <div className="py-12 max-w-7xl mx-auto px-6">
+             <div className="text-center mb-20 animate-fade-in-up">
+                <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Directions</h2>
+                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.dir_title}</h1>
+                <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+                <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep">
+                  {t.dir_subtitle}
+                </p>
+             </div>
+          </div>
+
+          {/* Directions Content Block - HQ */}
+          <div className="pb-12 max-w-7xl mx-auto px-6 border-b border-gray-100">
+             <div className="grid md:grid-cols-2 gap-16">
+                {/* Map Side with Actual Image */}
+                <div className="bg-gray-50 border border-gray-100 shadow-sm overflow-hidden rounded-sm h-[500px] relative">
+                   <img src="./map-gimpo.png" alt="Naver Map Location" className="w-full h-full object-cover" />
+                   <a 
+                      href="https://naver.me/FaeQVgxf" 
+                      target="_blank" 
+                      className="absolute bottom-6 right-6 bg-white text-brand px-6 py-3 shadow-lg font-bold text-sm flex items-center space-x-2 hover:bg-black hover:text-white transition-all rounded-full border border-gray-100"
+                   >
+                      <i data-lucide="map-pin" className="w-4 h-4"></i>
+                      <span>{t.dir_map_btn}</span>
+                   </a>
+                </div>
+
+                {/* Address Side */}
+                <div className="flex flex-col justify-center">
+                   <h2 className="text-3xl font-bold mb-8 text-black border-l-4 border-accent pl-6 uppercase tracking-tight">{t.dir_hq}</h2>
+                   
+                   <div className="space-y-10 pl-6">
+                      <div>
+                         <h3 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-4">Address</h3>
+                         <p className="text-xl text-gray-700 leading-relaxed font-light">
+                            {t.hq_addr}
+                         </p>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-8 pt-6 border-t border-gray-100">
+                         <div>
+                            <h3 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-3">Tel</h3>
+                            <p className="text-lg text-gray-800">031.990.4120</p>
+                         </div>
+                         <div>
+                            <h3 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-3">Fax</h3>
+                            <p className="text-lg text-gray-800">031.991.4130</p>
+                         </div>
+                      </div>
+
+                      <div className="pt-6">
+                         <h3 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-3">Email</h3>
+                         <p className="text-lg text-gray-800">ezekielcos1@naver.com</p>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+
+          {/* Directions Content Block - R&D */}
+          <div className="py-12 max-w-7xl mx-auto px-6 mb-24">
+             <div className="grid md:grid-cols-2 gap-16">
+                {/* Map Side with Actual Image */}
+                <div className="bg-gray-50 border border-gray-100 shadow-sm overflow-hidden rounded-sm h-[500px] relative">
+                   <img src="./연구소.png" alt="R&D Center Location" className="w-full h-full object-cover" />
+                   <a 
+                      href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%20%EC%84%A0%EC%9C%A0%EB%A1%9C9%EA%B8%B8%2010" 
+                      target="_blank" 
+                      className="absolute bottom-6 right-6 bg-white text-brand px-6 py-3 shadow-lg font-bold text-sm flex items-center space-x-2 hover:bg-black hover:text-white transition-all rounded-full border border-gray-100"
+                   >
+                      <i data-lucide="map-pin" className="w-4 h-4"></i>
+                      <span>{t.dir_map_btn}</span>
+                   </a>
+                </div>
+
+                {/* Address Side */}
+                <div className="flex flex-col justify-center">
+                   <h2 className="text-3xl font-bold mb-8 text-black border-l-4 border-accent pl-6 uppercase tracking-tight">{t.dir_rnd}</h2>
+                   
+                   <div className="space-y-10 pl-6">
+                      <div>
+                         <h3 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-4">Address</h3>
+                         <p className="text-xl text-gray-700 leading-relaxed font-light">
+                            {t.rnd_addr}
+                         </p>
+                      </div>
+
+                      <div className="pt-6 border-t border-gray-100">
+                         <h3 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-3">Tel</h3>
+                         <p className="text-lg text-gray-800">02.6953.4120</p>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+        </section>
+      );
+    };
+
     const SectionPartners = () => {
       const { lang, setView } = useContext(AppContext);
       const t = translations[lang];
