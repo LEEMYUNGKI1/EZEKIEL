@@ -64,12 +64,15 @@
 
   <!-- Lucide Icons mapping for simple usage -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Naver Maps API - Replace [YOUR_CLIENT_ID] with your actual Client ID -->
+  <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=YOUR_CLIENT_ID"></script>
 </head>
 <body>
   <div id="root"></div>
 
   <script type="text/babel">
-    const { useState, useEffect, createContext, useContext } = React;
+    const { useState, useEffect, useRef, createContext, useContext } = React;
 
     // Translation Data
     const translations = {
@@ -812,6 +815,37 @@
     const SectionDirections = () => {
       const { lang, setView } = useContext(AppContext);
       const t = translations[lang];
+      const hqMapRef = useRef(null);
+      const rndMapRef = useRef(null);
+
+      useEffect(() => {
+        if (typeof naver !== 'undefined' && hqMapRef.current && rndMapRef.current) {
+          // Gimpo HQ
+          const hqCoords = new naver.maps.LatLng(37.6135792, 126.6172437);
+          const hqMap = new naver.maps.Map(hqMapRef.current, {
+            center: hqCoords,
+            zoom: 16
+          });
+          new naver.maps.Marker({
+            position: hqCoords,
+            map: hqMap,
+            title: 'EZEKIEL Gimpo HQ'
+          });
+
+          // Seoul R&D
+          const rndCoords = new naver.maps.LatLng(37.5179104, 126.8872095);
+          const rndMap = new naver.maps.Map(rndMapRef.current, {
+            center: rndCoords,
+            zoom: 16
+          });
+          new naver.maps.Marker({
+            position: rndCoords,
+            map: rndMap,
+            title: 'EZEKIEL R&D Center'
+          });
+        }
+      }, []);
+
       return (
         <section id="오시는길" className="bg-surface relative overflow-hidden pt-28">
 
@@ -829,7 +863,7 @@
                 <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.dir_title}</h1>
                 <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
                 <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep">
-                  {t.dir_subtitle}
+                   {t.dir_subtitle}
                 </p>
              </div>
           </div>
@@ -837,13 +871,13 @@
           {/* Directions Content Block - HQ */}
           <div className="pb-12 max-w-7xl mx-auto px-6 border-b border-gray-100">
              <div className="grid md:grid-cols-2 gap-16">
-                {/* Map Side with Actual Image */}
+                {/* Interactive Map Side */}
                 <div className="bg-gray-50 border border-gray-100 shadow-sm overflow-hidden rounded-sm h-[500px] relative">
-                   <img src="./map-gimpo.png" alt="Naver Map Location" className="w-full h-full object-cover" />
+                   <div ref={hqMapRef} className="w-full h-full"></div>
                    <a 
                       href="https://naver.me/FaeQVgxf" 
                       target="_blank" 
-                      className="absolute bottom-6 right-6 bg-white text-brand px-6 py-3 shadow-lg font-bold text-sm flex items-center space-x-2 hover:bg-black hover:text-white transition-all rounded-full border border-gray-100"
+                      className="absolute bottom-6 right-6 bg-white text-brand px-6 py-3 shadow-lg font-bold text-sm flex items-center space-x-2 hover:bg-black hover:text-white transition-all rounded-full border border-gray-100 z-10"
                    >
                       <i data-lucide="map-pin" className="w-4 h-4"></i>
                       <span>{t.dir_map_btn}</span>
@@ -885,13 +919,13 @@
           {/* Directions Content Block - R&D */}
           <div className="py-12 max-w-7xl mx-auto px-6 mb-24">
              <div className="grid md:grid-cols-2 gap-16">
-                {/* Map Side with Actual Image */}
+                {/* Interactive Map Side */}
                 <div className="bg-gray-50 border border-gray-100 shadow-sm overflow-hidden rounded-sm h-[500px] relative">
-                   <img src="./연구소.png" alt="R&D Center Location" className="w-full h-full object-cover" />
+                   <div ref={rndMapRef} className="w-full h-full"></div>
                    <a 
                       href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%20%EC%84%A0%EC%9C%A0%EB%A1%9C9%EA%B8%B8%2010" 
                       target="_blank" 
-                      className="absolute bottom-6 right-6 bg-white text-brand px-6 py-3 shadow-lg font-bold text-sm flex items-center space-x-2 hover:bg-black hover:text-white transition-all rounded-full border border-gray-100"
+                      className="absolute bottom-6 right-6 bg-white text-brand px-6 py-3 shadow-lg font-bold text-sm flex items-center space-x-2 hover:bg-black hover:text-white transition-all rounded-full border border-gray-100 z-10"
                    >
                       <i data-lucide="map-pin" className="w-4 h-4"></i>
                       <span>{t.dir_map_btn}</span>
