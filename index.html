@@ -209,6 +209,46 @@
         ov_main_addr: "京畿道金浦市阳村邑黄金3路7街53", maintenance: "(维护中)", tel: "电话.", fax: "传真."
       }
     };
+    
+    const historyData = [
+      {
+        year: "2023",
+        events: [
+          { period: '1H', desc: '국내 인기 인플루언서 브랜드 제품 기획/개발 및 생산 (폴라탐, 247벨, 247챠르, 쉬가이아 등)' }
+        ]
+      },
+      {
+        year: "2022",
+        events: [
+          { period: "10", desc: '브래비티(Brævity) 국내 및 중국 상표 등록 완료' }
+        ]
+      },
+      {
+        year: "2021",
+        events: [
+          { period: "10", desc: '위생용품 제조업 허가 및 영업신고 취득 / 중소기업(외감대상) 우수업체 선정' },
+          { period: "09", desc: '4노즐 충진기기 특허 신청 / 프리미엄 라인 인셀덤 액티브 크림 EX 연구 및 제조' },
+          { period: "04", desc: '브이플랫폼 회사 설립 및 전략적 투자 (연예인/인플루언서 뷰티 비즈니스 개시)' },
+          { period: "03", desc: '프랑스 EVE VEGAN (이브 비건) 공식 인증 취득' }
+        ]
+      },
+      {
+        year: "2020",
+        events: [
+          { period: "12", desc: '마이크로 바이옴 국제 생물자원국 정식 등재 / 일반의약외품 제조 허가증 취득' },
+          { period: "07", desc: '동물용 의약외품 제조 허가증 획득' },
+          { period: "05", desc: '더마코스메틱 셀라피(Cellapy) 주요 홈쇼핑 런칭' },
+          { period: "03", desc: '중국 타오바오 전용 10종 제품 개발 (플랫폼 내 화장품 전체 매출 2위 달성)' },
+          { period: "01", desc: 'SNP 마스크 시트팩 라인 (5종) 개발 및 독점 생산 개시' }
+        ]
+      },
+      {
+        year: "2015",
+        events: [
+          { period: "11", desc: '㈜에스겔코스메틱 법인 설립 및 김포 학운 공장 준공' }
+        ]
+      }
+    ];
 
     const AppContext = createContext();
 
@@ -261,7 +301,6 @@
           { label: t.menu_hub, view: "home", section: "생산인프라" }
         ] },
         { label: t.pr, key: "홍보센터", subMenu: [
-          { label: t.menu_news, view: "home", section: "홍보센터" },
           { label: t.menu_press, view: "home", section: "홍보센터" },
           { label: t.menu_video, view: "home", section: "홍보센터" },
           { label: t.menu_ci, view: "home", section: "홍보센터" }
@@ -1050,44 +1089,6 @@
       const { lang, setView } = useContext(AppContext);
       const t = translations[lang];
       
-      const historyData = [
-        {
-          year: "2023",
-          events: [
-            { period: lang === 'KOR' ? '상반기' : (lang === 'CHN' ? '上半年' : '1H'), desc: lang === 'KOR' ? '국내 인기 인플루언서 브랜드 제품 기획/개발 및 생산 (폴라탐, 247벨, 247챠르, 쉬가이아 등)' : (lang === 'CHN' ? '策划/开发并生产韩国人气网红品牌产品' : 'Planning/development and production of popular Korean influencer brand products') }
-          ]
-        },
-        {
-          year: "2022",
-          events: [
-            { period: "10", desc: lang === 'KOR' ? '브래비티(Brævity) 국내 및 중국 상표 등록 완료' : (lang === 'CHN' ? 'Brævity韩国及中国商标注册完成' : 'Brævity trademark registration completed in Korea and China') }
-          ]
-        },
-        {
-          year: "2021",
-          events: [
-            { period: "10", desc: lang === 'KOR' ? '위생용품 제조업 허가 및 영업신고 취득 / 중소기업(외감대상) 우수업체 선정' : (lang === 'CHN' ? '获得卫生用品制造业许可和营业申报 / 被选为优秀中小企业' : 'Acquired hygiene product manufacturing license and business report / Selected as excellent SME') },
-            { period: "09", desc: lang === 'KOR' ? '4노즐 충진기기 특허 신청 / 프리미엄 라인 인셀덤 액티브 크림 EX 연구 및 제조' : (lang === 'CHN' ? '申请4喷嘴填充设备专利 / 研发制造Incellderm Active Cream EX' : 'Applied for 4-nozzle filling equipment patent / R&D and manufacturing of Incellderm Active Cream EX') },
-            { period: "04", desc: lang === 'KOR' ? '브이플랫폼 회사 설립 및 전략적 투자 (연예인/인플루언서 뷰티 비즈니스 개시)' : (lang === 'CHN' ? '成立V Platform公司并进行战略投资' : 'Established V Platform and strategic investment (Beauty business with celebrities/influencers)') },
-            { period: "03", desc: lang === 'KOR' ? '프랑스 EVE VEGAN (이브 비건) 공식 인증 취득' : (lang === 'CHN' ? '获得法国EVE VEGAN正式认证' : 'Acquired official French EVE VEGAN certification') }
-          ]
-        },
-        {
-          year: "2020",
-          events: [
-            { period: "12", desc: lang === 'KOR' ? '마이크로 바이옴 국제 생물자원국 정식 등재 / 일반의약외품 제조 허가증 취득' : (lang === 'CHN' ? '正式加入国际生物资源局 / 获得普通准医护用品制造许可证' : 'Formally registered with International Bioresource Bureau / Acquired manufacturing license for quasi-drugs') },
-            { period: "07", desc: lang === 'KOR' ? '동물용 의약외품 제조 허가증 획득' : (lang === 'CHN' ? '获得动物专用准医护用品制造许可证' : 'Acquired manufacturing license for animal quasi-drugs') },
-            { period: "05", desc: lang === 'KOR' ? '더마코스메틱 셀라피(Cellapy) 주요 홈쇼핑 런칭' : (lang === 'CHN' ? 'Cellapy在主要电视购物频道上市' : 'Launched Derma-cosmetic Cellapy on major home shopping channels') },
-            { period: "03", desc: lang === 'KOR' ? '중국 타오바오 전용 10종 제품 개발 (플랫폼 내 화장품 전체 매출 2위 달성)' : (lang === 'CHN' ? '开发中国淘宝专用10种产品 (化妆品销售额平台第2位)' : 'Developed 10 products exclusive to Taobao (Ranked 2nd in total cosmetics sales on the platform)') },
-            { period: "01", desc: lang === 'KOR' ? 'SNP 마스크 시트팩 라인 (5종) 개발 및 독점 생산 개시' : (lang === 'CHN' ? '开发并独家生产SNP面膜系列 (5种)' : 'Developed and started exclusive production of SNP mask sheet pack lines (5 types)') }
-          ]
-        },
-        {
-          year: "2015",
-          events: [
-            { period: "11", desc: lang === 'KOR' ? '㈜에스겔코스메틱 법인 설립 및 김포 학운 공장 준공' : (lang === 'CHN' ? '成立㈜EZEKIEL COSMETIC法人并竣工金浦工厂' : 'Established EZEKIEL COSMETIC Co., Ltd. and completed Gimpo factory') }
-          ]
-        }
       ];
 
       return (
@@ -1307,26 +1308,21 @@
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20">
           <div id="홍보센터">
-            <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.pr}</h3>
-            <h2 className="text-4xl font-bold mb-10">{t.pr_title}</h2>
+            <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.company}</h3>
+            <h2 className="text-4xl font-bold mb-10">{t.menu_history}</h2>
             <div className="space-y-6">
-              {[
-                { date: "2026.03", title: t.news_1_t },
-                { date: "2026.01", title: t.news_2_t },
-                { date: "2025.11", title: t.news_3_t },
-                { date: "2025.08", title: t.news_4_t }
-              ].map((news, i) => (
-                <div key={i} className="flex justify-between items-center border-b border-gray-100 pb-6 group cursor-pointer hover:border-black transition-colors">
-                  <div>
-                    <div className="text-sm text-accent mb-2">{news.date}</div>
-                    <h4 className="text-lg font-medium group-hover:text-brand text-gray-700 transition-colors">{news.title}</h4>
+              {historyData.slice(0, 4).map((data, i) => (
+                <div key={i} className="flex justify-between items-center border-b border-gray-100 pb-6 group cursor-pointer hover:border-black transition-colors" onClick={() => setView('history')}>
+                  <div className="flex-1">
+                    <div className="text-sm text-accent mb-2">{data.year}</div>
+                    <h4 className="text-lg font-medium group-hover:text-brand text-gray-700 transition-colors line-clamp-1">{data.events[0].desc}</h4>
                   </div>
-                  <i data-lucide="arrow-up-right" className="text-gray-300 group-hover:text-brand transition-colors w-5 h-5"></i>
+                  <i data-lucide="arrow-up-right" className="text-gray-300 group-hover:text-brand transition-colors w-5 h-5 ml-4"></i>
                 </div>
               ))}
             </div>
             <div className="mt-8">
-                <button className="text-sm font-medium tracking-widest uppercase border-b border-black pb-1 hover:text-accent hover:border-accent transition-colors">{t.pr_more}</button>
+                <button onClick={() => setView('history')} className="text-sm font-medium tracking-widest uppercase border-b border-black pb-1 hover:text-accent hover:border-accent transition-colors">View All History</button>
             </div>
           </div>
 
