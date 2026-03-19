@@ -1488,86 +1488,76 @@
              </div>
 
              {/* Timeline Container */}
-             <div className="relative w-full max-w-4xl mx-auto animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-                {/* Center Line for LG+ screens */}
-                <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-gray-200 -translate-x-1/2 rounded-full"></div>
+             <div className="relative w-full max-w-4xl mx-auto animate-fade-in-up pb-10" style={{animationDelay: '0.2s'}}>
+                {/* Vertical Line */}
+                <div className="absolute left-6 lg:left-12 top-0 bottom-0 w-1 bg-gray-200 rounded-full"></div>
 
-                <div className="space-y-12 lg:space-y-20">
-                  {/* Step 1 & 2 & 3: Initial Phase */}
-                  <div className="relative flex flex-col lg:flex-row items-center lg:items-start group">
-                    <div className="flex-1 lg:pr-16 w-full lg:text-right hidden lg:block"></div>
-                    <div className="absolute left-6 lg:left-1/2 top-4 lg:top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-brand text-accent font-bold text-2xl flex flex-col items-center justify-center border-4 border-surface shadow-xl z-10 shrink-0">01</div>
-                    <div className="flex-1 w-full pl-24 lg:pl-16">
-                      <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:border-accent transition-all duration-300 group-hover:-translate-y-1">
-                        <div className="w-12 h-12 bg-surface text-accent rounded-xl flex items-center justify-center mb-6">
-                           <i data-lucide="users" className="w-6 h-6"></i>
-                        </div>
-                        <h3 className="text-2xl font-bold text-brand mb-3">고객 상담 및 기획</h3>
-                        <p className="text-gray-500 font-light leading-relaxed">브랜드 아이덴티티 논의 및 제품 개발 방향성 설정</p>
+                <div className="space-y-12 lg:space-y-16 pl-20 lg:pl-32">
+                  {/* Step 1 */}
+                  <div className="relative group w-full text-left flex flex-col items-start block">
+                    <div className="absolute -left-14 lg:-left-20 top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-accent text-white font-bold text-2xl flex items-center justify-center border-4 border-surface shadow-md z-10 shrink-0">01</div>
+                    <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:border-accent transition-all duration-300 group-hover:-translate-y-1 w-full">
+                      <div className="w-12 h-12 bg-surface text-accent rounded-xl flex items-center justify-center mb-6">
+                         <i data-lucide="users" className="w-6 h-6"></i>
                       </div>
+                      <h3 className="text-2xl font-bold text-brand mb-3">고객 상담 및 기획</h3>
+                      <p className="text-gray-500 font-light leading-relaxed">브랜드 아이덴티티 논의 및 제품 개발 방향성 설정</p>
                     </div>
                   </div>
 
                   {/* Step 2 */}
-                  <div className="relative flex flex-col lg:flex-row items-center lg:items-start group">
-                    <div className="flex-1 lg:pr-16 w-full lg:text-right pl-24 lg:pl-0 order-2 lg:order-1 mt-4 lg:mt-0">
-                      <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:border-accent transition-all duration-300 group-hover:-translate-y-1">
-                        <div className="w-12 h-12 bg-surface text-accent rounded-xl flex flex-col flex-wrap justify-center items-center lg:ml-auto mb-6 lg:mr-0 mr-auto">
-                           <i data-lucide="briefcase" className="w-6 h-6"></i>
-                        </div>
-                        <h3 className="text-2xl font-bold text-brand mb-6 text-left lg:text-right">경영지원 및 각 부서 제안</h3>
-                        <div className="flex flex-col space-y-4 text-left lg:text-right text-gray-700 font-light bg-surface p-6 rounded-2xl">
-                           <div><strong className="text-brand font-medium">마케팅:</strong> 제품 동향, 시장정보, 신제품 P/T</div>
-                           <div className="border-t border-gray-200 block h-0 w-full my-1"></div>
-                           <div><strong className="text-brand font-medium">자재개발:</strong> 브랜드별 맞춤 부자재 개발 제안</div>
-                           <div className="border-t border-gray-200 block h-0 w-full my-1"></div>
-                           <div><strong className="text-brand font-medium">연구소:</strong> 핵심 기술 기반 내용물 개발 및 방향 제안</div>
-                        </div>
+                  <div className="relative group w-full text-left flex flex-col items-start block">
+                    <div className="absolute -left-14 lg:-left-20 top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-accent text-white font-bold text-2xl flex items-center justify-center border-4 border-surface shadow-md z-10 shrink-0">02</div>
+                    <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:border-accent transition-all duration-300 group-hover:-translate-y-1 w-full">
+                      <div className="w-12 h-12 bg-surface text-accent rounded-xl flex items-center justify-center mb-6">
+                         <i data-lucide="briefcase" className="w-6 h-6"></i>
+                      </div>
+                      <h3 className="text-2xl font-bold text-brand mb-6">경영지원 및 각 부서 제안</h3>
+                      <div className="flex flex-col space-y-4 text-gray-700 font-light bg-surface p-6 rounded-2xl">
+                         <div><strong className="text-brand font-medium">마케팅:</strong> 제품 동향, 시장정보, 신제품 P/T</div>
+                         <div className="border-t border-gray-200 h-0 w-full my-1"></div>
+                         <div><strong className="text-brand font-medium">자재개발:</strong> 브랜드별 맞춤 부자재 개발 제안</div>
+                         <div className="border-t border-gray-200 h-0 w-full my-1"></div>
+                         <div><strong className="text-brand font-medium">연구소:</strong> 핵심 기술 기반 내용물 개발 및 방향 제안</div>
                       </div>
                     </div>
-                    <div className="absolute left-6 lg:left-1/2 top-4 lg:top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-brand text-accent font-bold text-2xl flex flex-col items-center justify-center border-4 border-surface shadow-xl z-10 shrink-0 order-1 lg:order-2">02</div>
-                    <div className="flex-1 w-full hidden lg:block order-3 lg:pl-16"></div>
                   </div>
 
                   {/* Step 3 */}
-                  <div className="relative flex flex-col lg:flex-row items-center lg:items-start group">
-                    <div className="flex-1 lg:pr-16 hidden lg:block"></div>
-                    <div className="absolute left-6 lg:left-1/2 top-4 lg:top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-brand text-accent font-bold text-2xl flex flex-col items-center justify-center border-4 border-surface shadow-xl z-10 shrink-0">03</div>
-                    <div className="flex-1 w-full pl-24 lg:pl-16">
-                      <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:border-accent transition-all duration-300 group-hover:-translate-y-1">
-                        <div className="w-12 h-12 bg-surface text-accent rounded-xl flex items-center justify-center mb-6">
-                           <i data-lucide="flask-conical" className="w-6 h-6"></i>
-                        </div>
-                        <h3 className="text-2xl font-bold text-brand mb-4">개발 의뢰 및 샘플 제조</h3>
-                        <p className="text-gray-500 font-light leading-relaxed mb-6 block border-b border-gray-100 pb-6">연구소 내부 신제품 개발 착수 및 1차 타겟 샘플 제조</p>
-                        
-                        <div className="pt-2">
-                          <h4 className="font-bold text-lg text-brand mb-2 flex items-center"><i data-lucide="check-circle-2" className="w-4 h-4 mr-2 text-accent"></i> 품평 및 처방 확정</h4>
-                          <p className="text-md text-gray-500 font-light leading-relaxed pl-6">클라이언트 내부 테스트 진행 후 최종 처방전을 확정하고 <strong className="text-brand font-medium">견적 및 계약서 산출</strong>을 진행합니다.</p>
-                        </div>
+                  <div className="relative group w-full text-left flex flex-col items-start block">
+                    <div className="absolute -left-14 lg:-left-20 top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-accent text-white font-bold text-2xl flex items-center justify-center border-4 border-surface shadow-md z-10 shrink-0">03</div>
+                    <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:border-accent transition-all duration-300 group-hover:-translate-y-1 w-full">
+                      <div className="w-12 h-12 bg-surface text-accent rounded-xl flex items-center justify-center mb-6">
+                         <i data-lucide="flask-conical" className="w-6 h-6"></i>
+                      </div>
+                      <h3 className="text-2xl font-bold text-brand mb-4">개발 의뢰 및 샘플 제조</h3>
+                      <p className="text-gray-500 font-light leading-relaxed mb-6 border-b border-gray-100 pb-6 w-full pr-4">연구소 내부 신제품 개발 착수 및 1차 타겟 샘플 제조</p>
+                      
+                      <div className="pt-2 flex flex-col items-start w-full">
+                        <h4 className="font-bold text-lg text-brand mb-2 flex items-center"><i data-lucide="check-circle-2" className="w-5 h-5 mr-3 text-accent inline-block"></i> 품평 및 처방 확정</h4>
+                        <p className="text-md text-gray-500 font-light leading-relaxed pl-8 pr-4">클라이언트 내부 테스트 진행 후 최종 처방전을 확정하고 <strong className="text-brand font-medium">견적 및 계약서 산출</strong>을 진행합니다.</p>
                       </div>
                     </div>
                   </div>
 
-                  {/* Step 4: 발주서 접수 & Parallel Process */}
-                  <div className="relative flex flex-col items-center group">
-                    <div className="absolute left-6 lg:left-1/2 top-4 lg:top-0 -translate-x-1/2 w-16 h-16 rounded-full bg-accent text-white font-extrabold text-2xl flex flex-col items-center justify-center border-[6px] border-surface shadow-2xl z-10 shrink-0">04</div>
-                    <div className="w-full pl-24 lg:pl-0 pt-16 lg:pt-28 mt-2 lg:mt-0 relative overflow-hidden clear-both lg:w-full flex flex-col">
-                       {/* Section break title */}
-                       <div className="bg-brand text-white text-center px-12 py-5 rounded-2xl mb-12 w-auto mx-auto font-bold text-xl shadow-xl border border-gray-800 relative z-20 flex items-center justify-center space-x-3">
-                         <i data-lucide="file-signature" className="w-6 h-6 text-accent"></i>
+                  {/* Step 4 */}
+                  <div className="relative group w-full text-left flex flex-col items-start block">
+                    <div className="absolute -left-14 lg:-left-20 top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-accent text-white font-bold text-2xl flex items-center justify-center border-4 border-surface shadow-md z-10 shrink-0">04</div>
+                    <div className="w-full relative overflow-hidden">
+                       <div className="bg-white border text-accent border-accent/40 text-center px-6 md:px-8 py-4 rounded-2xl mb-8 w-fit shadow-sm font-bold text-[17px] flex items-center justify-center space-x-3">
+                         <i data-lucide="file-signature" className="w-5 h-5 text-accent shrink-0"></i>
                          <span>발주서 접수 및 부문별 병렬 진행 프로세스</span>
                        </div>
 
                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full relative z-20">
-                          <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 hover:border-brand transition-colors hover:shadow-lg">
-                             <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-6 font-extrabold text-lg">A</div>
+                          <div className="bg-white p-6 md:p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:border-accent transition-colors hover:shadow-lg">
+                             <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-6 font-bold text-lg">A</div>
                              <h4 className="font-bold text-xl text-brand mb-3 border-b border-gray-100 pb-3">계약 진행</h4>
-                             <p className="text-gray-600 font-light text-md leading-relaxed">계약금 이체 확인 및 제반 법적, 행정적 서류 처리 완료</p>
+                             <p className="text-gray-600 font-light text-md leading-relaxed">계약금 이체 확인 및 제반 행정 처리 완료</p>
                           </div>
                           
-                          <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 hover:border-brand transition-colors hover:shadow-lg">
-                             <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-6 font-extrabold text-lg">B</div>
+                          <div className="bg-white p-6 md:p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:border-accent transition-colors hover:shadow-lg">
+                             <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-6 font-bold text-lg">B</div>
                              <h4 className="font-bold text-xl text-brand mb-3 border-b border-gray-100 pb-3">원료 부문</h4>
                              <div className="flex flex-col space-y-3 mt-5">
                                 <span className="text-sm font-medium bg-surface px-4 py-3 rounded-xl border border-gray-100 text-center text-gray-700">원료 발주</span>
@@ -1576,71 +1566,68 @@
                              </div>
                           </div>
                           
-                          <div className="bg-brand text-white p-6 md:p-8 rounded-3xl shadow-lg border border-gray-800 transition-colors hover:shadow-xl">
-                             <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white border border-white/20 mb-6 font-extrabold text-lg">C</div>
-                             <h4 className="font-bold text-xl text-white mb-3 border-b border-white/20 pb-3">부자재 부문</h4>
+                          <div className="bg-white p-6 md:p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:border-accent transition-colors hover:shadow-lg">
+                             <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-6 font-bold text-lg">C</div>
+                             <h4 className="font-bold text-xl text-brand mb-3 border-b border-gray-100 pb-3">부자재 부문</h4>
                              <p className="text-[13px] text-accent font-medium mb-4 leading-relaxed tracking-wide">
                                 개발 &gt; CT테스트 &gt; 디자인 확정 &gt; 문안확인
                              </p>
                              <div className="flex flex-col space-y-3">
-                                <span className="text-sm font-medium bg-white/5 px-4 py-3 rounded-xl border border-white/10 text-center text-white/90">부자재 발주 (한도설정 및 생산)</span>
+                                <span className="text-sm font-medium bg-surface px-4 py-3 rounded-xl border border-gray-100 text-center text-gray-700">발주 (한도설정 및 생산)</span>
                                 <i data-lucide="arrow-down" className="w-4 h-4 mx-auto text-accent"></i>
-                                <span className="text-sm font-medium bg-white/5 px-4 py-3 rounded-xl border border-white/10 text-center text-white/90">입고 및 부자재 Q.C</span>
+                                <span className="text-sm font-medium bg-surface px-4 py-3 rounded-xl border border-gray-100 text-center text-gray-700">입고 및 부자재 Q.C</span>
                              </div>
                           </div>
                        </div>
                     </div>
                   </div>
 
-                  {/* Step 5: Finalizing */}
-                  <div className="relative flex flex-col lg:flex-row items-center lg:items-start group pt-8 lg:pt-0">
-                    <div className="flex-1 lg:pr-16 w-full lg:text-right hidden lg:block"></div>
-                    <div className="absolute left-6 lg:left-1/2 top-12 lg:top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-brand text-accent font-bold text-2xl flex flex-col items-center justify-center border-4 border-surface shadow-xl z-10 shrink-0">05</div>
-                    <div className="flex-1 w-full pl-24 lg:pl-16">
-                      <div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-md border border-gray-100 hover:shadow-2xl hover:border-brand transition-all duration-300 group-hover:-translate-y-2">
-                        <div className="w-14 h-14 bg-brand text-accent rounded-2xl flex items-center justify-center mb-8 shadow-md">
-                           <i data-lucide="star" className="w-7 h-7"></i>
-                        </div>
-                        <h3 className="text-3xl font-extrabold text-brand mb-8 pb-6 border-b border-gray-100">최종 생산 및 납품</h3>
-                        
-                        <div className="space-y-4 relative">
-                           <div className="flex items-start md:items-center space-y-2 md:space-y-0 space-x-0 md:space-x-5 flex-col md:flex-row bg-surface p-4 rounded-xl">
-                              <i data-lucide="test-tube-2" className="w-6 h-6 text-accent shrink-0 hidden md:block"></i>
-                              <div className="flex flex-col">
-                                 <p className="text-gray-800 text-lg"><strong className="text-brand font-bold">파일럿 테스트</strong></p>
-                                 <span className="text-gray-500 text-sm mt-1">원료 및 부자재 Q.C 완벽 통과 후 본 생산 전 최종 조율</span>
-                              </div>
-                           </div>
-                           
-                           <div className="pl-12 h-6 border-l-2 border-dashed border-gray-300 ml-3 md:ml-2 my-1 hidden md:block"></div>
-                           
-                           <div className="flex items-start md:items-center space-y-2 md:space-y-0 space-x-0 md:space-x-5 flex-col md:flex-row bg-surface p-4 rounded-xl">
-                              <i data-lucide="factory" className="w-6 h-6 text-accent shrink-0 hidden md:block"></i>
-                              <div className="flex flex-col">
-                                 <p className="text-gray-800 text-lg"><strong className="text-brand font-bold">본 생산 진행</strong></p>
-                                 <span className="text-brand/60 font-medium text-sm mt-1 bg-white border border-gray-100 px-3 py-1 rounded-full w-max mt-2">설비점검 &gt; 내용물 제조 &gt; 용기 포장</span>
-                              </div>
-                           </div>
-                           
-                           <div className="pl-12 h-6 border-l-2 border-dashed border-gray-300 ml-3 md:ml-2 my-1 hidden md:block"></div>
-                           
-                           <div className="flex items-start md:items-center space-y-2 md:space-y-0 space-x-0 md:space-x-5 flex-col md:flex-row bg-surface p-4 rounded-xl">
-                              <i data-lucide="search-check" className="w-6 h-6 text-accent shrink-0 hidden md:block"></i>
-                              <div>
-                                 <p className="text-gray-800 text-lg"><strong className="text-brand font-bold">최종 Q.C (품질 관리)</strong></p>
-                                 <p className="text-sm text-gray-500 mt-1">완성된 제품에 대한 미생물, 물성, 외관 등 최종 퀄리티 체크</p>
-                              </div>
-                           </div>
-                           
-                           <div className="pl-12 h-6 border-l-2 border-dashed border-gray-300 ml-3 md:ml-2 my-1 hidden md:block"></div>
-                           
-                           <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 space-x-0 md:space-x-5 bg-black p-5 md:p-6 rounded-2xl shadow-lg mt-4 w-full">
-                              <i data-lucide="truck" className="w-8 h-8 text-accent shrink-0 hidden md:block"></i>
-                              <div>
-                                 <p className="text-white text-xl md:text-2xl font-extrabold tracking-wide text-center md:text-left w-full"><strong className="text-white">최종 제품 출하 및 납품</strong></p>
-                              </div>
-                           </div>
-                        </div>
+                  {/* Step 5 */}
+                  <div className="relative group w-full text-left flex flex-col items-start block">
+                    <div className="absolute -left-14 lg:-left-20 top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-accent text-white font-bold text-2xl flex items-center justify-center border-4 border-surface shadow-md z-10 shrink-0">05</div>
+                    <div className="bg-white p-8 md:p-12 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:border-accent transition-all duration-300 group-hover:-translate-y-1 w-full flex flex-col">
+                      <div className="w-14 h-14 bg-surface text-accent rounded-2xl flex items-center justify-center mb-8">
+                         <i data-lucide="star" className="w-7 h-7"></i>
+                      </div>
+                      <h3 className="text-3xl font-extrabold text-brand mb-8 pb-6 border-b border-gray-100">최종 생산 및 납품</h3>
+                      
+                      <div className="space-y-4 relative w-full text-left">
+                         <div className="flex items-start md:items-center space-y-2 md:space-y-0 space-x-0 md:space-x-5 flex-col md:flex-row bg-surface p-4 rounded-xl">
+                            <i data-lucide="test-tube-2" className="w-6 h-6 text-accent shrink-0 hidden md:block"></i>
+                            <div className="flex flex-col">
+                               <p className="text-gray-800 text-lg"><strong className="text-brand font-bold">파일럿 테스트</strong></p>
+                               <span className="text-gray-500 text-sm mt-1">원료 및 부자재 Q.C 완벽 통과 후 본 생산 전 최종 조율</span>
+                            </div>
+                         </div>
+                         
+                         <div className="pl-12 h-6 border-l-2 border-dashed border-gray-300 ml-3 md:ml-2 my-1 hidden md:block"></div>
+                         
+                         <div className="flex items-start md:items-center space-y-2 md:space-y-0 space-x-0 md:space-x-5 flex-col md:flex-row bg-surface p-4 rounded-xl">
+                            <i data-lucide="factory" className="w-6 h-6 text-accent shrink-0 hidden md:block"></i>
+                            <div className="flex flex-col">
+                               <p className="text-gray-800 text-lg"><strong className="text-brand font-bold">본 생산 진행</strong></p>
+                               <span className="text-brand font-medium text-sm bg-white border border-gray-200 px-3 py-1 rounded-full w-max mt-2">설비점검 &gt; 내용물 제조 &gt; 용기 포장</span>
+                            </div>
+                         </div>
+                         
+                         <div className="pl-12 h-6 border-l-2 border-dashed border-gray-300 ml-3 md:ml-2 my-1 hidden md:block"></div>
+                         
+                         <div className="flex items-start md:items-center space-y-2 md:space-y-0 space-x-0 md:space-x-5 flex-col md:flex-row bg-surface p-4 rounded-xl">
+                            <i data-lucide="search-check" className="w-6 h-6 text-accent shrink-0 hidden md:block"></i>
+                            <div>
+                               <p className="text-gray-800 text-lg"><strong className="text-brand font-bold">최종 Q.C (품질 관리)</strong></p>
+                               <p className="text-sm text-gray-500 mt-1">완성된 제품에 대한 미생물, 물성, 외관 등 최종 퀄리티 체크</p>
+                            </div>
+                         </div>
+                         
+                         <div className="pl-12 h-6 border-l-2 border-dashed border-gray-300 ml-3 md:ml-2 my-1 hidden md:block"></div>
+                         
+                         <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 space-x-0 md:space-x-4 bg-accent/10 border border-accent/30 p-5 md:p-6 rounded-2xl w-full text-brand shadow-sm mt-4">
+                            <i data-lucide="truck" className="w-8 h-8 text-accent shrink-0 hidden md:block"></i>
+                            <div>
+                               <p className="text-xl md:text-2xl font-extrabold tracking-wide w-full"><strong className="text-brand">최종 제품 출하 및 납품</strong></p>
+                            </div>
+                         </div>
                       </div>
                     </div>
                   </div>
