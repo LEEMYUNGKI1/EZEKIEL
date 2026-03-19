@@ -503,6 +503,7 @@
       const t = translations[lang];
       const [currentSlide, setCurrentSlide] = useState(0);
       const [prevSlideIndex, setPrevSlideIndex] = useState(0);
+      const [isPlaying, setIsPlaying] = useState(true);
 
       const [dragStart, setDragStart] = useState(null);
       const [dragEnd, setDragEnd] = useState(null);
@@ -565,12 +566,23 @@
       ];
 
       useEffect(() => {
+        if (!isPlaying) return;
         const timer = setTimeout(() => {
           setPrevSlideIndex(currentSlide);
           setCurrentSlide((prev) => (prev + 1) % slides.length);
         }, 10000);
         return () => clearTimeout(timer);
-      }, [currentSlide, slides.length]);
+      }, [currentSlide, slides.length, isPlaying]);
+
+      const togglePlay = (e) => {
+        e.stopPropagation();
+        const newState = !isPlaying;
+        setIsPlaying(newState);
+        // Immediately refresh icons
+        setTimeout(() => {
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+        }, 10);
+      };
 
       useEffect(() => {
         setHeroBg(slides[currentSlide].bg);
@@ -657,22 +669,34 @@
              <i data-lucide="chevron-right" className="w-6 h-6 group-hover:translate-x-0.5 transition-transform"></i>
           </button>
 
-          {/* Pagination Indicators */}
-          <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
-             {slides.map((_, index) => (
-                <button 
-                  key={index} 
-                  onClick={(e) => { 
-                    e.stopPropagation(); 
-                    if (currentSlide !== index) {
-                      setPrevSlideIndex(currentSlide);
-                      setCurrentSlide(index); 
-                    }
-                  }} 
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-accent w-8' : 'bg-white/50 hover:bg-white'}`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-             ))}
+          {/* Pagination Indicators & Play/Stop Toggle */}
+          <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-20 flex items-center space-x-6">
+             <div className="flex space-x-3">
+               {slides.map((_, index) => (
+                  <button 
+                    key={index} 
+                    onClick={(e) => { 
+                      e.stopPropagation(); 
+                      if (currentSlide !== index) {
+                        setPrevSlideIndex(currentSlide);
+                        setCurrentSlide(index); 
+                      }
+                    }} 
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-accent w-8' : 'bg-white/50 hover:bg-white'}`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+               ))}
+             </div>
+             
+             <div className="h-4 w-[1px] bg-white/20"></div>
+
+             <button 
+               onClick={togglePlay}
+               className="text-white/60 hover:text-white transition-colors focus:outline-none"
+               aria-label={isPlaying ? "Stop auto-slide" : "Start auto-slide"}
+             >
+               {isPlaying ? <i data-lucide="pause" className="w-4 h-4"></i> : <i data-lucide="play" className="w-4 h-4 text-accent"></i>}
+             </button>
           </div>
 
 
