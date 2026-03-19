@@ -576,13 +576,12 @@
 
       const togglePlay = (e) => {
         e.stopPropagation();
-        const newState = !isPlaying;
-        setIsPlaying(newState);
-        // Immediately refresh icons
-        setTimeout(() => {
-          if (typeof lucide !== 'undefined') lucide.createIcons();
-        }, 10);
+        setIsPlaying(!isPlaying);
       };
+
+      useEffect(() => {
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+      }, [isPlaying, currentSlide]);
 
       useEffect(() => {
         setHeroBg(slides[currentSlide].bg);
@@ -695,7 +694,7 @@
                className="text-white/60 hover:text-white transition-colors focus:outline-none"
                aria-label={isPlaying ? "Stop auto-slide" : "Start auto-slide"}
              >
-               {isPlaying ? <i data-lucide="pause" className="w-4 h-4"></i> : <i data-lucide="play" className="w-4 h-4 text-accent"></i>}
+               <i data-lucide={isPlaying ? "pause" : "play"} className={`w-4 h-4 ${!isPlaying ? 'text-accent' : ''}`}></i>
              </button>
           </div>
 
