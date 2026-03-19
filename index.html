@@ -682,20 +682,25 @@
                       }
                     }} 
                     className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-white w-8' : 'bg-white/40 hover:bg-white'}`}
-                    style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.8))' }}
+                    style={{ filter: 'drop-shadow(0 1px 1px rgba(0,0,0,1)) drop-shadow(0 -1px 1px rgba(0,0,0,1))' }}
                     aria-label={`Go to slide ${index + 1}`}
                   />
                ))}
              </div>
              
-             <div className="h-4 w-[1px] bg-white/30"></div>
+             <div className="h-4 w-[1px] bg-white/40 shadow-sm"></div>
 
              <button 
                onClick={togglePlay}
-               className="text-white hover:text-accent transition-colors focus:outline-none drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
+               className="text-white hover:text-accent transition-all duration-300 focus:outline-none"
+               style={{ filter: 'drop-shadow(1px 0px 0px #000) drop-shadow(-1px 0px 0px #000) drop-shadow(0px 1px 0px #000) drop-shadow(0px -1px 0px #000)' }}
                aria-label={isPlaying ? "Stop auto-slide" : "Start auto-slide"}
              >
-               <i key={isPlaying ? 'pause-icon' : 'play-icon'} data-lucide={isPlaying ? "pause" : "play"} className="w-5 h-5"></i>
+               {isPlaying ? (
+                 <i key="pause-btn" data-lucide="pause" className="w-5 h-5"></i>
+               ) : (
+                 <i key="play-btn" data-lucide="play" className="w-5 h-5"></i>
+               )}
              </button>
           </div>
 
