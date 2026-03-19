@@ -287,7 +287,7 @@
           { label: t.menu_directions, view: "directions" }
         ] },
         { label: t.business, key: "사업소개", subMenu: [
-          { label: t.menu_process, link: "process.html" },
+          { label: t.menu_process, view: "process" },
           { label: t.menu_skincare, view: "home", section: "사업소개" },
           { label: t.menu_bodyhair, view: "home", section: "사업소개" },
           { label: t.menu_maskpad, view: "home", section: "사업소개" }
@@ -1459,6 +1459,35 @@
       );
     };
     
+    const SectionProcess = () => {
+      const { lang, setView } = useContext(AppContext);
+      const t = translations[lang];
+      return (
+        <section id="화장품개발프로세스" className="bg-surface relative overflow-hidden pt-28 pb-32 min-h-screen">
+          <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
+             <p className="text-gray-400 text-sm font-light">Home &gt; Business &gt; {t.menu_process}</p>
+             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+                <i data-lucide="arrow-left" className="w-4 h-4"></i>
+                <span>{t.back}</span>
+             </button>
+          </div>
+
+          <div className="max-w-5xl mx-auto px-6 mt-16 relative flex flex-col items-center">
+             <div className="text-center mb-16 animate-fade-in-up">
+                <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Development Process</h2>
+                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.menu_process}</h1>
+                <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+                <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep">에스겔코스메틱만의 체계적이고 혁신적인 뷰티 개발 솔루션을 확인해보세요.</p>
+             </div>
+
+             <div className="bg-white p-8 md:p-14 w-full rounded-[2.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-100 flex justify-center items-center animate-fade-in-up">
+               <img src="./프로세스.png" alt="개발 프로세스" className="w-full h-auto object-contain transition-transform duration-700 ease-in-out hover:scale-[1.02]" style={{filter: 'contrast(1.05) brightness(1.02) saturate(1.1)'}} />
+             </div>
+          </div>
+         </section>
+      );
+    };
+
     const App = () => {
       const [lang, setLang] = useState('KOR');
       const [view, setView] = useState('home');
@@ -1489,6 +1518,7 @@
             {view === 'history' && <SectionHistory />}
             {view === 'overview' && <SectionOverview />}
             {view === 'organization' && <SectionOrganization />}
+            {view === 'process' && <SectionProcess />}
             <Footer />
           </div>
         </AppContext.Provider>
