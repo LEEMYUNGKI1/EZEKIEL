@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer-when-downgrade">
   <title>EZEKIEL | Premium Cosmetics OEM/ODM</title>
+  
+  <!-- Naver Maps API - Removed submodules for compatibility -->
+  <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=anp61vtw96"></script>
   
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   
@@ -64,9 +68,6 @@
 
   <!-- Lucide Icons mapping for simple usage -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  
-  <!-- Naver Maps API - User Requested openapi Domain -->
-  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=anp61vtw96"></script>
 </head>
 <body>
   <div id="root"></div>
@@ -822,38 +823,32 @@
       const t = translations[lang];
 
       useEffect(() => {
-        const initNaverMaps = () => {
-          // Check if naver and DOM elements are ready
-          if (typeof naver !== 'undefined' && naver.maps && document.getElementById('map_hq') && document.getElementById('map_rnd')) {
-            try {
-              // 1. Gimpo HQ - User requested ID-based init 'map_hq'
-              const hqCoords = new naver.maps.LatLng(37.6135792, 126.6172437);
-              const mapHq = new naver.maps.Map('map_hq', {
-                center: hqCoords,
-                zoom: 15
-              });
-              new naver.maps.Marker({ position: hqCoords, map: mapHq });
+        // [CHECK] 이 문구가 콘솔에 보여야 최신 코드가 반영된 것입니다.
+        console.log(">>> LATEST MAP CODE LOADED (VER 5.0) <<<");
 
-              // 2. Seoul R&D - User requested ID-based init 'map_rnd'
-              const rndCoords = new naver.maps.LatLng(37.5179104, 126.8872095);
-              const mapRnd = new naver.maps.Map('map_rnd', {
-                center: rndCoords,
-                zoom: 15
-              });
-              new naver.maps.Marker({ position: rndCoords, map: mapRnd });
-              
-              console.log("Naver Maps successfully loaded via ID-based initialization");
+        const initMaps = () => {
+          if (typeof naver === 'undefined' || !naver.maps) return;
+          
+          const hqEl = document.getElementById('map_hq');
+          const rndEl = document.getElementById('map_rnd');
+          if (!hqEl || !rndEl) return;
 
-              // Refresh icons after map render
-              if (typeof lucide !== 'undefined') lucide.createIcons();
-            } catch (e) {
-              console.error("Map loading error:", e);
-            }
+          try {
+            const hqCoords = new naver.maps.LatLng(37.6135792, 126.6172437);
+            const mapHq = new naver.maps.Map('map_hq', { center: hqCoords, zoom: 16 });
+            new naver.maps.Marker({ position: hqCoords, map: mapHq });
+
+            const rndCoords = new naver.maps.LatLng(37.5179104, 126.8872095);
+            const mapRnd = new naver.maps.Map('map_rnd', { center: rndCoords, zoom: 16 });
+            new naver.maps.Marker({ position: rndCoords, map: mapRnd });
+            
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+          } catch (err) {
+            console.error("Map final error:", err);
           }
         };
 
-        // Small delay to ensure React finishes DOM update
-        const timer = setTimeout(initNaverMaps, 250);
+        const timer = setTimeout(initMaps, 1000);
         return () => clearTimeout(timer);
       }, [lang]);
 
