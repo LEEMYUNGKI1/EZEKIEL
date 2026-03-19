@@ -822,34 +822,54 @@
       const t = translations[lang];
       const hqMapRef = useRef(null);
       const rndMapRef = useRef(null);
+      const initialized = useRef(false);
 
       useEffect(() => {
-        if (typeof naver !== 'undefined' && hqMapRef.current && rndMapRef.current) {
-          // Gimpo HQ
-          const hqCoords = new naver.maps.LatLng(37.6135792, 126.6172437);
-          const hqMap = new naver.maps.Map(hqMapRef.current, {
-            center: hqCoords,
-            zoom: 16
-          });
-          new naver.maps.Marker({
-            position: hqCoords,
-            map: hqMap,
-            title: 'EZEKIEL Gimpo HQ'
-          });
+        const initMap = () => {
+          if (initialized.current) return;
+          
+          if (typeof naver !== 'undefined' && naver.maps && hqMapRef.current && rndMapRef.current) {
+            try {
+              // Gimpo HQ
+              const hqCoords = new naver.maps.LatLng(37.6135792, 126.6172437);
+              const hqMap = new naver.maps.Map(hqMapRef.current, {
+                center: hqCoords,
+                zoom: 16,
+                minZoom: 10
+              });
+              new naver.maps.Marker({
+                position: hqCoords,
+                map: hqMap,
+                title: 'EZEKIEL Gimpo HQ'
+              });
 
-          // Seoul R&D
-          const rndCoords = new naver.maps.LatLng(37.5179104, 126.8872095);
-          const rndMap = new naver.maps.Map(rndMapRef.current, {
-            center: rndCoords,
-            zoom: 16
-          });
-          new naver.maps.Marker({
-            position: rndCoords,
-            map: rndMap,
-            title: 'EZEKIEL R&D Center'
-          });
-        }
-      }, []);
+              // Seoul R&D
+              const rndCoords = new naver.maps.LatLng(37.5179104, 126.8872095);
+              const rndMap = new naver.maps.Map(rndMapRef.current, {
+                center: rndCoords,
+                zoom: 16,
+                minZoom: 10
+              });
+              new naver.maps.Marker({
+                position: rndCoords,
+                map: rndMap,
+                title: 'EZEKIEL R&D Center'
+              });
+              
+              initialized.current = true;
+              console.log("Naver Maps Initialized");
+            } catch (e) {
+              console.error("Map Init Error:", e);
+            }
+          }
+        };
+
+        const timer = setTimeout(initMap, 500);
+        return () => {
+          clearTimeout(timer);
+          initialized.current = false;
+        };
+      }, [lang]);
 
       return (
         <section id="오시는길" className="bg-surface relative overflow-hidden pt-28">
