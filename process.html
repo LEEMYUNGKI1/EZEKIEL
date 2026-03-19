@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>화장품개발프로세스 | EZEKIEL</title>
+  
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', 'sans-serif'],
+          },
+          colors: {
+            brand: '#111111',
+            accent: '#BCA37F',
+            surface: '#FAFAFA'
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 1s ease-out forwards',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: 0, transform: 'translateY(30px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-brand min-h-screen flex flex-col pt-16 font-sans">
+  <div class="max-w-5xl mx-auto px-6 w-full flex-1 mb-24 animate-fade-in-up flex flex-col items-center">
+    
+    <div class="text-center mb-14">
+      <h3 class="text-accent text-sm font-semibold tracking-[0.2em] uppercase mb-4">Development Process</h3>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight text-brand">화장품 개발 프로세스</h1>
+      <p class="text-gray-500 font-light text-lg">에스겔코스메틱만의 체계적이고 혁신적인 뷰티 개발 솔루션을 확인해보세요.</p>
+    </div>
+    
+    <div class="bg-white p-8 md:p-14 w-full rounded-[2.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-100 flex justify-center items-center">
+      <img src="프로세스.png" alt="개발 프로세스" class="w-full h-auto object-contain transition-transform duration-700 ease-in-out hover:scale-[1.02]" style="filter: contrast(1.05) brightness(1.02) saturate(1.1);">
+    </div>
+    
+  </div>
+</body>
+</html>
