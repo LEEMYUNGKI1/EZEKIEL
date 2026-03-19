@@ -6,8 +6,7 @@
   <meta name="referrer" content="no-referrer-when-downgrade">
   <title>EZEKIEL | Premium Cosmetics OEM/ODM</title>
   
-  <!-- Naver Maps API - Removed submodules for compatibility -->
-  <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=388hhminr5"></script>
+  <!-- Naver Maps API deferred to external expert -->
   
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   
@@ -823,32 +822,9 @@
       const t = translations[lang];
 
       useEffect(() => {
-        // [CHECK] 이 문구가 콘솔에 보여야 최신 코드가 반영된 것입니다.
-        console.log(">>> LATEST MAP CODE LOADED (VER 5.0) <<<");
-
-        const initMaps = () => {
-          if (typeof naver === 'undefined' || !naver.maps) return;
-          
-          const hqEl = document.getElementById('map_hq');
-          const rndEl = document.getElementById('map_rnd');
-          if (!hqEl || !rndEl) return;
-
-          try {
-            const hqCoords = new naver.maps.LatLng(37.6135792, 126.6172437);
-            const mapHq = new naver.maps.Map('map_hq', { center: hqCoords, zoom: 16 });
-            new naver.maps.Marker({ position: hqCoords, map: mapHq });
-
-            const rndCoords = new naver.maps.LatLng(37.5179104, 126.8872095);
-            const mapRnd = new naver.maps.Map('map_rnd', { center: rndCoords, zoom: 16 });
-            new naver.maps.Marker({ position: rndCoords, map: mapRnd });
-            
-            if (typeof lucide !== 'undefined') lucide.createIcons();
-          } catch (err) {
-            console.error("Map final error:", err);
-          }
-        };
-
-        const timer = setTimeout(initMaps, 1000);
+        const timer = setTimeout(() => {
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+        }, 100);
         return () => clearTimeout(timer);
       }, [lang]);
 
@@ -877,7 +853,14 @@
           <div className="pb-12 max-w-7xl mx-auto px-6 border-b border-gray-100">
              <div className="grid md:grid-cols-2 gap-16">
                 <div className="bg-gray-50 border border-gray-100 shadow-sm overflow-hidden rounded-sm relative">
-                   <div id="map_hq" style={{ width: '100%', height: '450px' }}></div>
+                   <div id="map_hq" style={{ width: '100%', height: '450px' }} className="flex flex-col items-center justify-center p-8 text-center bg-gray-100 rounded-sm">
+                      <i data-lucide="map" className="w-12 h-12 text-gray-300 mb-4"></i>
+                      <p className="text-gray-500 font-medium whitespace-pre-line leading-relaxed">
+                        {lang === 'KOR' ? "현재 본 사이트의 지도 API 기능은 지원되지 않습니다.\n지도 연동은 웹 퍼블리싱 전문가의 도움이 필요합니다." : 
+                         lang === 'ENG' ? "Map feature is not currently supported.\nPlease consult a web publishing expert." : 
+                         "目前不支持地图功能。\n请咨询网页前端专家。"}
+                      </p>
+                   </div>
                    <a 
                       href="https://naver.me/FaeQVgxf" 
                       target="_blank" 
@@ -918,7 +901,14 @@
           <div className="py-12 max-w-7xl mx-auto px-6 mb-24">
              <div className="grid md:grid-cols-2 gap-16">
                 <div className="bg-gray-50 border border-gray-100 shadow-sm overflow-hidden rounded-sm relative">
-                   <div id="map_rnd" style={{ width: '100%', height: '450px' }}></div>
+                   <div id="map_rnd" style={{ width: '100%', height: '450px' }} className="flex flex-col items-center justify-center p-8 text-center bg-gray-100 rounded-sm">
+                      <i data-lucide="map" className="w-12 h-12 text-gray-300 mb-4"></i>
+                      <p className="text-gray-500 font-medium whitespace-pre-line leading-relaxed">
+                        {lang === 'KOR' ? "현재 본 사이트의 지도 API 기능은 지원되지 않습니다.\n지도 연동은 웹 퍼블리싱 전문가의 도움이 필요합니다." : 
+                         lang === 'ENG' ? "Map feature is not currently supported.\nPlease consult a web publishing expert." : 
+                         "目前不支持地图功能。\n请咨询网页前端专家。"}
+                      </p>
+                   </div>
                    <a 
                       href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%20%EC%84%A0%EC%9C%A0%EB%A1%9C9%EA%B8%B8%2010" 
                       target="_blank" 
