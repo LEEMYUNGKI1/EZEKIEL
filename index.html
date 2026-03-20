@@ -1659,6 +1659,12 @@
       const t = translations[lang];
       const [selectedCert, setSelectedCert] = useState(null);
 
+      useEffect(() => {
+        if (window.lucide) {
+          window.lucide.createIcons();
+        }
+      }, [selectedCert]);
+
       const certs = [
         { title: lang === 'KOR' ? "화장품 제조업 등록필증" : (lang === 'CHN' ? "化妆品制造业注册证" : "Cosmetic Manufacturing Registration"), img: "./cert-manufacturing.png" },
         { title: lang === 'KOR' ? "화장품책임판매업 등록필증" : (lang === 'CHN' ? "化妆品责任销售业注册证" : "Cosmetic Marketing Registration"), img: "./cert-marketing.png" },
