@@ -1710,20 +1710,24 @@
 
           {/* Image Modal */}
           {selectedCert && (
-            <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10 animate-fade-in">
-               <div className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={() => setSelectedCert(null)}></div>
-               <div className="relative max-w-5xl w-full max-h-full flex flex-col items-center animate-zoom-in">
-                  <button 
-                    onClick={() => setSelectedCert(null)}
-                    className="absolute -top-12 right-0 text-white hover:text-accent transition-colors flex items-center space-x-2"
-                  >
-                    <span className="text-sm font-bold tracking-widest uppercase">Close</span>
-                    <i data-lucide="x" className="w-8 h-8"></i>
-                  </button>
-                  <div className="bg-white p-3 md:p-6 rounded-lg shadow-2xl w-full flex items-center justify-center overflow-auto max-h-[85vh]">
-                     <img src={selectedCert.img} alt={selectedCert.title} className="max-w-full max-h-full object-contain" />
+            <div className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-xl overflow-y-auto">
+               <div className="min-h-screen flex flex-col items-center justify-center p-4 md:p-12 relative">
+                  <div className="absolute inset-0 z-0" onClick={() => setSelectedCert(null)}></div>
+                  <div className="relative z-10 w-full max-w-4xl animate-zoom-in bg-white rounded-2xl shadow-2xl p-4 md:p-8 flex flex-col">
+                     <button 
+                       onClick={() => setSelectedCert(null)}
+                       className="absolute -top-4 -right-4 md:-top-6 md:-right-6 w-12 h-12 bg-accent text-white rounded-full shadow-xl flex items-center justify-center hover:bg-black transition-colors z-[110]"
+                     >
+                       <i data-lucide="x" className="w-6 h-6"></i>
+                     </button>
+                     <div className="w-full flex items-center justify-center bg-gray-50 rounded-xl overflow-hidden mb-6">
+                        <img src={selectedCert.img} alt={selectedCert.title} className="max-w-full h-auto max-h-[80vh] object-contain shadow-sm" />
+                     </div>
+                     <div className="text-center">
+                        <h3 className="text-brand text-2xl font-bold tracking-tight">{selectedCert.title}</h3>
+                        <p className="text-gray-400 text-xs mt-2 uppercase tracking-widest">{t.menu_qc}</p>
+                     </div>
                   </div>
-                  <h3 className="text-white text-xl font-bold mt-6 text-center">{selectedCert.title}</h3>
                </div>
             </div>
           )}
