@@ -681,7 +681,8 @@
                         setCurrentSlide(index); 
                       }
                     }} 
-                    className={`w-2 h-2 rounded-full transition-all duration-300 border border-black/20 ${index === currentSlide ? 'bg-white w-8' : 'bg-white/40 hover:bg-white'}`}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-white w-8' : 'bg-white hover:bg-gray-200'}`}
+                    style={{ filter: 'drop-shadow(1px 1px 0px #000) drop-shadow(-1px -1px 0px #000) drop-shadow(1px -1px 0px #000) drop-shadow(-1px 1px 0px #000)' }}
                     aria-label={`Go to slide ${index + 1}`}
                   />
                ))}
