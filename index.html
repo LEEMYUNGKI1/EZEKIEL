@@ -1710,25 +1710,21 @@
 
           {/* Image Modal */}
           {selectedCert && (
-            <div className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-xl overflow-y-auto">
-               <div className="min-h-screen flex flex-col items-center justify-center p-4 md:p-12 relative">
-                  <div className="absolute inset-0 z-0" onClick={() => setSelectedCert(null)}></div>
-                  <div className="relative z-10 w-full max-w-4xl animate-zoom-in bg-white rounded-2xl shadow-2xl p-4 md:p-8 flex flex-col">
-                     <button 
-                       onClick={() => setSelectedCert(null)}
-                       className="absolute -top-4 -right-4 md:-top-6 md:-right-6 w-12 h-12 bg-accent text-white rounded-full shadow-xl flex items-center justify-center hover:bg-black transition-colors z-[110]"
-                     >
-                       <i data-lucide="x" className="w-6 h-6"></i>
-                     </button>
-                     <div className="w-full flex items-center justify-center bg-gray-50 rounded-xl overflow-hidden mb-6">
-                        <img src={selectedCert.img} alt={selectedCert.title} className="max-w-full h-auto max-h-[80vh] object-contain shadow-sm" />
-                     </div>
-                     <div className="text-center">
-                        <h3 className="text-brand text-2xl font-bold tracking-tight">{selectedCert.title}</h3>
-                        <p className="text-gray-400 text-xs mt-2 uppercase tracking-widest">{t.menu_qc}</p>
-                     </div>
-                  </div>
-               </div>
+            <div 
+               className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8 cursor-pointer animate-fade-in"
+               onClick={() => setSelectedCert(null)}
+            >
+               <img 
+                 src={selectedCert.img} 
+                 alt={selectedCert.title} 
+                 className="max-w-full max-h-full object-contain animate-zoom-in" 
+               />
+               <button 
+                 onClick={() => setSelectedCert(null)}
+                 className="absolute top-6 right-6 md:top-10 md:right-10 text-white/50 hover:text-white transition-colors z-[110]"
+               >
+                 <i data-lucide="x" className="w-10 h-10"></i>
+               </button>
             </div>
           )}
         </section>
