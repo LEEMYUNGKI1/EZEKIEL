@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="no-referrer-when-downgrade">
   <title>EZEKIEL | Premium Cosmetics OEM/ODM</title>
-  
+
   <!-- Naver Maps API deferred to external expert -->
-  
-  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  
+
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-  
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -68,6 +70,7 @@
   <!-- Lucide Icons mapping for simple usage -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
   <div id="root"></div>
 
@@ -215,7 +218,7 @@
         qc_title: "质量控制认证", qc_subtitle: "通过建立包含CGMP和ISO22716认证在内的全球标准质量与环境管理体系，我们在整个流程中进行持续且彻底的质量控制，以制造和生产卓越的化妆品。"
       }
     };
-    
+
     const historyData = [
       {
         year: "2023",
@@ -280,51 +283,63 @@
       }, []);
 
       const navItems = [
-        { label: t.company, key: "회사소개", subMenu: [
-          { label: t.menu_overview, view: "overview" },
-          { label: t.menu_philosophy, view: "philosophy" },
-          { label: t.menu_ceo, view: "ceo" },
-          { label: t.menu_org, view: "organization" },
-          { label: t.menu_history, view: "history" },
-          { label: t.menu_partners, view: "partners" },
-          { label: t.menu_directions, view: "directions" }
-        ] },
-        { label: t.business, key: "사업소개", subMenu: [
-          { label: t.menu_process, view: "process" },
-          { label: t.menu_skincare, view: "home", section: "사업소개" },
-          { label: t.menu_bodyhair, view: "home", section: "사업소개" },
-          { label: t.menu_maskpad, view: "home", section: "사업소개" }
-        ] },
-        { label: t.rnd, key: "R&D", subMenu: [
-          { label: t.menu_rnd_intro, view: "home", section: "R&D" },
-          { label: t.menu_patents, view: "home", section: "R&D" },
-          { label: t.menu_tech, view: "home", section: "R&D" },
-          { label: t.menu_clinical, view: "home", section: "R&D" }
-        ] },
-        { label: t.infra, key: "생산인프라", subMenu: [
-          { label: t.menu_factory, view: "home", section: "생산인프라" },
-          { label: t.menu_qc, view: "qc" },
-          { label: t.menu_flow, view: "home", section: "생산인프라" },
-          { label: t.menu_hub, view: "home", section: "생산인프라" }
-        ] },
-        { label: t.pr, key: "홍보센터", subMenu: [
-          { label: t.menu_press, view: "home", section: "홍보센터" },
-          { label: t.menu_video, view: "home", section: "홍보센터" },
-          { label: t.menu_ci, view: "home", section: "홍보센터" }
-        ] },
-        { label: t.contact, key: "문의하기", subMenu: [
-          { label: t.menu_inquiry, view: "home", section: "문의하기" },
-          { label: t.menu_service, view: "home", section: "문의하기" },
-          { label: t.menu_directions, view: "directions" }
-        ] }
+        {
+          label: t.company, key: "회사소개", subMenu: [
+            { label: t.menu_overview, view: "overview" },
+            { label: t.menu_philosophy, view: "philosophy" },
+            { label: t.menu_ceo, view: "ceo" },
+            { label: t.menu_org, view: "organization" },
+            { label: t.menu_history, view: "history" },
+            { label: t.menu_partners, view: "partners" },
+            { label: t.menu_directions, view: "directions" }
+          ]
+        },
+        {
+          label: t.business, key: "사업소개", subMenu: [
+            { label: t.menu_process, view: "process" },
+            { label: t.menu_skincare, view: "home", section: "사업소개" },
+            { label: t.menu_bodyhair, view: "home", section: "사업소개" },
+            { label: t.menu_maskpad, view: "home", section: "사업소개" }
+          ]
+        },
+        {
+          label: t.rnd, key: "R&D", subMenu: [
+            { label: t.menu_rnd_intro, view: "home", section: "R&D" },
+            { label: t.menu_patents, view: "home", section: "R&D" },
+            { label: t.menu_tech, view: "home", section: "R&D" },
+            { label: t.menu_clinical, view: "home", section: "R&D" }
+          ]
+        },
+        {
+          label: t.infra, key: "생산인프라", subMenu: [
+            { label: t.menu_factory, view: "home", section: "생산인프라" },
+            { label: t.menu_qc, view: "qc" },
+            { label: t.menu_flow, view: "home", section: "생산인프라" },
+            { label: t.menu_hub, view: "home", section: "생산인프라" }
+          ]
+        },
+        {
+          label: t.pr, key: "홍보센터", subMenu: [
+            { label: t.menu_press, view: "home", section: "홍보센터" },
+            { label: t.menu_video, view: "home", section: "홍보센터" },
+            { label: t.menu_ci, view: "home", section: "홍보센터" }
+          ]
+        },
+        {
+          label: t.contact, key: "문의하기", subMenu: [
+            { label: t.menu_inquiry, view: "home", section: "문의하기" },
+            { label: t.menu_service, view: "home", section: "문의하기" },
+            { label: t.menu_directions, view: "directions" }
+          ]
+        }
       ];
 
       const handleLogoClick = () => {
         if (view !== 'home') {
           setView('home');
-          setTimeout(() => window.scrollTo({top: 0, behavior: 'smooth'}), 50);
+          setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 50);
         } else {
-          window.scrollTo({top: 0, behavior: 'smooth'});
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
       };
 
@@ -346,18 +361,18 @@
         <header className={`fixed w-full top-0 z-50 ${scrolled ? 'glass-header py-4' : 'transparent-header py-6'} text-${scrolled ? 'black' : 'white'}`}>
           {(!scrolled && view !== 'home') && (
             <div className="absolute inset-0 z-0 overflow-hidden bg-black">
-               <img src={heroBg} alt="" className="absolute inset-0 w-full h-[100vh] object-cover object-top" />
-               <div className="absolute inset-0 bg-black/10 z-10"></div>
-               <div className="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-black/80 to-transparent z-20"></div>
+              <img src={heroBg} alt="" className="absolute inset-0 w-full h-[100vh] object-cover object-top" />
+              <div className="absolute inset-0 bg-black/10 z-10"></div>
+              <div className="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-black/80 to-transparent z-20"></div>
             </div>
           )}
           <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-10">
             {/* Logo */}
             <div className="cursor-pointer flex items-center h-12" onClick={handleLogoClick}>
-              <img 
-                src={scrolled ? "./logo-black.png" : "./logo-white.png"} 
-                alt="Company Logo" 
-                className="h-full w-auto object-contain transition-opacity duration-300" 
+              <img
+                src={scrolled ? "./logo-black.png" : "./logo-white.png"}
+                alt="Company Logo"
+                className="h-full w-auto object-contain transition-opacity duration-300"
               />
             </div>
 
@@ -365,8 +380,8 @@
             <nav className="hidden lg:flex space-x-12 text-lg font-bold items-center">
               {navItems.map((item, idx) => (
                 <div key={idx} className="relative group">
-                  <a 
-                    href={`#${item.key}`} 
+                  <a
+                    href={`#${item.key}`}
                     className="hover:text-accent transition-colors py-2 block relative"
                     onClick={(e) => {
                       e.preventDefault();
@@ -380,15 +395,15 @@
                     <div className="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 w-48 z-50">
                       <div className="bg-white/95 backdrop-blur-md rounded-xl shadow-xl border border-gray-100 py-3 flex flex-col items-center">
                         {item.subMenu.map((sub, i) => (
-                          <a key={i} 
-                             href={sub.link || `#${sub.label}`} 
-                             target={sub.link ? "_blank" : undefined}
-                             className="text-[15px] font-semibold text-brand/80 hover:text-accent hover:bg-gray-50/50 w-full px-6 py-2.5 transition-colors text-center"
-                             onClick={(e) => {
-                               if (sub.link) return;
-                               e.preventDefault();
-                               handleNavAction(sub.view, sub.section || sub.label);
-                             }}
+                          <a key={i}
+                            href={sub.link || `#${sub.label}`}
+                            target={sub.link ? "_blank" : undefined}
+                            className="text-[15px] font-semibold text-brand/80 hover:text-accent hover:bg-gray-50/50 w-full px-6 py-2.5 transition-colors text-center"
+                            onClick={(e) => {
+                              if (sub.link) return;
+                              e.preventDefault();
+                              handleNavAction(sub.view, sub.section || sub.label);
+                            }}
                           >
                             {sub.label}
                           </a>
@@ -407,19 +422,19 @@
                 <span className="text-base font-bold">{t.lang}</span>
                 <i data-lucide="chevron-down" className="w-5 h-5"></i>
               </div>
-              
+
               {/* Language Dropdown */}
               <div className="absolute top-full right-10 pt-2 opacity-0 invisible group-hover/lang:opacity-100 group-hover/lang:visible transition-all duration-300 w-24">
-                 <div className="bg-white/95 backdrop-blur text-brand rounded shadow-lg border border-gray-100 py-2 flex flex-col">
-                    <button className="text-sm py-2 hover:bg-gray-50 hover:text-accent" onClick={()=>setLang('KOR')}>KOR</button>
-                    <button className="text-sm py-2 hover:bg-gray-50 hover:text-accent" onClick={()=>setLang('ENG')}>ENG</button>
-                    <button className="text-sm py-2 hover:bg-gray-50 hover:text-accent" onClick={()=>setLang('CHN')}>中文</button>
-                 </div>
+                <div className="bg-white/95 backdrop-blur text-brand rounded shadow-lg border border-gray-100 py-2 flex flex-col">
+                  <button className="text-sm py-2 hover:bg-gray-50 hover:text-accent" onClick={() => setLang('KOR')}>KOR</button>
+                  <button className="text-sm py-2 hover:bg-gray-50 hover:text-accent" onClick={() => setLang('ENG')}>ENG</button>
+                  <button className="text-sm py-2 hover:bg-gray-50 hover:text-accent" onClick={() => setLang('CHN')}>中文</button>
+                </div>
               </div>
-              
+
               {/* Hamburger Icon for "메뉴전체보기" */}
-              <button 
-                className="flex items-center space-x-2 group" 
+              <button
+                className="flex items-center space-x-2 group"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label={lang === 'KOR' ? '메뉴 전체보기' : (lang === 'CHN' ? '查看全部菜单' : 'View All Menu')}
               >
@@ -438,19 +453,19 @@
               {/* Left Side Info / Title */}
               <div className="w-1/4 pr-10 border-r border-gray-100 hidden md:block">
                 <h3 className="text-3xl font-light mb-4 text-left">
-                  <img src="./logo-black.png" alt="Company Logo" className="h-10 w-auto mb-2 object-contain" /><br/>
-                  Total<br/>Beauty<br/>Solution
+                  <img src="./logo-black.png" alt="Company Logo" className="h-10 w-auto mb-2 object-contain" /><br />
+                  Total<br />Beauty<br />Solution
                 </h3>
-                <p className="text-sm text-gray-400 leading-relaxed text-left" dangerouslySetInnerHTML={{__html: t.mega_desc}}></p>
+                <p className="text-sm text-gray-400 leading-relaxed text-left" dangerouslySetInnerHTML={{ __html: t.mega_desc }}></p>
               </div>
 
-               {/* Right Side Mega Menu Columns */}
-               <div className="flex-1 pl-0 md:pl-16 grid grid-cols-2 md:grid-cols-6 gap-8">
+              {/* Right Side Mega Menu Columns */}
+              <div className="flex-1 pl-0 md:pl-16 grid grid-cols-2 md:grid-cols-6 gap-8">
                 {navItems.map((item, idx) => (
                   <div key={idx} className="flex flex-col text-left">
-                    <a 
-                      href={`#${item.key}`} 
-                      className="text-lg font-bold mb-6 hover:text-accent transition-colors" 
+                    <a
+                      href={`#${item.key}`}
+                      className="text-lg font-bold mb-6 hover:text-accent transition-colors"
                       onClick={(e) => {
                         e.preventDefault();
                         handleNavAction('home', item.key);
@@ -461,11 +476,11 @@
                     {item.subMenu && (
                       <div className="flex flex-col space-y-3">
                         {item.subMenu.map((sub, i) => (
-                          <a 
-                            key={i} 
-                            href={sub.link || `#${sub.label}`} 
+                          <a
+                            key={i}
+                            href={sub.link || `#${sub.label}`}
                             target={sub.link ? "_blank" : undefined}
-                            className="text-[15px] font-semibold text-gray-500 hover:text-accent transition-colors block" 
+                            className="text-[15px] font-semibold text-gray-500 hover:text-accent transition-colors block"
                             onClick={(e) => {
                               if (sub.link) return;
                               e.preventDefault();
@@ -481,19 +496,19 @@
                 ))}
               </div>
             </div>
-            
+
             {/* Mega Menu Footer Actions */}
             <div className="bg-surface py-6">
-               <div className="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm font-medium text-gray-500">
-                  <div className="flex space-x-8">
-                     <a href="#" className="hover:text-brand transition-colors">{t.support_tel}</a>
-                     <a href="#" className="hover:text-brand transition-colors">{t.brochure_down}</a>
-                  </div>
-                  <button className="flex items-center space-x-2 text-accent hover:text-brand transition-colors" onClick={() => setMenuOpen(false)}>
-                    <span>{t.close}</span>
-                    <i data-lucide="x" className="w-4 h-4"></i>
-                  </button>
-               </div>
+              <div className="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm font-medium text-gray-500">
+                <div className="flex space-x-8">
+                  <a href="#" className="hover:text-brand transition-colors">{t.support_tel}</a>
+                  <a href="#" className="hover:text-brand transition-colors">{t.brochure_down}</a>
+                </div>
+                <button className="flex items-center space-x-2 text-accent hover:text-brand transition-colors" onClick={() => setMenuOpen(false)}>
+                  <span>{t.close}</span>
+                  <i data-lucide="x" className="w-4 h-4"></i>
+                </button>
+              </div>
             </div>
           </div>
         </header>
@@ -594,14 +609,14 @@
         setPrevSlideIndex(currentSlide);
         setCurrentSlide((prev) => (prev + 1) % slides.length);
       };
-      
+
       const prevSlide = () => {
         setPrevSlideIndex(currentSlide);
         setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
       };
 
       return (
-        <section 
+        <section
           className="relative h-screen flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing select-none"
           onMouseDown={handleDragStart}
           onMouseMove={handleDragMove}
@@ -613,96 +628,96 @@
         >
           <div className="relative w-full h-full">
             {slides.map((slide, index) => {
-               let offset = index - currentSlide;
-               if (currentSlide === 0 && index === slides.length - 1) offset = -1;
-               else if (currentSlide === slides.length - 1 && index === 0) offset = 1;
+              let offset = index - currentSlide;
+              if (currentSlide === 0 && index === slides.length - 1) offset = -1;
+              else if (currentSlide === slides.length - 1 && index === 0) offset = 1;
 
-               let zIndex = 1;
-               if (index === currentSlide) zIndex = 10;
-               else if (index === prevSlideIndex) zIndex = 5;
+              let zIndex = 1;
+              if (index === currentSlide) zIndex = 10;
+              else if (index === prevSlideIndex) zIndex = 5;
 
-               return (
-                 <div 
-                   key={index} 
-                   className="absolute inset-0 w-full h-full"
-                   style={{
-                     transform: `translateX(${offset * 100}%)`,
-                     transition: 'transform 2000ms cubic-bezier(0.25,1,0.5,1)',
-                     zIndex: zIndex
-                   }}
-                 >
-                <div className="absolute inset-0 z-0 bg-black overflow-hidden">
-                   <img src={slide.bg} alt={`Hero Background ${index + 1}`} className="absolute inset-0 w-full h-full object-cover pointer-events-none z-10" draggable="false" />
-                   <div className="absolute inset-0 bg-black/10 pointer-events-none z-20"></div>
-                   {/* Top gradient specifically for header text visibility */}
-                   <div className="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-black/80 to-transparent pointer-events-none z-20"></div>
-                </div>
-                
-                <div 
-                  className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4 max-w-5xl mx-auto pt-20"
-                  style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0px 4px 12px rgba(0,0,0,0.8)' }}
+              return (
+                <div
+                  key={index}
+                  className="absolute inset-0 w-full h-full"
+                  style={{
+                    transform: `translateX(${offset * 100}%)`,
+                    transition: 'transform 2000ms cubic-bezier(0.25,1,0.5,1)',
+                    zIndex: zIndex
+                  }}
                 >
-                  <div className={`${index === currentSlide ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                    <h2 className="text-sm md:text-lg font-medium tracking-[0.2em] mb-4 text-accent" style={{animationDelay: '0.2s'}}>
-                      {slide.sub}
-                    </h2>
-                    <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 uppercase" dangerouslySetInnerHTML={{__html: slide.title}} style={{animationDelay: '0.4s'}}>
-                    </h1>
-                    <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto font-light mb-12" dangerouslySetInnerHTML={{__html: slide.desc}} style={{animationDelay: '0.6s'}}>
-                    </p>
+                  <div className="absolute inset-0 z-0 bg-black overflow-hidden">
+                    <img src={slide.bg} alt={`Hero Background ${index + 1}`} className="absolute inset-0 w-full h-full object-cover pointer-events-none z-10" draggable="false" />
+                    <div className="absolute inset-0 bg-black/10 pointer-events-none z-20"></div>
+                    {/* Top gradient specifically for header text visibility */}
+                    <div className="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-black/80 to-transparent pointer-events-none z-20"></div>
+                  </div>
+
+                  <div
+                    className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4 max-w-5xl mx-auto pt-20"
+                    style={{ textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0px 4px 12px rgba(0,0,0,0.8)' }}
+                  >
+                    <div className={`${index === currentSlide ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                      <h2 className="text-sm md:text-lg font-medium tracking-[0.2em] mb-4 text-accent" style={{ animationDelay: '0.2s' }}>
+                        {slide.sub}
+                      </h2>
+                      <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 uppercase" dangerouslySetInnerHTML={{ __html: slide.title }} style={{ animationDelay: '0.4s' }}>
+                      </h1>
+                      <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto font-light mb-12" dangerouslySetInnerHTML={{ __html: slide.desc }} style={{ animationDelay: '0.6s' }}>
+                      </p>
+                    </div>
                   </div>
                 </div>
-                 </div>
-               );
+              );
             })}
           </div>
 
           {/* Navigation Arrows */}
-          <button 
-            onClick={(e) => { e.stopPropagation(); prevSlide(); }} 
+          <button
+            onClick={(e) => { e.stopPropagation(); prevSlide(); }}
             className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full border border-white/20 text-white hover:bg-white hover:text-brand transition-all backdrop-blur-sm group"
           >
-             <i data-lucide="chevron-left" className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform"></i>
+            <i data-lucide="chevron-left" className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform"></i>
           </button>
-          <button 
-            onClick={(e) => { e.stopPropagation(); nextSlide(); }} 
+          <button
+            onClick={(e) => { e.stopPropagation(); nextSlide(); }}
             className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full border border-white/20 text-white hover:bg-white hover:text-brand transition-all backdrop-blur-sm group"
           >
-             <i data-lucide="chevron-right" className="w-6 h-6 group-hover:translate-x-0.5 transition-transform"></i>
+            <i data-lucide="chevron-right" className="w-6 h-6 group-hover:translate-x-0.5 transition-transform"></i>
           </button>
 
           {/* Pagination Indicators & Play/Stop Toggle */}
           <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-20 flex items-center space-x-6">
-             <div className="flex space-x-3">
-               {slides.map((_, index) => (
-                  <button 
-                    key={index} 
-                    onClick={(e) => { 
-                      e.stopPropagation(); 
-                      if (currentSlide !== index) {
-                        setPrevSlideIndex(currentSlide);
-                        setCurrentSlide(index); 
-                      }
-                    }} 
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-white w-8' : 'bg-white hover:bg-gray-200'}`}
-                    style={{ filter: 'drop-shadow(1px 1px 0px #000) drop-shadow(-1px -1px 0px #000) drop-shadow(1px -1px 0px #000) drop-shadow(-1px 1px 0px #000)' }}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-               ))}
-             </div>
-             
-             <button 
-               onClick={togglePlay}
-               className="text-white hover:text-accent transition-all duration-300 focus:outline-none flex items-center justify-center p-1"
-               style={{ filter: 'drop-shadow(1px 1px 0px #000) drop-shadow(-1px -1px 0px #000) drop-shadow(1px -1px 0px #000) drop-shadow(-1px 1px 0px #000)' }}
-               aria-label={isPlaying ? "Stop auto-slide" : "Start auto-slide"}
-             >
-               {isPlaying ? (
-                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path></svg>
-               ) : (
-                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
-               )}
-             </button>
+            <div className="flex space-x-3">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (currentSlide !== index) {
+                      setPrevSlideIndex(currentSlide);
+                      setCurrentSlide(index);
+                    }
+                  }}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-white w-8' : 'bg-white hover:bg-gray-200'}`}
+                  style={{ filter: 'drop-shadow(1px 1px 0px #000) drop-shadow(-1px -1px 0px #000) drop-shadow(1px -1px 0px #000) drop-shadow(-1px 1px 0px #000)' }}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={togglePlay}
+              className="text-white hover:text-accent transition-all duration-300 focus:outline-none flex items-center justify-center p-1"
+              style={{ filter: 'drop-shadow(1px 1px 0px #000) drop-shadow(-1px -1px 0px #000) drop-shadow(1px -1px 0px #000) drop-shadow(-1px 1px 0px #000)' }}
+              aria-label={isPlaying ? "Stop auto-slide" : "Start auto-slide"}
+            >
+              {isPlaying ? (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path></svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+              )}
+            </button>
           </div>
 
 
@@ -714,37 +729,37 @@
       const { lang } = useContext(AppContext);
       const t = translations[lang];
       return (
-      <section id="회사소개" className="py-32 bg-white relative">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-          <div className="text-left">
-            <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.company}</h3>
-            <h2 className="text-4xl font-bold mb-8 leading-tight" dangerouslySetInnerHTML={{__html: t.comp_title}}></h2>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              {t.comp_desc}
-            </p>
-            <div className="flex space-x-12 mt-10 text-center md:text-left">
-              <div>
-                <div className="text-4xl font-light text-brand mb-1">20<span className="text-accent text-2xl font-bold">+</span></div>
-                <div className="text-xs tracking-widest text-gray-400 uppercase">Years History</div>
+        <section id="회사소개" className="py-32 bg-white relative">
+          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div className="text-left">
+              <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.company}</h3>
+              <h2 className="text-4xl font-bold mb-8 leading-tight" dangerouslySetInnerHTML={{ __html: t.comp_title }}></h2>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                {t.comp_desc}
+              </p>
+              <div className="flex space-x-12 mt-10 text-center md:text-left">
+                <div>
+                  <div className="text-4xl font-light text-brand mb-1">20<span className="text-accent text-2xl font-bold">+</span></div>
+                  <div className="text-xs tracking-widest text-gray-400 uppercase">Years History</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-light text-brand mb-1">150<span className="text-accent text-2xl font-bold">+</span></div>
+                  <div className="text-xs tracking-widest text-gray-400 uppercase">Global Partners</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-light text-brand mb-1">5K<span className="text-accent text-2xl font-bold">+</span></div>
+                  <div className="text-xs tracking-widest text-gray-400 uppercase">Formulas</div>
+                </div>
               </div>
-              <div>
-                <div className="text-4xl font-light text-brand mb-1">150<span className="text-accent text-2xl font-bold">+</span></div>
-                <div className="text-xs tracking-widest text-gray-400 uppercase">Global Partners</div>
-              </div>
-              <div>
-                <div className="text-4xl font-light text-brand mb-1">5K<span className="text-accent text-2xl font-bold">+</span></div>
-                <div className="text-xs tracking-widest text-gray-400 uppercase">Formulas</div>
+            </div>
+            <div className="relative h-[600px] w-full mt-10 md:mt-0">
+              <div className="absolute inset-0 bg-brand rounded-tr-[100px] rounded-bl-[100px] transform translate-x-4 translate-y-4 opacity-5"></div>
+              <div className="relative h-full w-full rounded-tr-[100px] rounded-bl-[100px] overflow-hidden shadow-2xl">
+                <img src="./product-bg.png" alt="Company Product" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
           </div>
-          <div className="relative h-[600px] w-full mt-10 md:mt-0">
-             <div className="absolute inset-0 bg-brand rounded-tr-[100px] rounded-bl-[100px] transform translate-x-4 translate-y-4 opacity-5"></div>
-             <div className="relative h-full w-full rounded-tr-[100px] rounded-bl-[100px] overflow-hidden shadow-2xl">
-               <img src="./product-bg.png" alt="Company Product" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-             </div>
-          </div>
-        </div>
-      </section>
+        </section>
       );
     };
 
@@ -767,7 +782,7 @@
               {businesses.map((biz, idx) => (
                 <div key={idx} className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-2xl transition-all duration-700 border border-gray-100 group overflow-hidden transform hover:-translate-y-2">
                   <div className="h-72 overflow-hidden relative bg-gray-100">
-                    <img src={biz.img} alt={biz.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-in-out" style={{filter: 'contrast(1.05)'}} />
+                    <img src={biz.img} alt={biz.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-in-out" style={{ filter: 'contrast(1.05)' }} />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-700"></div>
                   </div>
                   <div className="px-5 py-8 relative">
@@ -791,28 +806,28 @@
       const { lang } = useContext(AppContext);
       const t = translations[lang];
       return (
-      <section id="R&D" className="py-10 bg-brand text-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-0">
-          <div className="pr-12 md:pr-24 py-12 flex flex-col justify-center text-left">
-            <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.rnd}</h3>
-            <h2 className="text-4xl font-bold mb-8 leading-tight" dangerouslySetInnerHTML={{__html: t.rnd_title}}></h2>
-            <p className="text-gray-400 mb-10 leading-relaxed text-lg">
-              {t.rnd_desc}
-            </p>
-            <ul className="space-y-4">
-              {[t.rnd_1, t.rnd_2, t.rnd_3].map((item, i) => (
-                <li key={i} className="flex items-center space-x-3">
-                  <i data-lucide="check-circle" className="w-5 h-5 text-accent"></i>
-                  <span className="text-gray-200">{item}</span>
-                </li>
-              ))}
-            </ul>
+        <section id="R&D" className="py-10 bg-brand text-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-0">
+            <div className="pr-12 md:pr-24 py-12 flex flex-col justify-center text-left">
+              <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.rnd}</h3>
+              <h2 className="text-4xl font-bold mb-8 leading-tight" dangerouslySetInnerHTML={{ __html: t.rnd_title }}></h2>
+              <p className="text-gray-400 mb-10 leading-relaxed text-lg">
+                {t.rnd_desc}
+              </p>
+              <ul className="space-y-4">
+                {[t.rnd_1, t.rnd_2, t.rnd_3].map((item, i) => (
+                  <li key={i} className="flex items-center space-x-3">
+                    <i data-lucide="check-circle" className="w-5 h-5 text-accent"></i>
+                    <span className="text-gray-200">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="h-[400px] md:h-[600px] relative w-full">
+              <img src="./rnd-bg.png" alt="R&D Lab" className="w-full h-full object-cover" />
+            </div>
           </div>
-          <div className="h-[400px] md:h-[600px] relative w-full">
-            <img src="./rnd-bg.png" alt="R&D Lab" className="w-full h-full object-cover" />
-          </div>
-        </div>
-      </section>
+        </section>
       );
     };
 
@@ -820,30 +835,30 @@
       const { lang } = useContext(AppContext);
       const t = translations[lang];
       return (
-      <section id="생산인프라" className="pb-10 relative bg-brand text-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2">
-          <div className="h-[400px] md:h-[600px] order-2 md:order-1 relative w-full">
-            <img src="./infra-bg.png" alt="Production Infrastructure" className="w-full h-full object-cover" />
-          </div>
-          <div className="p-12 md:p-24 flex flex-col justify-center order-1 md:order-2 text-left">
-             <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.infra}</h3>
-             <h2 className="text-4xl font-bold mb-8" dangerouslySetInnerHTML={{__html: t.infra_title}}></h2>
-             <p className="text-gray-300 leading-relaxed text-lg mb-8">
-               {t.infra_desc}
-             </p>
-             <div className="grid grid-cols-2 gap-8 mt-4 border-t border-white/10 pt-8">
-               <div>
+        <section id="생산인프라" className="pb-10 relative bg-brand text-white overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2">
+            <div className="h-[400px] md:h-[600px] order-2 md:order-1 relative w-full">
+              <img src="./infra-bg.png" alt="Production Infrastructure" className="w-full h-full object-cover" />
+            </div>
+            <div className="p-12 md:p-24 flex flex-col justify-center order-1 md:order-2 text-left">
+              <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.infra}</h3>
+              <h2 className="text-4xl font-bold mb-8" dangerouslySetInnerHTML={{ __html: t.infra_title }}></h2>
+              <p className="text-gray-300 leading-relaxed text-lg mb-8">
+                {t.infra_desc}
+              </p>
+              <div className="grid grid-cols-2 gap-8 mt-4 border-t border-white/10 pt-8">
+                <div>
                   <div className="text-xs uppercase tracking-widest mb-1 text-accent">Annual Capacity</div>
                   <div className="text-3xl font-light">150M<span className="text-xl">+</span></div>
-               </div>
-               <div>
+                </div>
+                <div>
                   <div className="text-xs uppercase tracking-widest mb-1 text-accent">Certifications</div>
                   <div className="text-xl font-light tracking-wide mt-1">CGMP, ISO</div>
-               </div>
-             </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
       );
     };
 
@@ -861,116 +876,116 @@
       return (
         <section id="오시는길" className="bg-surface relative overflow-hidden pt-28">
           <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
-             <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; {t.menu_directions}</p>
-             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
-                <i data-lucide="arrow-left" className="w-4 h-4"></i>
-                <span>{t.back}</span>
-             </button>
+            <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; {t.menu_directions}</p>
+            <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+              <i data-lucide="arrow-left" className="w-4 h-4"></i>
+              <span>{t.back}</span>
+            </button>
           </div>
 
           <div className="py-12 max-w-7xl mx-auto px-6">
-             <div className="text-center mb-20 animate-fade-in-up">
-                <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Directions</h2>
-                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.dir_title}</h1>
-                <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
-                <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep">
-                   {t.dir_subtitle}
-                </p>
-             </div>
+            <div className="text-center mb-20 animate-fade-in-up">
+              <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Directions</h2>
+              <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.dir_title}</h1>
+              <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+              <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep">
+                {t.dir_subtitle}
+              </p>
+            </div>
           </div>
 
           {/* HQ Section */}
           <div className="pb-12 max-w-7xl mx-auto px-6 border-b border-gray-100">
-             <div className="grid md:grid-cols-2 gap-16">
-                <div className="bg-gray-50 border border-gray-100 shadow-sm overflow-hidden rounded-sm relative">
-                   <div id="map_hq" style={{ width: '100%', height: '450px' }} className="flex flex-col items-center justify-center bg-gray-100 rounded-sm overflow-hidden relative">
-                      <iframe 
-                        width="100%" 
-                        height="100%" 
-                        frameBorder="0" 
-                        scrolling="no" 
-                        marginHeight="0" 
-                        marginWidth="0" 
-                        src="https://maps.google.com/maps?q=경기도 김포시 양촌읍 황금3로 7번길 53&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                        className="absolute inset-0 z-0"
-                      ></iframe>
-                   </div>
-                   <a 
-                      href="https://naver.me/FaeQVgxf" 
-                      target="_blank" 
-                      className="absolute bottom-6 right-6 bg-white text-brand px-6 py-3 shadow-lg font-bold text-sm flex items-center space-x-2 hover:bg-black hover:text-white transition-all rounded-full border border-gray-100 z-10"
-                   >
-                      <i data-lucide="map-pin" className="w-4 h-4"></i>
-                      <span>{t.dir_map_btn}</span>
-                   </a>
+            <div className="grid md:grid-cols-2 gap-16">
+              <div className="bg-gray-50 border border-gray-100 shadow-sm overflow-hidden rounded-sm relative">
+                <div id="map_hq" style={{ width: '100%', height: '450px' }} className="flex flex-col items-center justify-center bg-gray-100 rounded-sm overflow-hidden relative">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    scrolling="no"
+                    marginHeight="0"
+                    marginWidth="0"
+                    src="https://maps.google.com/maps?q=경기도 김포시 양촌읍 황금3로 7번길 53&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    className="absolute inset-0 z-0"
+                  ></iframe>
                 </div>
+                <a
+                  href="https://naver.me/FaeQVgxf"
+                  target="_blank"
+                  className="absolute bottom-6 right-6 bg-white text-brand px-6 py-3 shadow-lg font-bold text-sm flex items-center space-x-2 hover:bg-black hover:text-white transition-all rounded-full border border-gray-100 z-10"
+                >
+                  <i data-lucide="map-pin" className="w-4 h-4"></i>
+                  <span>{t.dir_map_btn}</span>
+                </a>
+              </div>
 
-                <div className="flex flex-col justify-center">
-                   <h2 className="text-3xl font-bold mb-8 text-black border-l-4 border-accent pl-6 uppercase tracking-tight">{t.dir_hq}</h2>
-                   <div className="space-y-10 pl-6">
-                      <div>
-                         <h3 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-4">Address</h3>
-                         <p className="text-xl text-gray-700 leading-relaxed font-light">{t.hq_addr}</p>
-                      </div>
-                      <div className="grid grid-cols-2 gap-8 pt-6 border-t border-gray-100">
-                         <div>
-                            <h3 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-3">Tel</h3>
-                            <p className="text-lg text-gray-800">031.990.4120</p>
-                         </div>
-                         <div>
-                            <h3 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-3">Fax</h3>
-                            <p className="text-lg text-gray-800">031.991.4130</p>
-                         </div>
-                      </div>
-                      <div className="pt-6">
-                         <h3 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-3">Email</h3>
-                         <p className="text-lg text-gray-800">ezekielcos@daum.net</p>
-                      </div>
-                   </div>
+              <div className="flex flex-col justify-center">
+                <h2 className="text-3xl font-bold mb-8 text-black border-l-4 border-accent pl-6 uppercase tracking-tight">{t.dir_hq}</h2>
+                <div className="space-y-10 pl-6">
+                  <div>
+                    <h3 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-4">Address</h3>
+                    <p className="text-xl text-gray-700 leading-relaxed font-light">{t.hq_addr}</p>
+                  </div>
+                  <div className="grid grid-cols-2 gap-8 pt-6 border-t border-gray-100">
+                    <div>
+                      <h3 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-3">Tel</h3>
+                      <p className="text-lg text-gray-800">031.990.4120</p>
+                    </div>
+                    <div>
+                      <h3 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-3">Fax</h3>
+                      <p className="text-lg text-gray-800">031.991.4130</p>
+                    </div>
+                  </div>
+                  <div className="pt-6">
+                    <h3 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-3">Email</h3>
+                    <p className="text-lg text-gray-800">ezekielcos@daum.net</p>
+                  </div>
                 </div>
-             </div>
+              </div>
+            </div>
           </div>
 
           {/* R&D Section */}
           <div className="py-12 max-w-7xl mx-auto px-6 mb-24">
-             <div className="grid md:grid-cols-2 gap-16">
-                <div className="bg-gray-50 border border-gray-100 shadow-sm overflow-hidden rounded-sm relative">
-                   <div id="map_rnd" style={{ width: '100%', height: '450px' }} className="flex flex-col items-center justify-center bg-gray-100 rounded-sm overflow-hidden relative">
-                      <iframe 
-                        width="100%" 
-                        height="100%" 
-                        frameBorder="0" 
-                        scrolling="no" 
-                        marginHeight="0" 
-                        marginWidth="0" 
-                        src="https://maps.google.com/maps?q=서울시 영등포구 선유로9길 10 문래 SK V1 CENTER&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                        className="absolute inset-0 z-0"
-                      ></iframe>
-                   </div>
-                   <a 
-                      href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%20%EC%84%A0%EC%9C%A0%EB%A1%9C9%EA%B8%B8%2010" 
-                      target="_blank" 
-                      className="absolute bottom-6 right-6 bg-white text-brand px-6 py-3 shadow-lg font-bold text-sm flex items-center space-x-2 hover:bg-black hover:text-white transition-all rounded-full border border-gray-100 z-10"
-                   >
-                      <i data-lucide="map-pin" className="w-4 h-4"></i>
-                      <span>{t.dir_map_btn}</span>
-                   </a>
+            <div className="grid md:grid-cols-2 gap-16">
+              <div className="bg-gray-50 border border-gray-100 shadow-sm overflow-hidden rounded-sm relative">
+                <div id="map_rnd" style={{ width: '100%', height: '450px' }} className="flex flex-col items-center justify-center bg-gray-100 rounded-sm overflow-hidden relative">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    scrolling="no"
+                    marginHeight="0"
+                    marginWidth="0"
+                    src="https://maps.google.com/maps?q=서울시 영등포구 선유로9길 10 문래 SK V1 CENTER&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    className="absolute inset-0 z-0"
+                  ></iframe>
                 </div>
+                <a
+                  href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC%20%EC%84%A0%EC%9C%A0%EB%A1%9C9%EA%B8%B8%2010"
+                  target="_blank"
+                  className="absolute bottom-6 right-6 bg-white text-brand px-6 py-3 shadow-lg font-bold text-sm flex items-center space-x-2 hover:bg-black hover:text-white transition-all rounded-full border border-gray-100 z-10"
+                >
+                  <i data-lucide="map-pin" className="w-4 h-4"></i>
+                  <span>{t.dir_map_btn}</span>
+                </a>
+              </div>
 
-                <div className="flex flex-col justify-center">
-                   <h2 className="text-3xl font-bold mb-8 text-black border-l-4 border-accent pl-6 uppercase tracking-tight">{t.dir_rnd}</h2>
-                   <div className="space-y-10 pl-6">
-                      <div>
-                         <h3 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-4">Address</h3>
-                         <p className="text-xl text-gray-700 leading-relaxed font-light">{t.rnd_addr}</p>
-                      </div>
-                      <div className="pt-6 border-t border-gray-100">
-                         <h3 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-3">Tel</h3>
-                         <p className="text-lg text-gray-800">02.6953.4120</p>
-                      </div>
-                   </div>
+              <div className="flex flex-col justify-center">
+                <h2 className="text-3xl font-bold mb-8 text-black border-l-4 border-accent pl-6 uppercase tracking-tight">{t.dir_rnd}</h2>
+                <div className="space-y-10 pl-6">
+                  <div>
+                    <h3 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-4">Address</h3>
+                    <p className="text-xl text-gray-700 leading-relaxed font-light">{t.rnd_addr}</p>
+                  </div>
+                  <div className="pt-6 border-t border-gray-100">
+                    <h3 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-3">Tel</h3>
+                    <p className="text-lg text-gray-800">02.6953.4120</p>
+                  </div>
                 </div>
-             </div>
+              </div>
+            </div>
           </div>
         </section>
       );
@@ -983,25 +998,25 @@
         <section id="협력사" className="bg-surface relative overflow-hidden min-h-screen pt-28">
 
           <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
-             <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; {t.menu_partners}</p>
-             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
-                <i data-lucide="arrow-left" className="w-4 h-4"></i>
-                <span>{t.back}</span>
-             </button>
+            <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; {t.menu_partners}</p>
+            <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+              <i data-lucide="arrow-left" className="w-4 h-4"></i>
+              <span>{t.back}</span>
+            </button>
           </div>
 
           <div className="py-12 max-w-7xl mx-auto px-6 mb-24">
-             <div className="text-center mb-20 animate-fade-in-up">
-                <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Partners</h2>
-                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.partners_title}</h1>
-                <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
-                <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep">
-                  {t.partners_subtitle}
-                </p>
-             </div>
-             <div className="flex justify-center bg-white p-10 md:p-16 rounded-xl shadow-sm border border-gray-100">
-                 <img src="./협력사.png" alt="Partners" className="w-full max-w-5xl object-contain min-h-[300px]" />
-             </div>
+            <div className="text-center mb-20 animate-fade-in-up">
+              <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Partners</h2>
+              <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.partners_title}</h1>
+              <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+              <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep">
+                {t.partners_subtitle}
+              </p>
+            </div>
+            <div className="flex justify-center bg-white p-10 md:p-16 rounded-xl shadow-sm border border-gray-100">
+              <img src="./협력사.png" alt="Partners" className="w-full max-w-5xl object-contain min-h-[300px]" />
+            </div>
           </div>
         </section>
       );
@@ -1013,59 +1028,59 @@
       return (
         <section id="CEO메시지" className="bg-surface relative overflow-hidden pt-28">
           <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
-             <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; {t.menu_ceo}</p>
-             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
-                <i data-lucide="arrow-left" className="w-4 h-4"></i>
-                <span>{t.back}</span>
-             </button>
+            <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; {t.menu_ceo}</p>
+            <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+              <i data-lucide="arrow-left" className="w-4 h-4"></i>
+              <span>{t.back}</span>
+            </button>
           </div>
 
           <div className="py-20 max-w-4xl mx-auto px-6 mb-24 bg-white shadow-xl rounded-2xl relative mt-12 border border-gray-100">
-             <div className="absolute top-0 right-10 -translate-y-1/2 w-20 h-20 bg-accent rounded-full flex items-center justify-center shadow-lg">
-                <i data-lucide="quote" className="w-8 h-8 text-white"></i>
-             </div>
-             
-             <div className="text-center mb-16 px-4 md:px-12 flex flex-col items-center">
-                <h2 className="text-3xl md:text-5xl font-bold mb-10 text-brand leading-tight text-center relative z-10 border-b-2 border-accent pb-8 inline-block">
-                   {t.ceo_main}
-                </h2>
-                <p className="text-xl md:text-2xl text-accent font-medium leading-relaxed italic mt-4 max-w-3xl" dangerouslySetInnerHTML={{__html: t.ceo_quote}}></p>
-             </div>
-             
-             <div className="space-y-8 text-gray-700 leading-relaxed text-lg px-4 md:px-12 font-light text-left">
-                <p className="text-xl font-medium text-brand border-l-4 border-brand pl-4">{t.ceo_greet}</p>
-                <p className="pl-5" dangerouslySetInnerHTML={{__html: t.ceo_p1}}></p>
-                
-                <div className="bg-gray-50 p-8 rounded-xl space-y-8 mt-10 border border-gray-100 shadow-inner">
-                   <div className="flex items-start">
-                     <div className="bg-brand text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-5 mt-1 flex-shrink-0 shadow-md text-sm">1</div>
-                     <div>
-                       <h3 className="text-xl font-bold text-brand mb-2">{t.ceo_val1_t}</h3>
-                       <p className="text-gray-600">{t.ceo_val1_d}</p>
-                     </div>
-                   </div>
-                   
-                   <div className="flex items-start">
-                     <div className="bg-brand text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-5 mt-1 flex-shrink-0 shadow-md text-sm">2</div>
-                     <div>
-                       <h3 className="text-xl font-bold text-brand mb-2">{t.ceo_val2_t}</h3>
-                       <p className="text-gray-600">{t.ceo_val2_d}</p>
-                     </div>
-                   </div>
-                   
-                   <div className="flex items-start">
-                     <div className="bg-brand text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-5 mt-1 flex-shrink-0 shadow-md text-sm">3</div>
-                     <div>
-                       <h3 className="text-xl font-bold text-brand mb-2">{t.ceo_val3_t}</h3>
-                       <p className="text-gray-600">{t.ceo_val3_d}</p>
-                     </div>
-                   </div>
+            <div className="absolute top-0 right-10 -translate-y-1/2 w-20 h-20 bg-accent rounded-full flex items-center justify-center shadow-lg">
+              <i data-lucide="quote" className="w-8 h-8 text-white"></i>
+            </div>
+
+            <div className="text-center mb-16 px-4 md:px-12 flex flex-col items-center">
+              <h2 className="text-3xl md:text-5xl font-bold mb-10 text-brand leading-tight text-center relative z-10 border-b-2 border-accent pb-8 inline-block">
+                {t.ceo_main}
+              </h2>
+              <p className="text-xl md:text-2xl text-accent font-medium leading-relaxed italic mt-4 max-w-3xl" dangerouslySetInnerHTML={{ __html: t.ceo_quote }}></p>
+            </div>
+
+            <div className="space-y-8 text-gray-700 leading-relaxed text-lg px-4 md:px-12 font-light text-left">
+              <p className="text-xl font-medium text-brand border-l-4 border-brand pl-4">{t.ceo_greet}</p>
+              <p className="pl-5" dangerouslySetInnerHTML={{ __html: t.ceo_p1 }}></p>
+
+              <div className="bg-gray-50 p-8 rounded-xl space-y-8 mt-10 border border-gray-100 shadow-inner">
+                <div className="flex items-start">
+                  <div className="bg-brand text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-5 mt-1 flex-shrink-0 shadow-md text-sm">1</div>
+                  <div>
+                    <h3 className="text-xl font-bold text-brand mb-2">{t.ceo_val1_t}</h3>
+                    <p className="text-gray-600">{t.ceo_val1_d}</p>
+                  </div>
                 </div>
-                
-                <div className="mt-16 pt-10 text-center border-t border-gray-200">
-                   <p className="text-xl font-medium text-gray-800" dangerouslySetInnerHTML={{__html: t.ceo_closing}}></p>
+
+                <div className="flex items-start">
+                  <div className="bg-brand text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-5 mt-1 flex-shrink-0 shadow-md text-sm">2</div>
+                  <div>
+                    <h3 className="text-xl font-bold text-brand mb-2">{t.ceo_val2_t}</h3>
+                    <p className="text-gray-600">{t.ceo_val2_d}</p>
+                  </div>
                 </div>
-             </div>
+
+                <div className="flex items-start">
+                  <div className="bg-brand text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-5 mt-1 flex-shrink-0 shadow-md text-sm">3</div>
+                  <div>
+                    <h3 className="text-xl font-bold text-brand mb-2">{t.ceo_val3_t}</h3>
+                    <p className="text-gray-600">{t.ceo_val3_d}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-16 pt-10 text-center border-t border-gray-200">
+                <p className="text-xl font-medium text-gray-800" dangerouslySetInnerHTML={{ __html: t.ceo_closing }}></p>
+              </div>
+            </div>
           </div>
         </section>
       );
@@ -1077,63 +1092,63 @@
       return (
         <section id="기업이념" className="bg-surface relative overflow-hidden pt-28">
           <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
-             <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; {t.menu_philosophy}</p>
-             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
-                <i data-lucide="arrow-left" className="w-4 h-4"></i>
-                <span>{t.back}</span>
-             </button>
+            <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; {t.menu_philosophy}</p>
+            <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+              <i data-lucide="arrow-left" className="w-4 h-4"></i>
+              <span>{t.back}</span>
+            </button>
           </div>
 
           <div className="py-20 max-w-5xl mx-auto px-6 mb-24">
-             {/* Title & Vision */}
-             <div className="text-center mb-20 animate-fade-in-up">
-                <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Corporate Philosophy</h2>
-                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.menu_philosophy}</h1>
-                <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
-                <p className="text-2xl md:text-3xl text-gray-800 font-light leading-relaxed" dangerouslySetInnerHTML={{__html: t.phil_vision}}></p>
-                <p className="text-gray-500 mt-6 text-lg max-w-2xl mx-auto border-t border-gray-200 pt-6">
-                  {t.phil_desc}
+            {/* Title & Vision */}
+            <div className="text-center mb-20 animate-fade-in-up">
+              <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Corporate Philosophy</h2>
+              <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.menu_philosophy}</h1>
+              <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+              <p className="text-2xl md:text-3xl text-gray-800 font-light leading-relaxed" dangerouslySetInnerHTML={{ __html: t.phil_vision }}></p>
+              <p className="text-gray-500 mt-6 text-lg max-w-2xl mx-auto border-t border-gray-200 pt-6">
+                {t.phil_desc}
+              </p>
+            </div>
+
+            {/* Core Values grid */}
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Value 1 */}
+              <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                <div className="w-16 h-16 bg-brand/5 group-hover:bg-brand text-brand group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
+                  <i data-lucide="shield-check" className="w-8 h-8"></i>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-brand">ETHIC Mind</h3>
+                <div className="w-10 h-0.5 bg-accent mb-6 transition-all duration-300 group-hover:w-full"></div>
+                <p className="text-gray-600 leading-relaxed font-light">
+                  {t.phil_val1_d}
                 </p>
-             </div>
+              </div>
 
-             {/* Core Values grid */}
-             <div className="grid md:grid-cols-3 gap-8">
-                {/* Value 1 */}
-                <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
-                   <div className="w-16 h-16 bg-brand/5 group-hover:bg-brand text-brand group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
-                     <i data-lucide="shield-check" className="w-8 h-8"></i>
-                   </div>
-                   <h3 className="text-2xl font-bold mb-4 text-brand">ETHIC Mind</h3>
-                   <div className="w-10 h-0.5 bg-accent mb-6 transition-all duration-300 group-hover:w-full"></div>
-                   <p className="text-gray-600 leading-relaxed font-light">
-                     {t.phil_val1_d}
-                   </p>
+              {/* Value 2 */}
+              <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                <div className="w-16 h-16 bg-brand/5 group-hover:bg-brand text-brand group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
+                  <i data-lucide="flask-conical" className="w-8 h-8"></i>
                 </div>
+                <h3 className="text-2xl font-bold mb-4 text-brand">Strong R&D</h3>
+                <div className="w-10 h-0.5 bg-accent mb-6 transition-all duration-300 group-hover:w-full"></div>
+                <p className="text-gray-600 leading-relaxed font-light">
+                  {t.phil_val2_d}
+                </p>
+              </div>
 
-                {/* Value 2 */}
-                <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
-                   <div className="w-16 h-16 bg-brand/5 group-hover:bg-brand text-brand group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
-                     <i data-lucide="flask-conical" className="w-8 h-8"></i>
-                   </div>
-                   <h3 className="text-2xl font-bold mb-4 text-brand">Strong R&D</h3>
-                   <div className="w-10 h-0.5 bg-accent mb-6 transition-all duration-300 group-hover:w-full"></div>
-                   <p className="text-gray-600 leading-relaxed font-light">
-                     {t.phil_val2_d}
-                   </p>
+              {/* Value 3 */}
+              <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                <div className="w-16 h-16 bg-brand/5 group-hover:bg-brand text-brand group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
+                  <i data-lucide="heart-handshake" className="w-8 h-8"></i>
                 </div>
-
-                {/* Value 3 */}
-                <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
-                   <div className="w-16 h-16 bg-brand/5 group-hover:bg-brand text-brand group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
-                     <i data-lucide="heart-handshake" className="w-8 h-8"></i>
-                   </div>
-                   <h3 className="text-2xl font-bold mb-4 text-brand">Satisfactory Service</h3>
-                   <div className="w-10 h-0.5 bg-accent mb-6 transition-all duration-300 group-hover:w-full"></div>
-                   <p className="text-gray-600 leading-relaxed font-light">
-                     {t.phil_val3_d}
-                   </p>
-                </div>
-             </div>
+                <h3 className="text-2xl font-bold mb-4 text-brand">Satisfactory Service</h3>
+                <div className="w-10 h-0.5 bg-accent mb-6 transition-all duration-300 group-hover:w-full"></div>
+                <p className="text-gray-600 leading-relaxed font-light">
+                  {t.phil_val3_d}
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       );
@@ -1146,43 +1161,43 @@
       return (
         <section id="주요연혁" className="bg-surface relative overflow-hidden pt-28">
           <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
-             <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; {t.menu_history}</p>
-             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
-                <i data-lucide="arrow-left" className="w-4 h-4"></i>
-                <span>{t.back}</span>
-             </button>
+            <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; {t.menu_history}</p>
+            <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+              <i data-lucide="arrow-left" className="w-4 h-4"></i>
+              <span>{t.back}</span>
+            </button>
           </div>
 
           <div className="py-20 max-w-5xl mx-auto px-6 mb-24 relative">
-             <div className="text-center mb-24 animate-fade-in-up">
-                <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Company History</h2>
-                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.menu_history}</h1>
-                <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
-                <p className="text-2xl text-gray-800 font-light leading-relaxed max-w-3xl mx-auto" dangerouslySetInnerHTML={{__html: t.hist_subtitle}}></p>
-             </div>
+            <div className="text-center mb-24 animate-fade-in-up">
+              <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Company History</h2>
+              <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.menu_history}</h1>
+              <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+              <p className="text-2xl text-gray-800 font-light leading-relaxed max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: t.hist_subtitle }}></p>
+            </div>
 
-             <div className="relative border-l border-gray-200 ml-4 md:ml-12">
-                {historyData.map((data, idx) => (
-                  <div key={idx} className="mb-20 pl-8 md:pl-16 relative">
-                     <div className="absolute top-0 -left-6 md:-left-8 w-12 h-12 md:w-16 md:h-16 bg-white border-4 border-brand rounded-full flex items-center justify-center shadow-lg z-10">
-                        <span className="text-brand font-bold text-lg md:text-xl">{data.year}</span>
-                     </div>
-                     <div className="pt-2 md:pt-4 space-y-8 animate-fade-in-up" style={{animationDelay: `${idx * 0.1}s`}}>
-                        {data.events.map((ev, i) => (
-                           <div key={i} className="flex flex-col md:flex-row group">
-                              <div className="text-accent font-bold w-full md:w-24 flex-shrink-0 text-xl md:text-2xl tracking-tighter mb-2 md:mb-0">
-                                {ev.period}
-                              </div>
-                              <div className="flex-1 text-gray-600 font-light text-[17px] leading-relaxed group-hover:text-brand transition-colors">
-                                {ev.desc}
-                              </div>
-                           </div>
-                        ))}
-                     </div>
+            <div className="relative border-l border-gray-200 ml-4 md:ml-12">
+              {historyData.map((data, idx) => (
+                <div key={idx} className="mb-20 pl-8 md:pl-16 relative">
+                  <div className="absolute top-0 -left-6 md:-left-8 w-12 h-12 md:w-16 md:h-16 bg-white border-4 border-brand rounded-full flex items-center justify-center shadow-lg z-10">
+                    <span className="text-brand font-bold text-lg md:text-xl">{data.year}</span>
                   </div>
-                ))}
-                <div className="absolute -bottom-4 -left-3 w-6 h-6 bg-gray-200 rounded-full border-4 border-white shadow-sm"></div>
-             </div>
+                  <div className="pt-2 md:pt-4 space-y-8 animate-fade-in-up" style={{ animationDelay: `${idx * 0.1}s` }}>
+                    {data.events.map((ev, i) => (
+                      <div key={i} className="flex flex-col md:flex-row group">
+                        <div className="text-accent font-bold w-full md:w-24 flex-shrink-0 text-xl md:text-2xl tracking-tighter mb-2 md:mb-0">
+                          {ev.period}
+                        </div>
+                        <div className="flex-1 text-gray-600 font-light text-[17px] leading-relaxed group-hover:text-brand transition-colors">
+                          {ev.desc}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+              <div className="absolute -bottom-4 -left-3 w-6 h-6 bg-gray-200 rounded-full border-4 border-white shadow-sm"></div>
+            </div>
           </div>
         </section>
       );
@@ -1194,80 +1209,80 @@
       return (
         <section id="조직도" className="bg-surface relative overflow-hidden pt-28">
           <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
-             <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; {t.menu_org}</p>
-             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
-                <i data-lucide="arrow-left" className="w-4 h-4"></i>
-                <span>{t.back}</span>
-             </button>
+            <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; {t.menu_org}</p>
+            <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+              <i data-lucide="arrow-left" className="w-4 h-4"></i>
+              <span>{t.back}</span>
+            </button>
           </div>
 
           <div className="py-20 max-w-6xl mx-auto px-6 mb-24 relative">
-             <div className="text-center mb-24 animate-fade-in-up">
-                <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Organization</h2>
-                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.menu_org}</h1>
-                <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
-                <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto" dangerouslySetInnerHTML={{__html: t.org_subtitle}}></p>
-             </div>
+            <div className="text-center mb-24 animate-fade-in-up">
+              <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Organization</h2>
+              <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.menu_org}</h1>
+              <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+              <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto" dangerouslySetInnerHTML={{ __html: t.org_subtitle }}></p>
+            </div>
 
-             <div className="max-w-[70rem] mx-auto flex flex-col items-center animate-fade-in-up">
-                <div className="flex flex-col items-center">
-                   <div className="bg-brand text-white text-lg md:text-xl font-bold px-12 py-5 rounded-xl shadow-lg border border-brand/20">
-                     {t.org_ceo}
-                   </div>
-                   <div className="w-1 h-10 bg-gray-300"></div>
-                   <div className="bg-white text-brand border-2 border-brand text-lg font-bold px-10 py-4 rounded-xl z-10 relative">
-                     {t.org_vceo}
-                   </div>
-                   <div className="w-1 h-12 bg-gray-300"></div>
+            <div className="max-w-[70rem] mx-auto flex flex-col items-center animate-fade-in-up">
+              <div className="flex flex-col items-center">
+                <div className="bg-brand text-white text-lg md:text-xl font-bold px-12 py-5 rounded-xl shadow-lg border border-brand/20">
+                  {t.org_ceo}
                 </div>
+                <div className="w-1 h-10 bg-gray-300"></div>
+                <div className="bg-white text-brand border-2 border-brand text-lg font-bold px-10 py-4 rounded-xl z-10 relative">
+                  {t.org_vceo}
+                </div>
+                <div className="w-1 h-12 bg-gray-300"></div>
+              </div>
 
-                <div className="relative w-full mt-0">
-                   <div className="absolute top-0 left-[10%] right-[10%] h-1 bg-gray-300 hidden lg:block rounded-full"></div>
-                   <div className="grid grid-cols-1 lg:grid-cols-5 pt-0 lg:pt-8 text-center gap-4 lg:gap-0">
-                      <div className="relative flex flex-col items-center group px-3">
-                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
-                         <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-5 rounded-xl font-bold text-gray-800 hover:border-accent transition-all z-10 relative">
-                            {t.org_rnd}
-                         </div>
-                      </div>
-                      <div className="relative flex flex-col items-center group px-3">
-                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
-                         <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-5 rounded-xl font-bold text-gray-800 hover:border-accent transition-all z-10 relative">
-                            {t.org_qc}
-                         </div>
-                      </div>
-                      <div className="relative flex flex-col items-center px-3">
-                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
-                         <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-5 rounded-xl font-bold text-gray-800 hover:border-accent transition-all z-10 relative">
-                            {t.org_ops}
-                         </div>
-                         <div className="w-full flex flex-col items-center mt-6 space-y-4 relative">
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-6 w-1 h-[calc(100%-20px)] bg-gray-300 hidden lg:block"></div>
-                            <div className="bg-white border-b-4 border-gray-100 shadow-sm w-full py-4 rounded-lg font-bold text-gray-700 z-10 relative">{t.org_mfg}</div>
-                            <div className="bg-white border-b-4 border-gray-100 shadow-sm w-full py-4 rounded-lg font-bold text-gray-700 z-10 relative">{t.org_prod}</div>
-                            <div className="bg-white border-b-4 border-gray-100 shadow-sm w-full py-4 rounded-lg font-bold text-gray-700 z-10 relative">{t.org_logistics}</div>
-                         </div>
-                      </div>
-                      <div className="relative flex flex-col items-center px-3">
-                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
-                         <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-5 rounded-xl font-bold text-gray-800 hover:border-accent transition-all z-10 relative">
-                            {t.org_admin}
-                         </div>
-                         <div className="w-full flex flex-col items-center mt-6 space-y-4 relative">
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-6 w-1 h-[calc(100%-20px)] bg-gray-300 hidden lg:block"></div>
-                            <div className="bg-white border-b-4 border-gray-100 shadow-sm w-full py-4 rounded-lg font-bold text-gray-700 z-10 relative">{t.org_acc}</div>
-                            <div className="bg-white border-b-4 border-gray-100 shadow-sm w-full py-4 rounded-lg font-bold text-gray-700 z-10 relative">{t.org_clean}</div>
-                         </div>
-                      </div>
-                      <div className="relative flex flex-col items-center group px-3">
-                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
-                         <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-5 rounded-xl font-bold text-gray-800 hover:border-accent transition-all z-10 relative">
-                            {t.org_design}
-                         </div>
-                      </div>
-                   </div>
+              <div className="relative w-full mt-0">
+                <div className="absolute top-0 left-[10%] right-[10%] h-1 bg-gray-300 hidden lg:block rounded-full"></div>
+                <div className="grid grid-cols-1 lg:grid-cols-5 pt-0 lg:pt-8 text-center gap-4 lg:gap-0">
+                  <div className="relative flex flex-col items-center group px-3">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
+                    <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-5 rounded-xl font-bold text-gray-800 hover:border-accent transition-all z-10 relative">
+                      {t.org_rnd}
+                    </div>
+                  </div>
+                  <div className="relative flex flex-col items-center group px-3">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
+                    <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-5 rounded-xl font-bold text-gray-800 hover:border-accent transition-all z-10 relative">
+                      {t.org_qc}
+                    </div>
+                  </div>
+                  <div className="relative flex flex-col items-center px-3">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
+                    <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-5 rounded-xl font-bold text-gray-800 hover:border-accent transition-all z-10 relative">
+                      {t.org_ops}
+                    </div>
+                    <div className="w-full flex flex-col items-center mt-6 space-y-4 relative">
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-6 w-1 h-[calc(100%-20px)] bg-gray-300 hidden lg:block"></div>
+                      <div className="bg-white border-b-4 border-gray-100 shadow-sm w-full py-4 rounded-lg font-bold text-gray-700 z-10 relative">{t.org_mfg}</div>
+                      <div className="bg-white border-b-4 border-gray-100 shadow-sm w-full py-4 rounded-lg font-bold text-gray-700 z-10 relative">{t.org_prod}</div>
+                      <div className="bg-white border-b-4 border-gray-100 shadow-sm w-full py-4 rounded-lg font-bold text-gray-700 z-10 relative">{t.org_logistics}</div>
+                    </div>
+                  </div>
+                  <div className="relative flex flex-col items-center px-3">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
+                    <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-5 rounded-xl font-bold text-gray-800 hover:border-accent transition-all z-10 relative">
+                      {t.org_admin}
+                    </div>
+                    <div className="w-full flex flex-col items-center mt-6 space-y-4 relative">
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-6 w-1 h-[calc(100%-20px)] bg-gray-300 hidden lg:block"></div>
+                      <div className="bg-white border-b-4 border-gray-100 shadow-sm w-full py-4 rounded-lg font-bold text-gray-700 z-10 relative">{t.org_acc}</div>
+                      <div className="bg-white border-b-4 border-gray-100 shadow-sm w-full py-4 rounded-lg font-bold text-gray-700 z-10 relative">{t.org_clean}</div>
+                    </div>
+                  </div>
+                  <div className="relative flex flex-col items-center group px-3">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
+                    <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-5 rounded-xl font-bold text-gray-800 hover:border-accent transition-all z-10 relative">
+                      {t.org_design}
+                    </div>
+                  </div>
                 </div>
-             </div>
+              </div>
+            </div>
           </div>
         </section>
       );
@@ -1277,53 +1292,53 @@
       const { lang, setView } = useContext(AppContext);
       const t = translations[lang];
       const overviewData = [
-          { icon: "building", label: t.ov_name, value: t.ov_val_name },
-          { icon: "user", label: t.ov_ceo_l, value: t.ov_val_ceo },
-          { icon: "wallet", label: t.ov_capital, value: t.ov_val_cap },
-          { icon: "briefcase", label: t.ov_cat, value: "OEM, ODM Cosmetic Manufacturing" },
-          { icon: "globe-2", label: t.ov_clients, value: t.ov_val_cli },
-          { icon: "users", label: t.ov_staff, value: t.ov_val_staff },
-          { icon: "factory", label: t.ov_capa, value: t.ov_val_capa, full: true },
-          { icon: "map-pin", label: t.ov_addr, value: t.ov_main_addr, full: true },
-          { icon: "phone", label: t.ov_support, value: "T. +82-31-990-4120 / F. +82-31-991-4130" },
-          { icon: "mail", label: "Email", value: "ezekielcos@daum.net" },
-          { icon: "monitor", label: "Website", value: `http://ezekielcos.com/ ${t.maintenance}` }
+        { icon: "building", label: t.ov_name, value: t.ov_val_name },
+        { icon: "user", label: t.ov_ceo_l, value: t.ov_val_ceo },
+        { icon: "wallet", label: t.ov_capital, value: t.ov_val_cap },
+        { icon: "briefcase", label: t.ov_cat, value: "OEM, ODM Cosmetic Manufacturing" },
+        { icon: "globe-2", label: t.ov_clients, value: t.ov_val_cli },
+        { icon: "users", label: t.ov_staff, value: t.ov_val_staff },
+        { icon: "factory", label: t.ov_capa, value: t.ov_val_capa, full: true },
+        { icon: "map-pin", label: t.ov_addr, value: t.ov_main_addr, full: true },
+        { icon: "phone", label: t.ov_support, value: "T. +82-31-990-4120 / F. +82-31-991-4130" },
+        { icon: "mail", label: "Email", value: "ezekielcos@daum.net" },
+        { icon: "monitor", label: "Website", value: `http://ezekielcos.com/ ${t.maintenance}` }
       ];
       return (
         <section id="회사개요" className="bg-surface relative overflow-hidden pt-28 pb-32">
           <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
-             <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; {t.menu_overview}</p>
-             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
-                <i data-lucide="arrow-left" className="w-4 h-4"></i>
-                <span>{t.back}</span>
-             </button>
+            <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; {t.menu_overview}</p>
+            <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+              <i data-lucide="arrow-left" className="w-4 h-4"></i>
+              <span>{t.back}</span>
+            </button>
           </div>
 
           <div className="max-w-6xl mx-auto px-6 mt-16 relative">
-             <div className="text-center mb-20 animate-fade-in-up">
-                <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Overview</h2>
-                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.menu_overview}</h1>
-                <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
-                <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep" dangerouslySetInnerHTML={{__html: t.ov_subtitle}}></p>
-             </div>
+            <div className="text-center mb-20 animate-fade-in-up">
+              <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Overview</h2>
+              <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.menu_overview}</h1>
+              <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+              <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep" dangerouslySetInnerHTML={{ __html: t.ov_subtitle }}></p>
+            </div>
 
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 animate-fade-in-up">
-                {overviewData.map((item, idx) => (
-                    <div key={idx} className={`bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group ${item.full ? 'md:col-span-2 lg:col-span-3' : ''}`}>
-                        <div className="flex items-start space-x-6">
-                            <div className="w-14 h-14 rounded-xl bg-gray-50 flex items-center justify-center shrink-0 group-hover:bg-brand transition-colors">
-                                <i data-lucide={item.icon} className="w-6 h-6 text-brand group-hover:text-white transition-colors"></i>
-                            </div>
-                            <div className="flex flex-col flex-1 justify-center min-h-[56px]">
-                                <span className="text-sm font-medium text-gray-400 mb-1 tracking-wider">{item.label}</span>
-                                <span className="text-lg font-bold text-gray-800 break-keep leading-snug">{item.value}</span>
-                            </div>
-                        </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 animate-fade-in-up">
+              {overviewData.map((item, idx) => (
+                <div key={idx} className={`bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group ${item.full ? 'md:col-span-2 lg:col-span-3' : ''}`}>
+                  <div className="flex items-start space-x-6">
+                    <div className="w-14 h-14 rounded-xl bg-gray-50 flex items-center justify-center shrink-0 group-hover:bg-brand transition-colors">
+                      <i data-lucide={item.icon} className="w-6 h-6 text-brand group-hover:text-white transition-colors"></i>
                     </div>
-                ))}
-             </div>
+                    <div className="flex flex-col flex-1 justify-center min-h-[56px]">
+                      <span className="text-sm font-medium text-gray-400 mb-1 tracking-wider">{item.label}</span>
+                      <span className="text-lg font-bold text-gray-800 break-keep leading-snug">{item.value}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-         </section>
+        </section>
       );
     };
 
@@ -1336,7 +1351,7 @@
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
-        
+
         try {
           const response = await fetch("https://formspree.io/f/xgonnvep", {
             method: "POST",
@@ -1345,7 +1360,7 @@
               'Accept': 'application/json'
             }
           });
-          
+
           if (response.ok) {
             alert(lang === 'KOR' ? "문의가 성공적으로 접수되었습니다. 곧 연락드리겠습니다." : "Message sent successfully. We will contact you soon.");
             form.reset();
@@ -1357,49 +1372,49 @@
         }
       };
       return (
-      <section className="py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20">
-          <div id="홍보센터">
-            <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.company}</h3>
-            <h2 className="text-4xl font-bold mb-10">{t.menu_history}</h2>
-            <div className="space-y-6">
-              {historyData.slice(0, 4).map((data, i) => (
-                <div key={i} className="flex justify-between items-center border-b border-gray-100 pb-6 group cursor-pointer hover:border-black transition-colors" onClick={() => setView('history')}>
-                  <div className="flex-1">
-                    <div className="text-sm text-accent mb-2">{data.year}</div>
-                    <h4 className="text-lg font-medium group-hover:text-brand text-gray-700 transition-colors line-clamp-1">{data.events[0].desc}</h4>
+        <section className="py-32 bg-white">
+          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20">
+            <div id="홍보센터">
+              <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.company}</h3>
+              <h2 className="text-4xl font-bold mb-10">{t.menu_history}</h2>
+              <div className="space-y-6">
+                {historyData.slice(0, 4).map((data, i) => (
+                  <div key={i} className="flex justify-between items-center border-b border-gray-100 pb-6 group cursor-pointer hover:border-black transition-colors" onClick={() => setView('history')}>
+                    <div className="flex-1">
+                      <div className="text-sm text-accent mb-2">{data.year}</div>
+                      <h4 className="text-lg font-medium group-hover:text-brand text-gray-700 transition-colors line-clamp-1">{data.events[0].desc}</h4>
+                    </div>
+                    <i data-lucide="arrow-up-right" className="text-gray-300 group-hover:text-brand transition-colors w-5 h-5 ml-4"></i>
                   </div>
-                  <i data-lucide="arrow-up-right" className="text-gray-300 group-hover:text-brand transition-colors w-5 h-5 ml-4"></i>
-                </div>
-              ))}
-            </div>
-            <div className="mt-8">
+                ))}
+              </div>
+              <div className="mt-8">
                 <button onClick={() => setView('history')} className="text-sm font-medium tracking-widest uppercase border-b border-black pb-1 hover:text-accent hover:border-accent transition-colors">View All History</button>
+              </div>
+            </div>
+
+            <div id="문의하기" className="bg-surface p-10 md:p-14 rounded-3xl shadow-sm border border-gray-50">
+              <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.contact}</h3>
+              <h2 className="text-3xl font-bold mb-8">{t.contact_title}</h2>
+              <form className="space-y-5" onSubmit={handleMailSubmit}>
+                <input type="hidden" name="_to" value="ezekielcos@daum.net" />
+                <div>
+                  <input name="name" type="text" placeholder={t.contact_ph1} required className="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all text-sm" />
+                </div>
+                <div>
+                  <input name="email" type="email" placeholder={t.contact_ph2} required className="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all text-sm" />
+                </div>
+                <div>
+                  <textarea name="content" rows="4" placeholder={t.contact_ph3} required className="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all resize-none text-sm"></textarea>
+                </div>
+                <button type="submit" className="w-full bg-brand text-white py-5 font-medium tracking-widest uppercase text-sm hover:bg-black/90 transition-colors rounded-lg flex justify-center items-center space-x-2 group">
+                  <span>{lang === 'KOR' ? "문의하기" : "Send Inquiry"}</span>
+                  <i data-lucide="arrow-right" className="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </button>
+              </form>
             </div>
           </div>
-
-          <div id="문의하기" className="bg-surface p-10 md:p-14 rounded-3xl shadow-sm border border-gray-50">
-            <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.contact}</h3>
-            <h2 className="text-3xl font-bold mb-8">{t.contact_title}</h2>
-            <form className="space-y-5" onSubmit={handleMailSubmit}>
-              <input type="hidden" name="_to" value="ezekielcos@daum.net" />
-              <div>
-                <input name="name" type="text" placeholder={t.contact_ph1} required className="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all text-sm" />
-              </div>
-              <div>
-                <input name="email" type="email" placeholder={t.contact_ph2} required className="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all text-sm" />
-              </div>
-              <div>
-                <textarea name="content" rows="4" placeholder={t.contact_ph3} required className="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all resize-none text-sm"></textarea>
-              </div>
-              <button type="submit" className="w-full bg-brand text-white py-5 font-medium tracking-widest uppercase text-sm hover:bg-black/90 transition-colors rounded-lg flex justify-center items-center space-x-2 group">
-                <span>{lang === 'KOR' ? "문의하기" : "Send Inquiry"}</span>
-                <i data-lucide="arrow-right" className="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
+        </section>
       );
     };
 
@@ -1420,60 +1435,60 @@
         }
       };
       return (
-      <footer className="bg-brand text-white/50 py-20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
-          <div className="col-span-1 md:col-span-2">
-            <div className="mb-6 flex space-x-4">
-               <img src="./logo-white.png" alt="Company Logo" className="h-12 w-auto object-contain" />
+        <footer className="bg-brand text-white/50 py-20 border-t border-white/10">
+          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
+            <div className="col-span-1 md:col-span-2">
+              <div className="mb-6 flex space-x-4">
+                <img src="./logo-white.png" alt="Company Logo" className="h-12 w-auto object-contain" />
+              </div>
+              <p className="text-sm leading-relaxed max-w-sm mb-8 text-white/60" dangerouslySetInnerHTML={{ __html: t.footer_desc }}>
+              </p>
+              <div className="flex space-x-4">
+                <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand transition-all">
+                  <i data-lucide="instagram" className="w-4 h-4"></i>
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand transition-all">
+                  <i data-lucide="linkedin" className="w-4 h-4"></i>
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand transition-all">
+                  <i data-lucide="youtube" className="w-4 h-4"></i>
+                </a>
+              </div>
             </div>
-            <p className="text-sm leading-relaxed max-w-sm mb-8 text-white/60" dangerouslySetInnerHTML={{__html: t.footer_desc}}>
-            </p>
-            <div className="flex space-x-4">
-               <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand transition-all">
-                 <i data-lucide="instagram" className="w-4 h-4"></i>
-               </a>
-               <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand transition-all">
-                 <i data-lucide="linkedin" className="w-4 h-4"></i>
-               </a>
-               <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand transition-all">
-                 <i data-lucide="youtube" className="w-4 h-4"></i>
-               </a>
+            <div>
+              <h4 className="text-white font-medium mb-6 uppercase tracking-widest text-sm">{t.footer_q}</h4>
+              <ul className="space-y-4 text-sm text-white/60">
+                <li><a href="#회사소개" className="hover:text-accent hover:translate-x-1 inline-block transition-all" onClick={(e) => { e.preventDefault(); handleNavAction('home', '회사소개'); }}>{t.company}</a></li>
+                <li><a href="#사업소개" className="hover:text-accent hover:translate-x-1 inline-block transition-all" onClick={(e) => { e.preventDefault(); handleNavAction('home', '사업소개'); }}>{t.business}</a></li>
+                <li><a href="#R&D" className="hover:text-accent hover:translate-x-1 inline-block transition-all" onClick={(e) => { e.preventDefault(); handleNavAction('home', 'R&D'); }}>{t.rnd}</a></li>
+                <li><a href="#오시는 길" className="hover:text-accent hover:translate-x-1 inline-block transition-all" onClick={(e) => { e.preventDefault(); handleNavAction('directions'); }}>{t.menu_directions}</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-medium mb-6 uppercase tracking-widest text-sm">{t.footer_c}</h4>
+              <ul className="space-y-4 text-sm text-white/60">
+                <li className="flex items-start space-x-3"><i data-lucide="phone" className="w-4 h-4 mt-0.5 opacity-70"></i><span>{t.tel} 031.990.4120</span></li>
+                <li className="flex items-start space-x-3"><i data-lucide="printer" className="w-4 h-4 mt-0.5 opacity-70"></i><span>{t.fax} 031.991.4130</span></li>
+                <li className="flex items-start space-x-3"><i data-lucide="mail" className="w-4 h-4 mt-0.5 opacity-70"></i><span>ezekielcos@daum.net</span></li>
+                <li className="flex items-start space-x-3 pt-2">
+                  <i data-lucide="map-pin" className="w-4 h-4 mt-0.5 opacity-70 flex-shrink-0"></i>
+                  <span className="leading-relaxed" dangerouslySetInnerHTML={{ __html: t.footer_a }}></span>
+                </li>
+              </ul>
             </div>
           </div>
-          <div>
-            <h4 className="text-white font-medium mb-6 uppercase tracking-widest text-sm">{t.footer_q}</h4>
-            <ul className="space-y-4 text-sm text-white/60">
-              <li><a href="#회사소개" className="hover:text-accent hover:translate-x-1 inline-block transition-all" onClick={(e) => { e.preventDefault(); handleNavAction('home', '회사소개'); }}>{t.company}</a></li>
-              <li><a href="#사업소개" className="hover:text-accent hover:translate-x-1 inline-block transition-all" onClick={(e) => { e.preventDefault(); handleNavAction('home', '사업소개'); }}>{t.business}</a></li>
-              <li><a href="#R&D" className="hover:text-accent hover:translate-x-1 inline-block transition-all" onClick={(e) => { e.preventDefault(); handleNavAction('home', 'R&D'); }}>{t.rnd}</a></li>
-              <li><a href="#오시는 길" className="hover:text-accent hover:translate-x-1 inline-block transition-all" onClick={(e) => { e.preventDefault(); handleNavAction('directions'); }}>{t.menu_directions}</a></li>
-            </ul>
+          <div className="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-white/10 text-xs flex flex-col md:flex-row justify-between items-center text-white/40">
+            <div>&copy; 2026 EZEKIEL Cosmetics Co., Ltd. All rights reserved.</div>
+            <div className="mt-4 md:mt-0 flex space-x-6">
+              <a href="#" className="hover:text-white transition-colors">{t.footer_p1}</a>
+              <a href="#" className="hover:text-white transition-colors">{t.footer_p2}</a>
+              <a href="#" className="hover:text-white transition-colors">{t.footer_p3}</a>
+            </div>
           </div>
-          <div>
-            <h4 className="text-white font-medium mb-6 uppercase tracking-widest text-sm">{t.footer_c}</h4>
-            <ul className="space-y-4 text-sm text-white/60">
-              <li className="flex items-start space-x-3"><i data-lucide="phone" className="w-4 h-4 mt-0.5 opacity-70"></i><span>{t.tel} 031.990.4120</span></li>
-              <li className="flex items-start space-x-3"><i data-lucide="printer" className="w-4 h-4 mt-0.5 opacity-70"></i><span>{t.fax} 031.991.4130</span></li>
-              <li className="flex items-start space-x-3"><i data-lucide="mail" className="w-4 h-4 mt-0.5 opacity-70"></i><span>ezekielcos@daum.net</span></li>
-              <li className="flex items-start space-x-3 pt-2">
-                <i data-lucide="map-pin" className="w-4 h-4 mt-0.5 opacity-70 flex-shrink-0"></i>
-                <span className="leading-relaxed" dangerouslySetInnerHTML={{__html: t.footer_a}}></span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-white/10 text-xs flex flex-col md:flex-row justify-between items-center text-white/40">
-          <div>&copy; 2026 EZEKIEL Cosmetics Co., Ltd. All rights reserved.</div>
-          <div className="mt-4 md:mt-0 flex space-x-6">
-            <a href="#" className="hover:text-white transition-colors">{t.footer_p1}</a>
-            <a href="#" className="hover:text-white transition-colors">{t.footer_p2}</a>
-            <a href="#" className="hover:text-white transition-colors">{t.footer_p3}</a>
-          </div>
-        </div>
-      </footer>
+        </footer>
       );
     };
-    
+
     const SectionProcess = () => {
       const { lang, setView } = useContext(AppContext);
       const t = translations[lang];
@@ -1487,170 +1502,170 @@
       return (
         <section id="화장품개발프로세스" className="bg-surface relative overflow-hidden pt-28 pb-32 min-h-screen">
           <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
-             <p className="text-gray-400 text-sm font-light">Home &gt; Business &gt; {t.menu_process}</p>
-             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
-                <i data-lucide="arrow-left" className="w-4 h-4"></i>
-                <span>{t.back}</span>
-             </button>
+            <p className="text-gray-400 text-sm font-light">Home &gt; Business &gt; {t.menu_process}</p>
+            <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+              <i data-lucide="arrow-left" className="w-4 h-4"></i>
+              <span>{t.back}</span>
+            </button>
           </div>
 
           <div className="max-w-5xl mx-auto px-4 sm:px-6 mt-16 relative flex flex-col items-center">
-             <div className="text-center mb-20 animate-fade-in-up w-full">
-                <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Development Process</h2>
-                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.menu_process}</h1>
-                <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
-                <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep pt-4">에스겔코스메틱만의 체계적이고 혁신적인 토탈 뷰티 솔루션 개발 과정을 안내합니다.</p>
-             </div>
+            <div className="text-center mb-20 animate-fade-in-up w-full">
+              <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Development Process</h2>
+              <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.menu_process}</h1>
+              <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+              <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep pt-4">에스겔코스메틱만의 체계적이고 혁신적인 토탈 뷰티 솔루션 개발 과정을 안내합니다.</p>
+            </div>
 
-             {/* Timeline Container */}
-             <div className="relative w-full max-w-4xl mx-auto animate-fade-in-up pb-10" style={{animationDelay: '0.2s'}}>
-                {/* Vertical Line */}
-                <div className="absolute left-6 lg:left-12 top-0 bottom-0 w-1 bg-gray-200 rounded-full"></div>
+            {/* Timeline Container */}
+            <div className="relative w-full max-w-4xl mx-auto animate-fade-in-up pb-10" style={{ animationDelay: '0.2s' }}>
+              {/* Vertical Line */}
+              <div className="absolute left-6 lg:left-12 top-0 bottom-0 w-1 bg-gray-200 rounded-full"></div>
 
-                <div className="space-y-12 lg:space-y-16 pl-20 lg:pl-32">
-                  {/* Step 1 */}
-                  <div className="relative group w-full text-left flex flex-col items-start block">
-                    <div className="absolute -left-14 lg:-left-20 top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-accent text-white font-bold text-2xl flex items-center justify-center border-4 border-surface shadow-md z-10 shrink-0">01</div>
-                    <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:border-accent transition-all duration-300 group-hover:-translate-y-1 w-full">
-                      <div className="w-12 h-12 bg-surface text-accent rounded-xl flex items-center justify-center mb-6">
-                         <i data-lucide="users" className="w-6 h-6"></i>
-                      </div>
-                      <h3 className="text-2xl font-bold text-brand mb-3">고객 상담 및 기획</h3>
-                      <p className="text-gray-500 font-light leading-relaxed">브랜드 아이덴티티 논의 및 제품 개발 방향성 설정</p>
+              <div className="space-y-12 lg:space-y-16 pl-20 lg:pl-32">
+                {/* Step 1 */}
+                <div className="relative group w-full text-left flex flex-col items-start block">
+                  <div className="absolute -left-14 lg:-left-20 top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-accent text-white font-bold text-2xl flex items-center justify-center border-4 border-surface shadow-md z-10 shrink-0">01</div>
+                  <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:border-accent transition-all duration-300 group-hover:-translate-y-1 w-full">
+                    <div className="w-12 h-12 bg-surface text-accent rounded-xl flex items-center justify-center mb-6">
+                      <i data-lucide="users" className="w-6 h-6"></i>
                     </div>
+                    <h3 className="text-2xl font-bold text-brand mb-3">고객 상담 및 기획</h3>
+                    <p className="text-gray-500 font-light leading-relaxed">브랜드 아이덴티티 논의 및 제품 개발 방향성 설정</p>
                   </div>
-
-                  {/* Step 2 */}
-                  <div className="relative group w-full text-left flex flex-col items-start block">
-                    <div className="absolute -left-14 lg:-left-20 top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-accent text-white font-bold text-2xl flex items-center justify-center border-4 border-surface shadow-md z-10 shrink-0">02</div>
-                    <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:border-accent transition-all duration-300 group-hover:-translate-y-1 w-full">
-                      <div className="w-12 h-12 bg-surface text-accent rounded-xl flex items-center justify-center mb-6">
-                         <i data-lucide="briefcase" className="w-6 h-6"></i>
-                      </div>
-                      <h3 className="text-2xl font-bold text-brand mb-6">경영지원 및 각 부서 제안</h3>
-                      <div className="flex flex-col space-y-4 text-gray-700 font-light bg-surface p-6 rounded-2xl">
-                         <div><strong className="text-brand font-medium">마케팅:</strong> 제품 동향, 시장정보, 신제품 P/T</div>
-                         <div className="border-t border-gray-200 h-0 w-full my-1"></div>
-                         <div><strong className="text-brand font-medium">자재개발:</strong> 브랜드별 맞춤 부자재 개발 제안</div>
-                         <div className="border-t border-gray-200 h-0 w-full my-1"></div>
-                         <div><strong className="text-brand font-medium">연구소:</strong> 핵심 기술 기반 내용물 개발 및 방향 제안</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Step 3 */}
-                  <div className="relative group w-full text-left flex flex-col items-start block">
-                    <div className="absolute -left-14 lg:-left-20 top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-accent text-white font-bold text-2xl flex items-center justify-center border-4 border-surface shadow-md z-10 shrink-0">03</div>
-                    <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:border-accent transition-all duration-300 group-hover:-translate-y-1 w-full">
-                      <div className="w-12 h-12 bg-surface text-accent rounded-xl flex items-center justify-center mb-6">
-                         <i data-lucide="flask-conical" className="w-6 h-6"></i>
-                      </div>
-                      <h3 className="text-2xl font-bold text-brand mb-4">개발 의뢰 및 샘플 제조</h3>
-                      <p className="text-gray-500 font-light leading-relaxed mb-6 border-b border-gray-100 pb-6 w-full pr-4">연구소 내부 신제품 개발 착수 및 1차 타겟 샘플 제조</p>
-                      
-                      <div className="pt-2 flex flex-col items-start w-full">
-                        <h4 className="font-bold text-lg text-brand mb-2 flex items-center"><i data-lucide="check-circle-2" className="w-5 h-5 mr-3 text-accent inline-block"></i> 품평 및 처방 확정</h4>
-                        <p className="text-md text-gray-500 font-light leading-relaxed pl-8 pr-4">클라이언트 내부 테스트 진행 후 최종 처방전을 확정하고 <strong className="text-brand font-medium">견적 및 계약서 산출</strong>을 진행합니다.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Step 4 */}
-                  <div className="relative group w-full text-left flex flex-col items-start block">
-                    <div className="absolute -left-14 lg:-left-20 top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-accent text-white font-bold text-2xl flex items-center justify-center border-4 border-surface shadow-md z-10 shrink-0">04</div>
-                    <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:border-accent transition-all duration-300 group-hover:-translate-y-1 w-full flex flex-col items-start">
-                      <div className="w-12 h-12 bg-surface text-accent rounded-xl flex items-center justify-center mb-6">
-                         <i data-lucide="file-signature" className="w-6 h-6"></i>
-                      </div>
-                      <h3 className="text-2xl font-bold text-brand mb-6">발주서 접수 및 부문별 병렬 진행 프로세스</h3>
-
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full relative z-20 border-t border-gray-100 pt-8 mt-2">
-                          <div className="bg-surface/50 p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 hover:border-accent transition-colors hover:shadow-md">
-                             <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-6 font-bold text-lg">A</div>
-                             <h4 className="font-bold text-xl text-brand mb-3 border-b border-gray-200 pb-3">계약 진행</h4>
-                             <p className="text-gray-600 font-light text-md leading-relaxed">계약금 이체 확인 및 제반 행정 처리 완료</p>
-                          </div>
-                          
-                          <div className="bg-surface/50 p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 hover:border-accent transition-colors hover:shadow-md">
-                             <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-6 font-bold text-lg">B</div>
-                             <h4 className="font-bold text-xl text-brand mb-3 border-b border-gray-200 pb-3">원료 부문</h4>
-                             <div className="flex flex-col space-y-3 mt-5">
-                                <span className="text-sm font-medium bg-white px-4 py-3 rounded-xl border border-gray-100 text-center text-gray-700 shadow-sm">원료 발주</span>
-                                <i data-lucide="arrow-down" className="w-4 h-4 mx-auto text-accent"></i>
-                                <span className="text-sm font-medium bg-white px-4 py-3 rounded-xl border border-gray-100 text-center text-gray-700 shadow-sm">입고 및 원료 Q.C</span>
-                             </div>
-                          </div>
-                          
-                          <div className="bg-surface/50 p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 hover:border-accent transition-colors hover:shadow-md">
-                             <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-6 font-bold text-lg">C</div>
-                             <h4 className="font-bold text-xl text-brand mb-3 border-b border-gray-200 pb-3">부자재 부문</h4>
-                             <p className="text-[13px] text-accent font-medium mb-4 leading-relaxed tracking-wide">
-                                개발 &gt; CT테스트 &gt; 디자인 확정 &gt; 문안확인
-                             </p>
-                             <div className="flex flex-col space-y-3">
-                                <span className="text-sm font-medium bg-white px-4 py-3 rounded-xl border border-gray-100 text-center text-gray-700 shadow-sm">발주 (한도설정 및 생산)</span>
-                                <i data-lucide="arrow-down" className="w-4 h-4 mx-auto text-accent"></i>
-                                <span className="text-sm font-medium bg-white px-4 py-3 rounded-xl border border-gray-100 text-center text-gray-700 shadow-sm">입고 및 부자재 Q.C</span>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                  </div>
-
-                  {/* Step 5 */}
-                  <div className="relative group w-full text-left flex flex-col items-start block">
-                    <div className="absolute -left-14 lg:-left-20 top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-accent text-white font-bold text-2xl flex items-center justify-center border-4 border-surface shadow-md z-10 shrink-0">05</div>
-                    <div className="bg-white p-8 md:p-12 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:border-accent transition-all duration-300 group-hover:-translate-y-1 w-full flex flex-col">
-                      <div className="w-14 h-14 bg-surface text-accent rounded-2xl flex items-center justify-center mb-8">
-                         <i data-lucide="star" className="w-7 h-7"></i>
-                      </div>
-                      <h3 className="text-3xl font-extrabold text-brand mb-8 pb-6 border-b border-gray-100">최종 생산 및 납품</h3>
-                      
-                      <div className="space-y-4 relative w-full text-left">
-                         <div className="flex items-start md:items-center space-y-2 md:space-y-0 space-x-0 md:space-x-5 flex-col md:flex-row bg-surface p-4 rounded-xl">
-                            <i data-lucide="test-tube-2" className="w-6 h-6 text-accent shrink-0 hidden md:block"></i>
-                            <div className="flex flex-col">
-                               <p className="text-gray-800 text-lg"><strong className="text-brand font-bold">파일럿 테스트</strong></p>
-                               <span className="text-gray-500 text-sm mt-1">원료 및 부자재 Q.C 완벽 통과 후 본 생산 전 최종 조율</span>
-                            </div>
-                         </div>
-                         
-                         <div className="pl-12 h-6 border-l-2 border-dashed border-gray-300 ml-3 md:ml-2 my-1 hidden md:block"></div>
-                         
-                         <div className="flex items-start md:items-center space-y-2 md:space-y-0 space-x-0 md:space-x-5 flex-col md:flex-row bg-surface p-4 rounded-xl">
-                            <i data-lucide="factory" className="w-6 h-6 text-accent shrink-0 hidden md:block"></i>
-                            <div className="flex flex-col">
-                               <p className="text-gray-800 text-lg"><strong className="text-brand font-bold">본 생산 진행</strong></p>
-                               <span className="text-brand font-medium text-sm bg-white border border-gray-200 px-3 py-1 rounded-full w-max mt-2">설비점검 &gt; 내용물 제조 &gt; 용기 포장</span>
-                            </div>
-                         </div>
-                         
-                         <div className="pl-12 h-6 border-l-2 border-dashed border-gray-300 ml-3 md:ml-2 my-1 hidden md:block"></div>
-                         
-                         <div className="flex items-start md:items-center space-y-2 md:space-y-0 space-x-0 md:space-x-5 flex-col md:flex-row bg-surface p-4 rounded-xl">
-                            <i data-lucide="search-check" className="w-6 h-6 text-accent shrink-0 hidden md:block"></i>
-                            <div>
-                               <p className="text-gray-800 text-lg"><strong className="text-brand font-bold">최종 Q.C (품질 관리)</strong></p>
-                               <p className="text-sm text-gray-500 mt-1">완성된 제품에 대한 미생물, 물성, 외관 등 최종 퀄리티 체크</p>
-                            </div>
-                         </div>
-                         
-                         <div className="pl-12 h-6 border-l-2 border-dashed border-gray-300 ml-3 md:ml-2 my-1 hidden md:block"></div>
-                         
-                         <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 space-x-0 md:space-x-4 bg-accent/10 border border-accent/30 p-5 md:p-6 rounded-2xl w-full text-brand shadow-sm mt-4">
-                            <i data-lucide="truck" className="w-8 h-8 text-accent shrink-0 hidden md:block"></i>
-                            <div>
-                               <p className="text-xl md:text-2xl font-extrabold tracking-wide w-full"><strong className="text-brand">최종 제품 출하 및 납품</strong></p>
-                            </div>
-                         </div>
-                      </div>
-                    </div>
-                  </div>
-
                 </div>
-             </div>
+
+                {/* Step 2 */}
+                <div className="relative group w-full text-left flex flex-col items-start block">
+                  <div className="absolute -left-14 lg:-left-20 top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-accent text-white font-bold text-2xl flex items-center justify-center border-4 border-surface shadow-md z-10 shrink-0">02</div>
+                  <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:border-accent transition-all duration-300 group-hover:-translate-y-1 w-full">
+                    <div className="w-12 h-12 bg-surface text-accent rounded-xl flex items-center justify-center mb-6">
+                      <i data-lucide="briefcase" className="w-6 h-6"></i>
+                    </div>
+                    <h3 className="text-2xl font-bold text-brand mb-6">경영지원 및 각 부서 제안</h3>
+                    <div className="flex flex-col space-y-4 text-gray-700 font-light bg-surface p-6 rounded-2xl">
+                      <div><strong className="text-brand font-medium">마케팅:</strong> 제품 동향, 시장정보, 신제품 P/T</div>
+                      <div className="border-t border-gray-200 h-0 w-full my-1"></div>
+                      <div><strong className="text-brand font-medium">자재개발:</strong> 브랜드별 맞춤 부자재 개발 제안</div>
+                      <div className="border-t border-gray-200 h-0 w-full my-1"></div>
+                      <div><strong className="text-brand font-medium">연구소:</strong> 핵심 기술 기반 내용물 개발 및 방향 제안</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Step 3 */}
+                <div className="relative group w-full text-left flex flex-col items-start block">
+                  <div className="absolute -left-14 lg:-left-20 top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-accent text-white font-bold text-2xl flex items-center justify-center border-4 border-surface shadow-md z-10 shrink-0">03</div>
+                  <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:border-accent transition-all duration-300 group-hover:-translate-y-1 w-full">
+                    <div className="w-12 h-12 bg-surface text-accent rounded-xl flex items-center justify-center mb-6">
+                      <i data-lucide="flask-conical" className="w-6 h-6"></i>
+                    </div>
+                    <h3 className="text-2xl font-bold text-brand mb-4">개발 의뢰 및 샘플 제조</h3>
+                    <p className="text-gray-500 font-light leading-relaxed mb-6 border-b border-gray-100 pb-6 w-full pr-4">연구소 내부 신제품 개발 착수 및 1차 타겟 샘플 제조</p>
+
+                    <div className="pt-2 flex flex-col items-start w-full">
+                      <h4 className="font-bold text-lg text-brand mb-2 flex items-center"><i data-lucide="check-circle-2" className="w-5 h-5 mr-3 text-accent inline-block"></i> 품평 및 처방 확정</h4>
+                      <p className="text-md text-gray-500 font-light leading-relaxed pl-8 pr-4">클라이언트 내부 테스트 진행 후 최종 처방전을 확정하고 <strong className="text-brand font-medium">견적 및 계약서 산출</strong>을 진행합니다.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Step 4 */}
+                <div className="relative group w-full text-left flex flex-col items-start block">
+                  <div className="absolute -left-14 lg:-left-20 top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-accent text-white font-bold text-2xl flex items-center justify-center border-4 border-surface shadow-md z-10 shrink-0">04</div>
+                  <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:border-accent transition-all duration-300 group-hover:-translate-y-1 w-full flex flex-col items-start">
+                    <div className="w-12 h-12 bg-surface text-accent rounded-xl flex items-center justify-center mb-6">
+                      <i data-lucide="file-signature" className="w-6 h-6"></i>
+                    </div>
+                    <h3 className="text-2xl font-bold text-brand mb-6">발주서 접수 및 부문별 병렬 진행 프로세스</h3>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full relative z-20 border-t border-gray-100 pt-8 mt-2">
+                      <div className="bg-surface/50 p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 hover:border-accent transition-colors hover:shadow-md">
+                        <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-6 font-bold text-lg">A</div>
+                        <h4 className="font-bold text-xl text-brand mb-3 border-b border-gray-200 pb-3">계약 진행</h4>
+                        <p className="text-gray-600 font-light text-md leading-relaxed">계약금 이체 확인 및 제반 행정 처리 완료</p>
+                      </div>
+
+                      <div className="bg-surface/50 p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 hover:border-accent transition-colors hover:shadow-md">
+                        <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-6 font-bold text-lg">B</div>
+                        <h4 className="font-bold text-xl text-brand mb-3 border-b border-gray-200 pb-3">원료 부문</h4>
+                        <div className="flex flex-col space-y-3 mt-5">
+                          <span className="text-sm font-medium bg-white px-4 py-3 rounded-xl border border-gray-100 text-center text-gray-700 shadow-sm">원료 발주</span>
+                          <i data-lucide="arrow-down" className="w-4 h-4 mx-auto text-accent"></i>
+                          <span className="text-sm font-medium bg-white px-4 py-3 rounded-xl border border-gray-100 text-center text-gray-700 shadow-sm">입고 및 원료 Q.C</span>
+                        </div>
+                      </div>
+
+                      <div className="bg-surface/50 p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 hover:border-accent transition-colors hover:shadow-md">
+                        <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-6 font-bold text-lg">C</div>
+                        <h4 className="font-bold text-xl text-brand mb-3 border-b border-gray-200 pb-3">부자재 부문</h4>
+                        <p className="text-[13px] text-accent font-medium mb-4 leading-relaxed tracking-wide">
+                          개발 &gt; CT테스트 &gt; 디자인 확정 &gt; 문안확인
+                        </p>
+                        <div className="flex flex-col space-y-3">
+                          <span className="text-sm font-medium bg-white px-4 py-3 rounded-xl border border-gray-100 text-center text-gray-700 shadow-sm">발주 (한도설정 및 생산)</span>
+                          <i data-lucide="arrow-down" className="w-4 h-4 mx-auto text-accent"></i>
+                          <span className="text-sm font-medium bg-white px-4 py-3 rounded-xl border border-gray-100 text-center text-gray-700 shadow-sm">입고 및 부자재 Q.C</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Step 5 */}
+                <div className="relative group w-full text-left flex flex-col items-start block">
+                  <div className="absolute -left-14 lg:-left-20 top-0 -translate-x-1/2 w-14 h-14 rounded-full bg-accent text-white font-bold text-2xl flex items-center justify-center border-4 border-surface shadow-md z-10 shrink-0">05</div>
+                  <div className="bg-white p-8 md:p-12 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:border-accent transition-all duration-300 group-hover:-translate-y-1 w-full flex flex-col">
+                    <div className="w-14 h-14 bg-surface text-accent rounded-2xl flex items-center justify-center mb-8">
+                      <i data-lucide="star" className="w-7 h-7"></i>
+                    </div>
+                    <h3 className="text-3xl font-extrabold text-brand mb-8 pb-6 border-b border-gray-100">최종 생산 및 납품</h3>
+
+                    <div className="space-y-4 relative w-full text-left">
+                      <div className="flex items-start md:items-center space-y-2 md:space-y-0 space-x-0 md:space-x-5 flex-col md:flex-row bg-surface p-4 rounded-xl">
+                        <i data-lucide="test-tube-2" className="w-6 h-6 text-accent shrink-0 hidden md:block"></i>
+                        <div className="flex flex-col">
+                          <p className="text-gray-800 text-lg"><strong className="text-brand font-bold">파일럿 테스트</strong></p>
+                          <span className="text-gray-500 text-sm mt-1">원료 및 부자재 Q.C 완벽 통과 후 본 생산 전 최종 조율</span>
+                        </div>
+                      </div>
+
+                      <div className="pl-12 h-6 border-l-2 border-dashed border-gray-300 ml-3 md:ml-2 my-1 hidden md:block"></div>
+
+                      <div className="flex items-start md:items-center space-y-2 md:space-y-0 space-x-0 md:space-x-5 flex-col md:flex-row bg-surface p-4 rounded-xl">
+                        <i data-lucide="factory" className="w-6 h-6 text-accent shrink-0 hidden md:block"></i>
+                        <div className="flex flex-col">
+                          <p className="text-gray-800 text-lg"><strong className="text-brand font-bold">본 생산 진행</strong></p>
+                          <span className="text-brand font-medium text-sm bg-white border border-gray-200 px-3 py-1 rounded-full w-max mt-2">설비점검 &gt; 내용물 제조 &gt; 용기 포장</span>
+                        </div>
+                      </div>
+
+                      <div className="pl-12 h-6 border-l-2 border-dashed border-gray-300 ml-3 md:ml-2 my-1 hidden md:block"></div>
+
+                      <div className="flex items-start md:items-center space-y-2 md:space-y-0 space-x-0 md:space-x-5 flex-col md:flex-row bg-surface p-4 rounded-xl">
+                        <i data-lucide="search-check" className="w-6 h-6 text-accent shrink-0 hidden md:block"></i>
+                        <div>
+                          <p className="text-gray-800 text-lg"><strong className="text-brand font-bold">최종 Q.C (품질 관리)</strong></p>
+                          <p className="text-sm text-gray-500 mt-1">완성된 제품에 대한 미생물, 물성, 외관 등 최종 퀄리티 체크</p>
+                        </div>
+                      </div>
+
+                      <div className="pl-12 h-6 border-l-2 border-dashed border-gray-300 ml-3 md:ml-2 my-1 hidden md:block"></div>
+
+                      <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 space-x-0 md:space-x-4 bg-accent/10 border border-accent/30 p-5 md:p-6 rounded-2xl w-full text-brand shadow-sm mt-4">
+                        <i data-lucide="truck" className="w-8 h-8 text-accent shrink-0 hidden md:block"></i>
+                        <div>
+                          <p className="text-xl md:text-2xl font-extrabold tracking-wide w-full"><strong className="text-brand">최종 제품 출하 및 납품</strong></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
-         </section>
+        </section>
       );
     };
 
@@ -1668,8 +1683,8 @@
       const certs = [
         { title: lang === 'KOR' ? "화장품 제조업 등록필증" : (lang === 'CHN' ? "化妆品制造业注册证" : "Cosmetic Manufacturing Registration"), img: "./cert-manufacturing.png" },
         { title: lang === 'KOR' ? "화장품책임판매업 등록필증" : (lang === 'CHN' ? "化妆品责任销售业注册证" : "Cosmetic Marketing Registration"), img: "./cert-marketing.png" },
-        { title: lang === 'KOR' ? "K-CGMP (국문)" : (lang === 'CHN' ? "韩国 CGMP (韩文)" : "K-CGMP (Korean)"), img: "./cert-cgmp-ko.png" },
-        { title: lang === 'KOR' ? "K-CGMP (영문)" : (lang === 'CHN' ? "韩国 CGMP (英文)" : "K-CGMP (English)"), img: "./cert-cgmp-en.png" },
+        { title: lang === 'KOR' ? "GMP" : (lang === 'CHN' ? "韩国 CGMP (韩文)" : "K-CGMP (Korean)"), img: "./cert-cgmp-ko.png" },
+        { title: lang === 'KOR' ? "식약처 인증" : (lang === 'CHN' ? "韩国 CGMP (英文)" : "K-CGMP (English)"), img: "./cert-cgmp-en.png" },
         { title: "ISO 22716:2007", img: "./cert-iso22716.png" },
         { title: lang === 'KOR' ? "대한화장품협회 회원증" : (lang === 'CHN' ? "大韩化妆品协会会员证" : "KCA Membership Certificate"), img: "./cert-kca.png" },
         { title: "EVE VEGAN", img: "./cert-vegan.png" },
@@ -1680,57 +1695,57 @@
       return (
         <section id="품질관리인증" className="bg-surface relative overflow-hidden pt-28 pb-32 min-h-screen">
           <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
-             <p className="text-gray-400 text-sm font-light">Home &gt; Infra &gt; {t.menu_qc}</p>
-             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
-                <i data-lucide="arrow-left" className="w-4 h-4"></i>
-                <span>{t.back}</span>
-             </button>
+            <p className="text-gray-400 text-sm font-light">Home &gt; Infra &gt; {t.menu_qc}</p>
+            <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+              <i data-lucide="arrow-left" className="w-4 h-4"></i>
+              <span>{t.back}</span>
+            </button>
           </div>
 
           <div className="max-w-7xl mx-auto px-6 mt-16 relative">
-             <div className="text-center mb-20 animate-fade-in-up">
-                <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Quality Control</h2>
-                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.qc_title}</h1>
-                <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
-                <p className="text-xl text-gray-600 font-light leading-relaxed max-w-4xl mx-auto break-keep" dangerouslySetInnerHTML={{__html: t.qc_subtitle}}></p>
-             </div>
+            <div className="text-center mb-20 animate-fade-in-up">
+              <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Quality Control</h2>
+              <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.qc_title}</h1>
+              <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+              <p className="text-xl text-gray-600 font-light leading-relaxed max-w-4xl mx-auto break-keep" dangerouslySetInnerHTML={{ __html: t.qc_subtitle }}></p>
+            </div>
 
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-                {certs.map((cert, idx) => (
-                    <div key={idx} 
-                         onClick={() => setSelectedCert(cert)}
-                         className="bg-white rounded-2xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 hover:shadow-xl hover:border-accent hover:-translate-y-2 transition-all duration-300 group flex flex-col items-center cursor-pointer">
-                       <div className="w-full h-80 md:h-[400px] bg-[#FAFAFA] flex items-center justify-center rounded-xl overflow-hidden mb-6 relative group border border-gray-100/50 p-6">
-                           <img src={cert.img} alt={cert.title} className="max-w-full max-h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" />
-                           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                              <div className="bg-white/90 p-4 rounded-full shadow-lg">
-                                 <i data-lucide="search" className="w-6 h-6 text-brand"></i>
-                              </div>
-                           </div>
-                       </div>
-                       <h3 className="text-xl font-bold text-gray-800 text-center tracking-tight">{cert.title}</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              {certs.map((cert, idx) => (
+                <div key={idx}
+                  onClick={() => setSelectedCert(cert)}
+                  className="bg-white rounded-2xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 hover:shadow-xl hover:border-accent hover:-translate-y-2 transition-all duration-300 group flex flex-col items-center cursor-pointer">
+                  <div className="w-full h-80 md:h-[400px] bg-[#FAFAFA] flex items-center justify-center rounded-xl overflow-hidden mb-6 relative group border border-gray-100/50 p-6">
+                    <img src={cert.img} alt={cert.title} className="max-w-full max-h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                      <div className="bg-white/90 p-4 rounded-full shadow-lg">
+                        <i data-lucide="search" className="w-6 h-6 text-brand"></i>
+                      </div>
                     </div>
-                ))}
-             </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 text-center tracking-tight">{cert.title}</h3>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Image Modal */}
           {selectedCert && (
-            <div 
-               className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8 cursor-pointer animate-fade-in"
-               onClick={() => setSelectedCert(null)}
+            <div
+              className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8 cursor-pointer animate-fade-in"
+              onClick={() => setSelectedCert(null)}
             >
-               <img 
-                 src={selectedCert.img} 
-                 alt={selectedCert.title} 
-                 className="max-w-full max-h-full object-contain animate-zoom-in" 
-               />
-               <button 
-                 onClick={() => setSelectedCert(null)}
-                 className="absolute top-6 right-6 md:top-10 md:right-10 text-white/50 hover:text-white transition-colors z-[110]"
-               >
-                 <i data-lucide="x" className="w-10 h-10"></i>
-               </button>
+              <img
+                src={selectedCert.img}
+                alt={selectedCert.title}
+                className="max-w-full max-h-full object-contain animate-zoom-in"
+              />
+              <button
+                onClick={() => setSelectedCert(null)}
+                className="absolute top-6 right-6 md:top-10 md:right-10 text-white/50 hover:text-white transition-colors z-[110]"
+              >
+                <i data-lucide="x" className="w-10 h-10"></i>
+              </button>
             </div>
           )}
         </section>
@@ -1779,4 +1794,5 @@
     root.render(<App />);
   </script>
 </body>
+
 </html>
