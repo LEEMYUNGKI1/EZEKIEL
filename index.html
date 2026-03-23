@@ -304,7 +304,7 @@
         },
         {
           label: t.rnd, key: "R&D", subMenu: [
-            { label: t.menu_rnd_intro, view: "home", section: "R&D" },
+            { label: t.menu_rnd_intro, view: "rnd_intro" },
             { label: t.menu_patents, view: "home", section: "R&D" },
             { label: t.menu_tech, view: "home", section: "R&D" },
             { label: t.menu_clinical, view: "home", section: "R&D" }
@@ -1752,6 +1752,79 @@
       );
     }
 
+    const SectionRnDIntro = () => {
+      const { lang, setView } = useContext(AppContext);
+      const t = translations[lang];
+
+      const introData = [
+        {
+          title: lang === 'KOR' ? "첨단 연구 시설" : (lang === 'CHN' ? "先进研究设施" : "Advanced Research Facilities"),
+          desc: lang === 'KOR' ? "최신 분석 장비와 연구 시설을 갖추어 혁신적인 화장품 제형과 소재를 연구합니다." : (lang === 'CHN' ? "配备最新的分析设备和研究设施，研究创新的化妆品配方和材料。" : "Equipped with the latest analytical equipment and research facilities to study innovative cosmetic formulations and materials."),
+          img: "./rnd-lab-1.jpg"
+        },
+        {
+          title: lang === 'KOR' ? "전문 연구 인력" : (lang === 'CHN' ? "专业研究人员" : "Expert Researchers"),
+          desc: lang === 'KOR' ? "풍부한 경험을 가진 전문 연구진이 체계적이고 과학적인 연구를 수행합니다." : (lang === 'CHN' ? "拥有丰富经验的专业研究团队进行系统科学的研究。" : "A professional research team with extensive experience conducts systematic and scientific research."),
+          img: "./rnd-lab-2.jpg"
+        },
+        {
+          title: lang === 'KOR' ? "철저한 품질 검증" : (lang === 'CHN' ? "严格的质量验证" : "Thorough Quality Verification"),
+          desc: lang === 'KOR' ? "원료 선별부터 완제품까지 엄격한 기준의 효능 및 안전성 테스트를 진행합니다." : (lang === 'CHN' ? "从原料筛选到成品，进行严格标准的功效和安全性测试。" : "We conduct strict efficacy and safety tests from raw material selection to finished products."),
+          img: "./rnd-lab-3.jpg"
+        },
+        {
+          title: lang === 'KOR' ? "글로벌 트렌드 선도" : (lang === 'CHN' ? "引领全球趋势" : "Leading Global Trends"),
+          desc: lang === 'KOR' ? "전 세계 뷰티 트렌드를 분석하여 시장을 이끌어갈 새로운 처방을 개발합니다." : (lang === 'CHN' ? "分析全球美容趋势，开发引领市场的新配方。" : "We analyze global beauty trends and develop new formulas to lead the market."),
+          img: "./rnd-lab-4.jpg"
+        }
+      ];
+
+      return (
+        <section id="연구소소개" className="bg-surface relative overflow-hidden pt-28 pb-10 min-h-screen">
+          <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
+            <p className="text-gray-400 text-sm font-light">Home &gt; R&D &gt; {t.menu_rnd_intro}</p>
+            <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+              <i data-lucide="arrow-left" className="w-4 h-4"></i>
+              <span>{t.back}</span>
+            </button>
+          </div>
+
+          <div className="py-12 max-w-7xl mx-auto px-6">
+            <div className="text-center mb-10 animate-fade-in-up">
+              <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">R&D Center</h2>
+              <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.menu_rnd_intro}</h1>
+              <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+              <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep">
+                {lang === 'KOR' ? "EZEKIEL의 기술력이 완성되는 곳, 프리미엄 R&D 연구소를 소개합니다." : (lang === 'CHN' ? "EZEKIEL的技术得以实现的地方，向您介绍高级R&D研究所。" : "Introducing the premium R&D Center where EZEKIEL's technology is perfected.")}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col">
+            {introData.map((item, index) => {
+              const isEven = index % 2 === 0;
+              return (
+                <div key={index} className={`w-full ${isEven ? 'bg-white' : 'bg-surface'}`}>
+                  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-0">
+                    <div className={`h-[400px] md:h-[500px] relative w-full ${isEven ? 'order-1 md:order-1' : 'order-1 md:order-2'}`}>
+                      <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
+                    </div>
+                    <div className={`p-12 md:p-24 flex flex-col justify-center text-left ${isEven ? 'order-2 md:order-2' : 'order-2 md:order-1'}`}>
+                      <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-2">Facility {index + 1}</h3>
+                      <h2 className="text-3xl font-bold mb-6 text-brand">{item.title}</h2>
+                      <p className="text-gray-600 leading-relaxed text-lg break-keep">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      );
+    };
+
     const App = () => {
       const [lang, setLang] = useState('KOR');
       const [view, setView] = useState('home');
@@ -1784,6 +1857,7 @@
             {view === 'organization' && <SectionOrganization />}
             {view === 'process' && <SectionProcess />}
             {view === 'qc' && <SectionQC />}
+            {view === 'rnd_intro' && <SectionRnDIntro />}
             <Footer />
           </div>
         </AppContext.Provider>
