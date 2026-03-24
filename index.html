@@ -1855,25 +1855,33 @@
           <div className="py-12 max-w-7xl mx-auto px-6">
             <div className="text-center mb-16 animate-fade-in-up">
               <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Major R&D</h2>
-              <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{lang === 'KOR' ? '주요 연구 개발' : (lang === 'CHN' ? '主要研发成就' : 'Major R&D Achievements')}</h1>
+              <h1 className="text-3xl md:text-4xl font-bold mb-8 text-brand tracking-tight">{lang === 'KOR' ? '주요 정책지원 연구/개발 과제' : (lang === 'CHN' ? '主要政策支援研究/开发课题' : 'Major Policy-Supported R&D Projects')}</h1>
               <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
               <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto break-keep leading-relaxed">
                 {lang === 'KOR' ? "EZEKIEL COSMETIC의 독보적인 기술력과 끊임없는 혁신을 증명하는 주요 연구 개발 실적입니다." : (lang === 'CHN' ? "证明EZEKIEL COSMETIC卓越技术与不断创新的主要研发成就。" : "These are the major R&D achievements that prove EZEKIEL COSMETIC's unrivaled technology and continuous innovation.")}
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-20">
-              {recordsData.map((item, index) => (
-                <div key={index} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow relative overflow-hidden group">
-                  <div className="absolute top-0 left-0 w-1 h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="text-accent font-bold text-sm tracking-widest mb-3">{(index + 1).toString().padStart(2, '0')}</div>
-                  <h3 className="text-xl font-medium text-brand mb-4 break-keep line-clamp-2 leading-tight">{item.title}</h3>
-                  <div className="flex items-center mt-auto text-gray-500 text-sm">
-                    <i data-lucide="calendar" className="w-4 h-4 mr-2"></i>
-                    <span>{item.period}</span>
+            <div className="pb-20 max-w-5xl mx-auto">
+              {/* Header Row */}
+              <div className="hidden md:grid grid-cols-4 bg-[#fff6f6] text-gray-800 font-bold border-t-2 border-accent border-b border-gray-200 py-4 px-6 md:px-0">
+                <div className="col-span-3 text-center">{lang === 'KOR' ? '과제명' : (lang === 'CHN' ? '课题名称' : 'Project Name')}</div>
+                <div className="col-span-1 text-center">{lang === 'KOR' ? '총 개발기간' : (lang === 'CHN' ? '总开发期' : 'Total Dev. Period')}</div>
+              </div>
+              
+              {/* Record Rows */}
+              <div className="flex flex-col border-b border-gray-200">
+                {recordsData.map((item, index) => (
+                  <div key={index} className="grid grid-cols-1 md:grid-cols-4 items-center border-b border-gray-100 last:border-0 hover:bg-gray-50 transition-colors py-5 px-6 md:px-0">
+                    <div className="md:col-span-3 text-gray-700 font-medium mb-3 md:mb-0 break-keep text-left md:pl-10 lg:pl-16">
+                      {item.title}
+                    </div>
+                    <div className="md:col-span-1 text-gray-500 text-sm md:text-base text-left md:text-center whitespace-nowrap">
+                      {item.period}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
