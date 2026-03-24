@@ -312,7 +312,7 @@
         },
         {
           label: t.infra, key: "생산인프라", subMenu: [
-            { label: t.menu_factory, view: "home", section: "생산인프라" },
+            { label: t.menu_factory, view: "smart_factory" },
             { label: t.menu_qc, view: "qc" },
             { label: t.menu_flow, view: "home", section: "생산인프라" },
             { label: t.menu_hub, view: "home", section: "생산인프라" }
@@ -1825,6 +1825,84 @@
       );
     };
 
+    const SectionSmartFactoryIntro = () => {
+      const { lang, setView } = useContext(AppContext);
+      const t = translations[lang];
+
+      const factoryData = [
+        {
+          title: lang === 'KOR' ? "최첨단 제조 설비" : (lang === 'CHN' ? "最先进的制造设备" : "State-of-the-Art Manufacturing Facilities"),
+          desc: lang === 'KOR' ? "정밀한 제어가 가능한 최신식 진공 유화 설비를 통해 고품질의 화장품 내용물을 균일하게 제조합니다." : (lang === 'CHN' ? "通过精确控制的最新真空乳化设备，均匀制造高品质的化妆品内容物。" : "We manufacture high-quality cosmetic contents uniformly through the latest vacuum emulsification facilities with precise control."),
+          img: "./smart-factory-1.jpg"
+        },
+        {
+          title: lang === 'KOR' ? "스마트 공정 제어" : (lang === 'CHN' ? "智能过程控制" : "Smart Process Control"),
+          desc: lang === 'KOR' ? "중앙 제어 시스템을 통해 전 공정의 온도, 압력, 교반 속도 등 핵심 데이터를 실시간으로 모니터링합니다." : (lang === 'CHN' ? "通过中央控制系统，实时监控全过程的温度、压力、搅拌速度等核心数据。" : "Through the central control system, we monitor core data such as temperature, pressure, and stirring speed of all processes in real time."),
+          img: "./smart-factory-2.jpg"
+        },
+        {
+          title: lang === 'KOR' ? "대용량 생산 인프라" : (lang === 'CHN' ? "大容量生产基础设施" : "Large-Capacity Production Infrastructure"),
+          desc: lang === 'KOR' ? "대규모 생산 라인을 구축하여 고객사의 다양한 발주 물량에 신속하고 유연하게 대응합니다." : (lang === 'CHN' ? "建立大规模生产线，迅速灵活地应对客户的各种订单量。" : "By establishing a large-scale production line, we respond quickly and flexibly to various order volumes from our clients."),
+          img: "./smart-factory-3.jpg"
+        },
+        {
+          title: lang === 'KOR' ? "청정 제조 환경" : (lang === 'CHN' ? "清洁制造环境" : "Clean Manufacturing Environment"),
+          desc: lang === 'KOR' ? "국제 규격에 부합하는 클린룸 설비를 통해 미세먼지와 오염물질을 완벽하게 차단합니다." : (lang === 'CHN' ? "通过符合国际标准的洁净室设施，完全阻断粉尘和污染物。" : "We completely block fine dust and pollutants through clean room facilities that meet international standards."),
+          img: "./smart-factory-4.jpg"
+        },
+        {
+          title: lang === 'KOR' ? "글로벌 스탠다드 설비" : (lang === 'CHN' ? "全球标准设备" : "Global Standard Facilities"),
+          desc: lang === 'KOR' ? "글로벌 인증(CGMP, ISO 등) 기준에 부합하는 최고급 품질관리(Q.C) 및 설비 라인업을 강화하였습니다." : (lang === 'CHN' ? "加强了符合全球认证（CGMP、ISO等）标准的顶级质量控制（Q.C）和设备阵容。" : "We have strengthened the top-notch quality control (Q.C) and equipment lineup that meet international certification (CGMP, ISO, etc.) standards."),
+          img: "./smart-factory-5.jpg"
+        }
+      ];
+
+      return (
+        <section id="스마트팩토리" className="bg-surface relative overflow-hidden pt-28 pb-10 min-h-screen">
+          <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
+            <p className="text-gray-400 text-sm font-light">Home &gt; Infra &gt; {t.menu_factory}</p>
+            <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+              <i data-lucide="arrow-left" className="w-4 h-4"></i>
+              <span>{t.back}</span>
+            </button>
+          </div>
+
+          <div className="py-12 max-w-7xl mx-auto px-6">
+            <div className="text-center mb-10 animate-fade-in-up">
+              <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Smart Factory</h2>
+              <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.menu_factory}</h1>
+              <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+              <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep">
+                {lang === 'KOR' ? "글로벌 스탠다드를 충족하는 최고 수준의 스마트 팩토리를 소개합니다." : (lang === 'CHN' ? "为您介绍符合全球最高标准的智能工厂。" : "Introducing the highest-level smart factory that meets global standards.")}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col">
+            {factoryData.map((item, index) => {
+              const isEven = index % 2 === 0;
+              return (
+                <div key={index} className={`w-full ${isEven ? 'bg-white' : 'bg-surface'}`}>
+                  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-0">
+                    <div className={`h-[400px] md:h-[500px] relative w-full ${isEven ? 'order-1 md:order-1' : 'order-1 md:order-2'}`}>
+                      <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
+                    </div>
+                    <div className={`p-12 md:p-24 flex flex-col justify-center text-left ${isEven ? 'order-2 md:order-2' : 'order-2 md:order-1'}`}>
+                      <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-2">Facility {index + 1}</h3>
+                      <h2 className="text-3xl font-bold mb-6 text-brand">{item.title}</h2>
+                      <p className="text-gray-600 leading-relaxed text-lg break-keep">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      );
+    };
+
     const App = () => {
       const [lang, setLang] = useState('KOR');
       const [view, setView] = useState('home');
@@ -1858,6 +1936,7 @@
             {view === 'process' && <SectionProcess />}
             {view === 'qc' && <SectionQC />}
             {view === 'rnd_intro' && <SectionRnDIntro />}
+            {view === 'smart_factory' && <SectionSmartFactoryIntro />}
             <Footer />
           </div>
         </AppContext.Provider>
