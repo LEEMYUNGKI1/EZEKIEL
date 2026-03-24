@@ -84,7 +84,7 @@
         lang: "KOR", close: "닫기", back: "뒤로가기",
         menu_overview: "회사개요", menu_philosophy: "기업이념", menu_ceo: "CEO메시지", menu_org: "조직도", menu_history: "주요연혁", menu_partners: "협력사", menu_directions: "오시는 길",
         menu_skincare: "아로마&스킨케어", menu_bodyhair: "바디&헤어케어", menu_maskpad: "마스크팩&패드", menu_process: "화장품개발프로세스",
-        menu_rnd_intro: "연구소 소개", menu_patents: "보유 특허", menu_tech: "핵심 기술", menu_clinical: "임상 센터",
+        menu_rnd_intro: "연구소 소개", menu_patents: "연구&개발실적", menu_tech: "핵심 기술", menu_clinical: "임상 센터",
         menu_factory: "스마트 팩토리", menu_qc: "품질 관리 인증", menu_flow: "생산 플로우", menu_hub: "글로벌 허브",
         menu_news: "EZEKIEL News", menu_press: "언론보도", menu_video: "브랜드 홍보 영상", menu_ci: "CI/BI 가이드",
         menu_inquiry: "프로젝트 문의", menu_service: "고객 센터",
@@ -130,7 +130,7 @@
         lang: "ENG", close: "Close", back: "Back",
         menu_overview: "Overview", menu_philosophy: "Philosophy", menu_ceo: "CEO Message", menu_org: "Organization", menu_history: "History", menu_partners: "Partners", menu_directions: "Directions",
         menu_skincare: "Basic Skincare", menu_bodyhair: "Body & Hair Care", menu_maskpad: "Mask Pack & Pad", menu_process: "Cosmetics Development Process",
-        menu_rnd_intro: "R&D Intro", menu_patents: "Patents", menu_tech: "Core Tech", menu_clinical: "Clinical Center",
+        menu_rnd_intro: "R&D Intro", menu_patents: "R&D Records", menu_tech: "Core Tech", menu_clinical: "Clinical Center",
         menu_factory: "Smart Factory", menu_qc: "QC Certs", menu_flow: "Production Flow", menu_hub: "Global Hub",
         menu_news: "EZEKIEL News", menu_press: "Press Release", menu_video: "Brand Video", menu_ci: "CI/BI Guide",
         menu_inquiry: "Project Inquiry", menu_service: "Customer Center",
@@ -176,7 +176,7 @@
         lang: "中文", close: "关闭", back: "返回",
         menu_overview: "公司概况", menu_philosophy: "企业理念", menu_ceo: "CEO致辞", menu_org: "组织架构", menu_history: "发展历程", menu_partners: "合作伙伴", menu_directions: "来访路线",
         menu_skincare: "基础护肤", menu_bodyhair: "身体与头发护理", menu_maskpad: "面膜与护肤垫", menu_process: "化妆品开发流程",
-        menu_rnd_intro: "研究所介绍", menu_patents: "拥有专利", menu_tech: "核心技术", menu_clinical: "临床中心",
+        menu_rnd_intro: "研究所介绍", menu_patents: "研究与开发成果", menu_tech: "核心技术", menu_clinical: "临床中心",
         menu_factory: "智能工厂", menu_qc: "质量认证", menu_flow: "生产流程", menu_hub: "全球枢纽",
         menu_news: "EZEKIEL 新闻", menu_press: "媒体报道", menu_video: "宣传视频", menu_ci: "CI/BI 指南",
         menu_inquiry: "项目咨询", menu_service: "客户中心",
@@ -305,7 +305,7 @@
         {
           label: t.rnd, key: "R&D", subMenu: [
             { label: t.menu_rnd_intro, view: "rnd_intro" },
-            { label: t.menu_patents, view: "home", section: "R&D" },
+            { label: t.menu_patents, view: "rnd_records" },
             { label: t.menu_tech, view: "home", section: "R&D" },
             { label: t.menu_clinical, view: "home", section: "R&D" }
           ]
@@ -1825,6 +1825,61 @@
       );
     };
 
+    const SectionRnDRecords = () => {
+      const { lang, setView } = useContext(AppContext);
+      const t = translations[lang];
+
+      const recordsData = [
+        { title: "모공 케어 특화 유효 성분을 기반으로 한 기능성 포뮬라 연구 및 개발", period: "2023.03.18 ~ 2023.09.28" },
+        { title: "두피 및 모발 컨디셔닝을 위한 폼 타입 트리트먼트 포뮬라 설계 및 개발", period: "2024.10.10 ~ 2025.02.06" },
+        { title: "식물성 오일 및 고보습 원료를 적용한 광채 강화 필오프 팩 제형 개발", period: "2022.02.05 ~ 2023.09.18" },
+        { title: "아미노산계 계면활성제를 활용한 저자극 페이셜 클렌저 제형 개발", period: "2025.06.09 ~ 2025.09.10" },
+        { title: "카페인 기반 탈모 증상 완화 기능성 샴푸 포뮬라 개발", period: "2024.03.24 ~ 2025.08.24" },
+        { title: "자외선 차단 효능을 강화한 데일리 립 케어 제품 개발", period: "2023.02.03 ~ 2024.06.10" },
+        { title: "무실리콘 처방을 적용한 실리콘 대체형 헤어 트리트먼트 제형 개발", period: "2024.12.12 ~ 2026.01.15" },
+        { title: "식약처 고시 기능성 원료를 적용한 효능 중심 스킨케어 제품 설계 및 개발", period: "2025.01.25 ~ 2025.09.19" },
+        { title: "카페인 기반 탈모 개선 기능성 미스트 제형 개발", period: "2024.03.20 ~ 2026.01.20" },
+        { title: "비타민 C 유도체를 적용한 브라이트닝 기능성 세럼 포뮬라 설계 및 개발", period: "2024.04.01 ~ 2025.09.10" }
+      ];
+
+      return (
+        <section id="연구개발실적" className="bg-surface relative overflow-hidden pt-28 pb-10 min-h-screen">
+          <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
+            <p className="text-gray-400 text-sm font-light">Home &gt; R&D &gt; {t.menu_patents}</p>
+            <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+              <i data-lucide="arrow-left" className="w-4 h-4"></i>
+              <span>{t.back}</span>
+            </button>
+          </div>
+
+          <div className="py-12 max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16 animate-fade-in-up">
+              <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Major R&D</h2>
+              <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{lang === 'KOR' ? '주요 연구 개발' : (lang === 'CHN' ? '主要研发成就' : 'Major R&D Achievements')}</h1>
+              <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+              <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto break-keep leading-relaxed">
+                {lang === 'KOR' ? "EZEKIEL COSMETIC의 독보적인 기술력과 끊임없는 혁신을 증명하는 주요 연구 개발 실적입니다." : (lang === 'CHN' ? "证明EZEKIEL COSMETIC卓越技术与不断创新的主要研发成就。" : "These are the major R&D achievements that prove EZEKIEL COSMETIC's unrivaled technology and continuous innovation.")}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-20">
+              {recordsData.map((item, index) => (
+                <div key={index} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 w-1 h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="text-accent font-bold text-sm tracking-widest mb-3">{(index + 1).toString().padStart(2, '0')}</div>
+                  <h3 className="text-xl font-medium text-brand mb-4 break-keep line-clamp-2 leading-tight">{item.title}</h3>
+                  <div className="flex items-center mt-auto text-gray-500 text-sm">
+                    <i data-lucide="calendar" className="w-4 h-4 mr-2"></i>
+                    <span>{item.period}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    };
+
     const SectionSmartFactoryIntro = () => {
       const { lang, setView } = useContext(AppContext);
       const t = translations[lang];
@@ -1843,7 +1898,7 @@
         {
           title: lang === 'KOR' ? "대용량 생산 인프라" : (lang === 'CHN' ? "大容量生产基础设施" : "Large-Capacity Production Infrastructure"),
           desc: lang === 'KOR' ? "대규모 생산 라인을 구축하여 고객사의 다양한 발주 물량에 신속하고 유연하게 대응합니다." : (lang === 'CHN' ? "建立大规模生产线，迅速灵活地应对客户的各种订单量。" : "By establishing a large-scale production line, we respond quickly and flexibly to various order volumes from our clients."),
-          img: "./smart-factory-3.jpg"
+          img: "./smart-factory-3.png"
         },
         {
           title: lang === 'KOR' ? "청정 제조 환경" : (lang === 'CHN' ? "清洁制造环境" : "Clean Manufacturing Environment"),
@@ -1936,6 +1991,7 @@
             {view === 'process' && <SectionProcess />}
             {view === 'qc' && <SectionQC />}
             {view === 'rnd_intro' && <SectionRnDIntro />}
+            {view === 'rnd_records' && <SectionRnDRecords />}
             {view === 'smart_factory' && <SectionSmartFactoryIntro />}
             <Footer />
           </div>
