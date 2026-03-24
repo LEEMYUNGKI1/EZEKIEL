@@ -82,7 +82,7 @@
       KOR: {
         company: "회사소개", business: "사업소개", rnd: "R&D", infra: "생산인프라", pr: "홍보센터", contact: "문의하기",
         lang: "KOR", close: "닫기", back: "뒤로가기",
-        menu_overview: "회사개요", menu_philosophy: "기업이념", menu_ceo: "CEO메시지", menu_org: "조직도", menu_history: "주요연혁", menu_partners: "협력사", menu_directions: "오시는 길",
+        menu_overview: "회사개요", menu_view: "회사전경", menu_philosophy: "기업이념", menu_ceo: "CEO메시지", menu_org: "조직도", menu_history: "주요연혁", menu_partners: "협력사", menu_directions: "오시는 길",
         menu_skincare: "아로마&스킨케어", menu_bodyhair: "바디&헤어케어", menu_maskpad: "마스크팩&패드", menu_process: "화장품개발프로세스",
         menu_rnd_intro: "연구소 소개", menu_patents: "연구&개발실적",
         menu_factory: "스마트 팩토리", menu_qc: "품질 관리 인증", menu_flow: "생산 플로우", menu_hub: "글로벌 허브",
@@ -128,7 +128,7 @@
       ENG: {
         company: "Company", business: "Business", rnd: "R&D", infra: "Infra", pr: "PR Center", contact: "Contact",
         lang: "ENG", close: "Close", back: "Back",
-        menu_overview: "Overview", menu_philosophy: "Philosophy", menu_ceo: "CEO Message", menu_org: "Organization", menu_history: "History", menu_partners: "Partners", menu_directions: "Directions",
+        menu_overview: "Overview", menu_view: "Company View", menu_philosophy: "Philosophy", menu_ceo: "CEO Message", menu_org: "Organization", menu_history: "History", menu_partners: "Partners", menu_directions: "Directions",
         menu_skincare: "Basic Skincare", menu_bodyhair: "Body & Hair Care", menu_maskpad: "Mask Pack & Pad", menu_process: "Cosmetics Development Process",
         menu_rnd_intro: "R&D Intro", menu_patents: "R&D Records",
         menu_factory: "Smart Factory", menu_qc: "QC Certs", menu_flow: "Production Flow", menu_hub: "Global Hub",
@@ -174,7 +174,7 @@
       CHN: {
         company: "公司介绍", business: "业务领域", rnd: "研发中心", infra: "生产基础设施", pr: "公关中心", contact: "联系我们",
         lang: "中文", close: "关闭", back: "返回",
-        menu_overview: "公司概况", menu_philosophy: "企业理念", menu_ceo: "CEO致辞", menu_org: "组织架构", menu_history: "发展历程", menu_partners: "合作伙伴", menu_directions: "来访路线",
+        menu_overview: "公司概况", menu_view: "公司全景", menu_philosophy: "企业理念", menu_ceo: "CEO致辞", menu_org: "组织架构", menu_history: "发展历程", menu_partners: "合作伙伴", menu_directions: "来访路线",
         menu_skincare: "基础护肤", menu_bodyhair: "身体与头发护理", menu_maskpad: "面膜与护肤垫", menu_process: "化妆品开发流程",
         menu_rnd_intro: "研究所介绍", menu_patents: "研究与开发成果",
         menu_factory: "智能工厂", menu_qc: "质量认证", menu_flow: "生产流程", menu_hub: "全球枢纽",
@@ -286,6 +286,7 @@
         {
           label: t.company, key: "회사소개", subMenu: [
             { label: t.menu_overview, view: "overview" },
+            { label: t.menu_view, view: "company_view" },
             { label: t.menu_philosophy, view: "philosophy" },
             { label: t.menu_ceo, view: "ceo" },
             { label: t.menu_org, view: "organization" },
@@ -2037,6 +2038,84 @@
       );
     };
 
+    const SectionCompanyView = () => {
+      const { lang, setView } = useContext(AppContext);
+      const t = translations[lang];
+
+      const viewData = [
+        {
+          title: lang === 'KOR' ? "본사 전경" : (lang === 'CHN' ? "总部全景" : "Headquarters Exterior"),
+          desc: lang === 'KOR' ? "글로벌 프리미엄 뷰티 기업으로 도약하는 에스겔코스메틱 본사 및 최첨단 설비 공장의 전경입니다." : (lang === 'CHN' ? "跃升为全球高级美容企业的EZEKIEL COSMETIC总部及最尖端设备工厂全景。" : "Exterior of EZEKIEL COSMETIC headquarters and state-of-the-art facility factory leaping forward as a global premium beauty company."),
+          img: "./company-view-1.jpg"
+        },
+        {
+          title: lang === 'KOR' ? "제품 전시실 및 로비" : (lang === 'CHN' ? "产品展厅及大厅" : "Product Display Room & Lobby"),
+          desc: lang === 'KOR' ? "방문객을 환영하는 넓고 쾌적한 로비와 함께, 자사 및 파트너사의 혁신적인 제품들을 한눈에 볼 수 있는 전시 공간입니다." : (lang === 'CHN' ? "宽敞舒适的大厅欢迎每一位访客，是您可以一览我们及合作伙伴创新产品的展示空间。" : "A spacious and pleasant lobby welcoming visitors, along with an exhibition space where you can see the innovative products of our company and our partners at a glance."),
+          img: "./company-view-2.jpg"
+        },
+        {
+          title: lang === 'KOR' ? "첨단 물류 센터" : (lang === 'CHN' ? "尖端物流中心" : "Advanced Logistics Center"),
+          desc: lang === 'KOR' ? "생산된 완제품들을 체계적이고 안전하게 보관, 관리하여 빠르고 완벽한 배송을 준비하는 대규모 물류 공간입니다." : (lang === 'CHN' ? "系统安全地保管和管理生产的成品，为快速完美的配送做准备的大规模物流空间。" : "A large-scale logistics space that systematically and safely stores and manages finished products, preparing for fast and perfect delivery."),
+          img: "./company-view-3.jpg"
+        },
+        {
+          title: lang === 'KOR' ? "임원실 및 접견 대기실" : (lang === 'CHN' ? "高管室及接待室" : "Executive & Reception Room"),
+          desc: lang === 'KOR' ? "중요 파트너 분들과 귀빈들을 모시고 미래 비즈니스를 논의할 수 있는 품격 있고 프라이빗한 비즈니스 공간입니다." : (lang === 'CHN' ? "接待重要合作伙伴和贵宾探讨未来业务的高雅私人商务空间。" : "An elegant and private business space where important partners and VIPs are invited to discuss future business."),
+          img: "./company-view-4.jpg"
+        },
+        {
+          title: lang === 'KOR' ? "클린룸 진입 시스템" : (lang === 'CHN' ? "洁净室进入系统" : "Cleanroom Entry System"),
+          desc: lang === 'KOR' ? "제조 구역(Manufacturing Area) 진입 전 철저한 오염 통제를 위한 에어샤워 룸 등 완벽한 클린 시설을 갖추고 있습니다." : (lang === 'CHN' ? "进入制造区域前，配备了为彻底控制污染而设置的风淋室等完美洁净设施。" : "Equipped with perfect clean facilities such as air shower rooms for thorough contamination control before entering the manufacturing area."),
+          img: "./company-view-5.jpg"
+        }
+      ];
+
+      return (
+        <section id="회사전경" className="bg-surface relative overflow-hidden pt-28 pb-10 min-h-screen">
+          <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
+            <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; {t.menu_view}</p>
+            <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+              <i data-lucide="arrow-left" className="w-4 h-4"></i>
+              <span>{t.back}</span>
+            </button>
+          </div>
+
+          <div className="py-12 max-w-7xl mx-auto px-6">
+            <div className="text-center mb-10 animate-fade-in-up">
+              <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Company View</h2>
+              <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.menu_view}</h1>
+              <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+              <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep">
+                {lang === 'KOR' ? "최고의 파트너와 함께 성장하는 에스겔코스메틱의 다양한 공간을 소개합니다." : (lang === 'CHN' ? "为您介绍与最佳合作伙伴共同成长的EZEKIEL COSMETIC的各种空间。" : "Introducing various spaces of EZEKIEL COSMETIC growing together with the best partners.")}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col">
+            {viewData.map((item, index) => {
+              const isEven = index % 2 === 0;
+              return (
+                <div key={index} className={`w-full ${isEven ? 'bg-white' : 'bg-surface'}`}>
+                  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-0">
+                    <div className={`h-[400px] md:h-[500px] relative w-full ${isEven ? 'order-1 md:order-1' : 'order-1 md:order-2'}`}>
+                      <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
+                    </div>
+                    <div className={`p-12 md:p-24 flex flex-col justify-center text-left ${isEven ? 'order-2 md:order-2' : 'order-2 md:order-1'}`}>
+                      <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-2">Space {index + 1}</h3>
+                      <h2 className="text-3xl font-bold mb-6 text-brand">{item.title}</h2>
+                      <p className="text-gray-600 leading-relaxed text-lg break-keep">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      );
+    };
+
     const App = () => {
       const [lang, setLang] = useState('KOR');
       const [view, setView] = useState('home');
@@ -2066,6 +2145,7 @@
             {view === 'philosophy' && <SectionPhilosophy />}
             {view === 'history' && <SectionHistory />}
             {view === 'overview' && <SectionOverview />}
+            {view === 'company_view' && <SectionCompanyView />}
             {view === 'organization' && <SectionOrganization />}
             {view === 'process' && <SectionProcess />}
             {view === 'qc' && <SectionQC />}
