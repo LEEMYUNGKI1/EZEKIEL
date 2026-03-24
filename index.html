@@ -312,7 +312,7 @@
           label: t.infra, key: "생산인프라", subMenu: [
             { label: t.menu_factory, view: "smart_factory" },
             { label: t.menu_qc, view: "qc" },
-            { label: t.menu_flow, view: "home", section: "생산인프라" },
+            { label: t.menu_flow, view: "production_flow" },
             { label: t.menu_hub, view: "home", section: "생산인프라" }
           ]
         },
@@ -1886,6 +1886,79 @@
       );
     };
 
+    const SectionProductionFlow = () => {
+      const { lang, setView } = useContext(AppContext);
+      const t = translations[lang];
+
+      const flowData = [
+        {
+          title: lang === 'KOR' ? "정밀 충진 및 포장 시스템" : (lang === 'CHN' ? "精密充填和包装系统" : "Precision Filling and Packaging System"),
+          desc: lang === 'KOR' ? "자동화된 충진 설비를 통해 내용물을 정밀하게 주입하고, 엄격한 위생 관리 하에 1차 포장을 진행합니다." : (lang === 'CHN' ? "通过自动化充填设备精确注入内容物，并在严格的卫生管理下进行初级包装。" : "We accurately inject contents through automated filling equipment and proceed with primary packaging under strict hygiene management."),
+          img: "./prod-flow-1.jpg"
+        },
+        {
+          title: lang === 'KOR' ? "실시간 검수 및 라벨링" : (lang === 'CHN' ? "实时检验和贴标" : "Real-time Inspection and Labeling"),
+          desc: lang === 'KOR' ? "생산 라인별 전수 검사를 통해 불량품을 차단하며, 제품별 정확한 정보가 담긴 라벨을 자동 부착합니다." : (lang === 'CHN' ? "通过生产线的全数检查杜绝不良品，并自动贴上包含产品准确信息的标签。" : "We block defective products through full inspection of each production line and automatically attach labels containing accurate information for each product."),
+          img: "./prod-flow-2.jpg"
+        },
+        {
+          title: lang === 'KOR' ? "완제품 자동 적재 및 관리" : (lang === 'CHN' ? "成品自动堆叠和管理" : "Automated Finished Product Stacking and Management"),
+          desc: lang === 'KOR' ? "포장이 완료된 제품은 로봇 시스템을 통해 안전하게 적재되며, 최적의 보관 환경을 갖춘 물류 센터에서 관리됩니다." : (lang === 'CHN' ? "包装完成的产品通过机器人系统安全堆叠，并在具备最佳存储环境的物流中心进行管理。" : "Packaged products are safely stacked via robotic systems and managed in a logistics center with an optimal storage environment."),
+          img: "./prod-flow-3.jpg"
+        },
+        {
+          title: lang === 'KOR' ? "철저한 품질 최종 확인" : (lang === 'CHN' ? "严格的最终质量确认" : "Thorough Final Quality Confirmation"),
+          desc: lang === 'KOR' ? "출하 전 최종 샘플링 검사를 통해 규격 준수 여부를 확인하고, 최고 수준의 품질을 보증하여 고객사로 발송합니다." : (lang === 'CHN' ? "在出货前进行最终抽样检查以确认是否符合规格，并保证最高水平的质量后发送给客户。" : "We verify compliance with specifications through final sampling inspection before shipping, ensuring the highest level of quality and sending it to customers."),
+          img: "./prod-flow-4.jpg"
+        }
+      ];
+
+      return (
+        <section id="생산플로우" className="bg-surface relative overflow-hidden pt-28 pb-10 min-h-screen">
+          <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
+            <p className="text-gray-400 text-sm font-light">Home &gt; Infra &gt; {t.menu_flow}</p>
+            <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
+              <i data-lucide="arrow-left" className="w-4 h-4"></i>
+              <span>{t.back}</span>
+            </button>
+          </div>
+
+          <div className="py-12 max-w-7xl mx-auto px-6">
+            <div className="text-center mb-10 animate-fade-in-up">
+              <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Production Flow</h2>
+              <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.menu_flow}</h1>
+              <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+              <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep">
+                {lang === 'KOR' ? "철저한 위생 관리와 자동화 설비로 완성되는 에스겔코스메틱의 생산 공정을 소개합니다." : (lang === 'CHN' ? "为您介绍通过严格的卫生管理和自动化设备完成的EZEKIEL COSMETIC生产流程。" : "Introducing EZEKIEL COSMETIC's production process completed with thorough hygiene management and automated equipment.")}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col">
+            {flowData.map((item, index) => {
+              const isEven = index % 2 === 0;
+              return (
+                <div key={index} className={`w-full ${isEven ? 'bg-white' : 'bg-surface'}`}>
+                  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-0">
+                    <div className={`h-[400px] md:h-[500px] relative w-full ${isEven ? 'order-1 md:order-1' : 'order-1 md:order-2'}`}>
+                      <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
+                    </div>
+                    <div className={`p-12 md:p-24 flex flex-col justify-center text-left ${isEven ? 'order-2 md:order-2' : 'order-2 md:order-1'}`}>
+                      <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-2">Step {index + 1}</h3>
+                      <h2 className="text-3xl font-bold mb-6 text-brand">{item.title}</h2>
+                      <p className="text-gray-600 leading-relaxed text-lg break-keep">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      );
+    };
+
     const SectionSmartFactoryIntro = () => {
       const { lang, setView } = useContext(AppContext);
       const t = translations[lang];
@@ -1998,6 +2071,7 @@
             {view === 'qc' && <SectionQC />}
             {view === 'rnd_intro' && <SectionRnDIntro />}
             {view === 'rnd_records' && <SectionRnDRecords />}
+            {view === 'production_flow' && <SectionProductionFlow />}
             {view === 'smart_factory' && <SectionSmartFactoryIntro />}
             <Footer />
           </div>
