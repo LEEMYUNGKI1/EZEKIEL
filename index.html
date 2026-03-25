@@ -116,6 +116,10 @@
         phil_val1_d: "기업의 윤리적 책임(Ethic Mind)을 최우선으로 투명하고 정직하게 경영하며, 파트너사와 고객에게 신뢰받는 안전한 제품을 개발합니다.",
         phil_val2_d: "코스메슈티컬(Cosmeceutical) 솔루션과 독자적인 연구 개발 역량을 통해 글로벌 시장을 선도하는 고기능성 혁신 제품을 만듭니다.",
         phil_val3_d: "상품 기획부터 개발, 제조, 관리 전 과정에 걸친 OEM/ODM 토탈 솔루션으로 파트너사가 깊이 감동할 수 있는 최상의 서비스를 제공합니다.",
+        phil_new_1_t: "창조와 혁신", phil_new_1_d: "창조와 혁신의 정신으로 엄격한 품질관리를 통하여 고객에게 만족을 드리고 일자리를 창출해 지역 경제에 이바지함은 에스겔 화장품의 기본정신입니다.",
+        phil_new_2_t: "정직과 신용", phil_new_2_d: "정직과 신용을 바탕으로 고객과 함께 성장하여 투명한 윤리적인 기업으로 지역사회의 공헌함은 에스겔 화장품의 기본정신입니다.",
+        phil_new_3_t: "정도경영", phil_new_3_d: "(주)에스겔코스메틱은 고객에게 배우고 봉사하며 고객의 생활 속에서 함께 발전하는 회사가 되고자 정도경영의 정신으로 공헌할 것을 약속합니다.",
+        phil_new_bottom: "앞으로 저희 <strong>(주)에스겔코스메틱</strong>은 혁신적인 경영이념을 바탕으로 연구개발 및 제조 전문기업으로써, 우수한 연구 인력을 확보하여 신기술 개발과 앞서가는 마케팅으로 국내시장 및 해외시장 개척 등을 통해 꾸준한 성장과 비약적인 발전을 거듭 할 것입니다.",
         hist_subtitle: "\"세계를 향한 힘찬 비상, ㈜에스겔코스메틱의 꿈은 <br className=\"hidden md:block\"/><strong className=\"text-brand font-bold\">100년 앞을 내다보는 글로벌 뷰티 기업</strong>으로 도약하는 것입니다.\"",
         org_subtitle: "전문적이고 체계적인 시스템을 갖추어<br className=\"hidden md:block\"/>가장 신뢰할 수 있는 뷰티 솔루션을 제공합니다.",
         org_ceo: "총괄대표", org_vceo: "부대표", org_rnd: "기업부설연구소", org_qc: "품질관리부", org_ops: "생산 운영", org_mfg: "제조부", org_prod: "생산부", org_logistics: "자재물류부", org_admin: "경영관리부", org_acc: "경리부", org_clean: "미화부", org_design: "디자인부",
@@ -162,6 +166,10 @@
         phil_val1_d: "Operating transparently and honestly with ethical responsibility, developing safe products trusted by partners.",
         phil_val2_d: "Creating innovative functional products leading the global market through cosmeceutical solutions and R&D capabilities.",
         phil_val3_d: "Providing best-in-class OEM/ODM total solutions that deeply move partners throughout the entire process.",
+        phil_new_1_t: "Creation & Innovation", phil_new_1_d: "With the spirit of creation and innovation, providing customer satisfaction through strict quality control, and creating jobs to contribute to the local economy is the fundamental spirit of EZEKIEL Cosmetic.",
+        phil_new_2_t: "Honesty & Trust", phil_new_2_d: "Growing with customers based on honesty and trust, contributing to the community as a transparent and ethical company is the fundamental spirit of EZEKIEL Cosmetic.",
+        phil_new_3_t: "Righteous Management", phil_new_3_d: "EZEKIEL COSMETIC Co., Ltd. promises to contribute with the spirit of righteous management to become a company that learns from and serves customers, developing together in their lives.",
+        phil_new_bottom: "Moving forward, <strong>EZEKIEL COSMETIC Co., Ltd.</strong>, as a specialized R&D and manufacturing company based on innovative management philosophy, will continue to steadily grow and make rapid progress by securing excellent researchers, developing new technologies, and pioneering domestic and overseas markets with leading marketing.",
         hist_subtitle: "\"Aspiring to be a global beauty leader looking 100 years ahead,<br className=\"hidden md:block\"/><strong className=\"text-brand font-bold\">soaring high towards the world with EZEKIEL COSMETIC.</strong>\"",
         org_subtitle: "Providing most reliable beauty solutions<br className=\"hidden md:block\"/>with professional and systematic organization.",
         org_ceo: "CEO", org_vceo: "Vice CEO", org_rnd: "R&D Center", org_qc: "QC Dept", org_ops: "Operations", org_mfg: "Manufacturing", org_prod: "Production", org_logistics: "Logistics", org_admin: "Management", org_acc: "Accounting", org_clean: "Facility", org_design: "Design Dept",
@@ -1148,55 +1156,53 @@
             </button>
           </div>
 
-          <div className="py-20 max-w-5xl mx-auto px-6 mb-24">
+          <div className="py-20 max-w-6xl mx-auto px-6 mb-24">
             {/* Title & Vision */}
-            <div className="text-center mb-20 animate-fade-in-up">
+            <div className="text-center mb-24 animate-fade-in-up">
               <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Corporate Philosophy</h2>
               <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.menu_philosophy}</h1>
-              <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
-              <p className="text-2xl md:text-3xl text-gray-800 font-light leading-relaxed" dangerouslySetInnerHTML={{ __html: t.phil_vision }}></p>
-              <p className="text-gray-500 mt-6 text-lg max-w-2xl mx-auto border-t border-gray-200 pt-6">
-                {t.phil_desc}
-              </p>
+              <div className="w-24 h-1 bg-accent mx-auto mb-16"></div>
             </div>
 
-            {/* Core Values grid */}
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Value 1 */}
-              <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
-                <div className="w-16 h-16 bg-brand/5 group-hover:bg-brand text-brand group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
-                  <i data-lucide="shield-check" className="w-8 h-8"></i>
+            <div className="grid md:grid-cols-3 gap-8 md:gap-12 relative animate-fade-in-up">
+              {/* Item 1 */}
+              <div className="flex flex-col items-center text-center group">
+                <div className="w-24 h-24 bg-[#41b0df] text-white rounded-full flex items-center justify-center text-5xl font-black mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                  1
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-brand">ETHIC Mind</h3>
-                <div className="w-10 h-0.5 bg-accent mb-6 transition-all duration-300 group-hover:w-full"></div>
-                <p className="text-gray-600 leading-relaxed font-light">
-                  {t.phil_val1_d}
+                <h3 className="text-2xl font-bold text-[#41b0df] mb-4">{t.phil_new_1_t}</h3>
+                <p className="text-gray-600 leading-relaxed font-light break-keep">
+                  {t.phil_new_1_d}
                 </p>
               </div>
 
-              {/* Value 2 */}
-              <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
-                <div className="w-16 h-16 bg-brand/5 group-hover:bg-brand text-brand group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
-                  <i data-lucide="flask-conical" className="w-8 h-8"></i>
+              {/* Item 2 */}
+              <div className="flex flex-col items-center text-center group md:mt-16">
+                <div className="w-24 h-24 bg-[#3eb15b] text-white rounded-full flex items-center justify-center text-5xl font-black mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                  2
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-brand">Strong R&D</h3>
-                <div className="w-10 h-0.5 bg-accent mb-6 transition-all duration-300 group-hover:w-full"></div>
-                <p className="text-gray-600 leading-relaxed font-light">
-                  {t.phil_val2_d}
+                <h3 className="text-2xl font-bold text-[#3eb15b] mb-4">{t.phil_new_2_t}</h3>
+                <p className="text-gray-600 leading-relaxed font-light break-keep">
+                  {t.phil_new_2_d}
                 </p>
               </div>
 
-              {/* Value 3 */}
-              <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
-                <div className="w-16 h-16 bg-brand/5 group-hover:bg-brand text-brand group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
-                  <i data-lucide="heart-handshake" className="w-8 h-8"></i>
+              {/* Item 3 */}
+              <div className="flex flex-col items-center text-center group">
+                <div className="w-24 h-24 bg-[#1eab89] text-white rounded-full flex items-center justify-center text-5xl font-black mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                  3
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-brand">Satisfactory Service</h3>
-                <div className="w-10 h-0.5 bg-accent mb-6 transition-all duration-300 group-hover:w-full"></div>
-                <p className="text-gray-600 leading-relaxed font-light">
-                  {t.phil_val3_d}
+                <h3 className="text-2xl font-bold text-[#1eab89] mb-4">{t.phil_new_3_t}</h3>
+                <p className="text-gray-600 leading-relaxed font-light break-keep">
+                  {t.phil_new_3_d}
                 </p>
               </div>
+            </div>
+
+            {/* Bottom Box */}
+            <div className="mt-28 bg-white border border-gray-100 shadow-sm p-10 py-12 md:p-14 rounded-3xl md:rounded-full animate-fade-in-up relative overflow-hidden flex items-center justify-center">
+               <div className="absolute top-0 left-0 w-3 h-full bg-[#e8eddf]"></div>
+               <p className="text-lg md:text-[20px] text-gray-700 leading-relaxed font-light break-keep text-center md:text-left px-4" dangerouslySetInnerHTML={{ __html: t.phil_new_bottom }}></p>
             </div>
           </div>
         </section>
@@ -1376,7 +1382,51 @@
               <h2 className="text-sm md:text-md font-medium tracking-[0.2em] mb-4 text-accent uppercase">Overview</h2>
               <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.menu_overview}</h1>
               <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
-              <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep" dangerouslySetInnerHTML={{ __html: t.ov_subtitle }}></p>
+              
+              <p className="text-2xl md:text-3xl text-gray-800 font-light leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: t.phil_vision }}></p>
+              <p className="text-gray-500 text-lg max-w-2xl mx-auto border-t border-gray-200 pt-6 break-keep">
+                {t.phil_desc}
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-24 animate-fade-in-up">
+              <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                <div className="w-16 h-16 bg-brand/5 group-hover:bg-brand text-brand group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
+                  <i data-lucide="shield-check" className="w-8 h-8"></i>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-brand">ETHIC Mind</h3>
+                <div className="w-10 h-0.5 bg-accent mb-6 transition-all duration-300 group-hover:w-full"></div>
+                <p className="text-gray-600 leading-relaxed font-light break-keep">
+                  {t.phil_val1_d}
+                </p>
+              </div>
+
+              <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                <div className="w-16 h-16 bg-brand/5 group-hover:bg-brand text-brand group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
+                  <i data-lucide="flask-conical" className="w-8 h-8"></i>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-brand">Strong R&D</h3>
+                <div className="w-10 h-0.5 bg-accent mb-6 transition-all duration-300 group-hover:w-full"></div>
+                <p className="text-gray-600 leading-relaxed font-light break-keep">
+                  {t.phil_val2_d}
+                </p>
+              </div>
+
+              <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                <div className="w-16 h-16 bg-brand/5 group-hover:bg-brand text-brand group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
+                  <i data-lucide="heart-handshake" className="w-8 h-8"></i>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-brand">Satisfactory Service</h3>
+                <div className="w-10 h-0.5 bg-accent mb-6 transition-all duration-300 group-hover:w-full"></div>
+                <p className="text-gray-600 leading-relaxed font-light break-keep">
+                  {t.phil_val3_d}
+                </p>
+              </div>
+            </div>
+
+            <div className="text-center mb-16 animate-fade-in-up border-t border-gray-100 pt-20">
+              <h2 className="text-3xl font-bold text-brand mb-6 uppercase tracking-widest">{t.ov_name}</h2>
+              <p className="text-xl text-gray-500 font-light break-keep max-w-2xl mx-auto" dangerouslySetInnerHTML={{ __html: t.ov_subtitle }}></p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 animate-fade-in-up">
