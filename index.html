@@ -82,7 +82,7 @@
       KOR: {
         company: "회사소개", business: "사업소개", rnd: "R&D", infra: "생산인프라", pr: "홍보센터", contact: "문의하기",
         lang: "KOR", close: "닫기", back: "뒤로가기",
-        menu_overview: "회사개요", menu_view: "회사전경", menu_philosophy: "기업이념", menu_ceo: "CEO메시지", menu_org: "조직도", menu_history: "주요연혁", menu_partners: "협력사", menu_directions: "오시는 길",
+        menu_view: "회사전경", menu_overview: "회사개요", menu_philosophy: "기업이념", menu_ceo: "CEO메시지", menu_org: "조직도", menu_history: "주요연혁", menu_partners: "협력사", menu_directions: "오시는 길",
         menu_skincare: "아로마&스킨케어", menu_bodyhair: "바디&헤어케어", menu_maskpad: "마스크팩&패드", menu_process: "화장품개발프로세스",
         menu_rnd_intro: "연구소 소개", menu_patents: "연구&개발실적",
         menu_factory: "스마트 팩토리", menu_qc: "품질 관리 인증", menu_flow: "생산 플로우", menu_hub: "글로벌 허브",
@@ -128,7 +128,7 @@
       ENG: {
         company: "Company", business: "Business", rnd: "R&D", infra: "Infra", pr: "PR Center", contact: "Contact",
         lang: "ENG", close: "Close", back: "Back",
-        menu_overview: "Overview", menu_view: "Company View", menu_philosophy: "Philosophy", menu_ceo: "CEO Message", menu_org: "Organization", menu_history: "History", menu_partners: "Partners", menu_directions: "Directions",
+        menu_view: "Company View", menu_overview: "Overview", menu_philosophy: "Philosophy", menu_ceo: "CEO Message", menu_org: "Organization", menu_history: "History", menu_partners: "Partners", menu_directions: "Directions",
         menu_skincare: "Basic Skincare", menu_bodyhair: "Body & Hair Care", menu_maskpad: "Mask Pack & Pad", menu_process: "Cosmetics Development Process",
         menu_rnd_intro: "R&D Intro", menu_patents: "R&D Records",
         menu_factory: "Smart Factory", menu_qc: "QC Certs", menu_flow: "Production Flow", menu_hub: "Global Hub",
@@ -174,7 +174,7 @@
       CHN: {
         company: "公司介绍", business: "业务领域", rnd: "研发中心", infra: "生产基础设施", pr: "公关中心", contact: "联系我们",
         lang: "中文", close: "关闭", back: "返回",
-        menu_overview: "公司概况", menu_view: "公司全景", menu_philosophy: "企业理念", menu_ceo: "CEO致辞", menu_org: "组织架构", menu_history: "发展历程", menu_partners: "合作伙伴", menu_directions: "来访路线",
+        menu_view: "公司全景", menu_overview: "公司概况", menu_philosophy: "企业理念", menu_ceo: "CEO致辞", menu_org: "组织架构", menu_history: "发展历程", menu_partners: "合作伙伴", menu_directions: "来访路线",
         menu_skincare: "基础护肤", menu_bodyhair: "身体与头发护理", menu_maskpad: "面膜与护肤垫", menu_process: "化妆品开发流程",
         menu_rnd_intro: "研究所介绍", menu_patents: "研究与开发成果",
         menu_factory: "智能工厂", menu_qc: "质量认证", menu_flow: "生产流程", menu_hub: "全球枢纽",
@@ -285,8 +285,8 @@
       const navItems = [
         {
           label: t.company, key: "회사소개", subMenu: [
-            { label: t.menu_overview, view: "overview" },
             { label: t.menu_view, view: "company_view" },
+            { label: t.menu_overview, view: "overview" },
             { label: t.menu_philosophy, view: "philosophy" },
             { label: t.menu_ceo, view: "ceo" },
             { label: t.menu_org, view: "organization" },
@@ -1867,7 +1867,7 @@
                 <div className="col-span-3 text-center">{lang === 'KOR' ? '과제명' : (lang === 'CHN' ? '课题名称' : 'Project Name')}</div>
                 <div className="col-span-1 text-center">{lang === 'KOR' ? '총 개발기간' : (lang === 'CHN' ? '总开发期' : 'Total Dev. Period')}</div>
               </div>
-              
+
               {/* Record Rows */}
               <div className="flex flex-col border-b border-gray-200">
                 {recordsData.map((item, index) => (
@@ -2051,12 +2051,12 @@
         {
           title: lang === 'KOR' ? "제품 전시실 및 로비" : (lang === 'CHN' ? "产品展厅及大厅" : "Product Display Room & Lobby"),
           desc: lang === 'KOR' ? "방문객을 환영하는 넓고 쾌적한 로비와 함께, 자사 및 파트너사의 혁신적인 제품들을 한눈에 볼 수 있는 전시 공간입니다." : (lang === 'CHN' ? "宽敞舒适的大厅欢迎每一位访客，是您可以一览我们及合作伙伴创新产品的展示空间。" : "A spacious and pleasant lobby welcoming visitors, along with an exhibition space where you can see the innovative products of our company and our partners at a glance."),
-          img: "./company-view-2.jpg"
+          img: "./company-view-2.png"
         },
         {
           title: lang === 'KOR' ? "임원실 및 접견 대기실" : (lang === 'CHN' ? "高管室及接待室" : "Executive & Reception Room"),
           desc: lang === 'KOR' ? "중요 파트너 분들과 귀빈들을 모시고 미래 비즈니스를 논의할 수 있는 품격 있고 프라이빗한 비즈니스 공간입니다." : (lang === 'CHN' ? "接待重要合作伙伴和贵宾探讨未来业务的高雅私人商务空间。" : "An elegant and private business space where important partners and VIPs are invited to discuss future business."),
-          img: "./company-view-4.jpg"
+          img: "./company-view-4.png"
         },
         {
           title: lang === 'KOR' ? "클린룸 진입 시스템" : (lang === 'CHN' ? "洁净室进入系统" : "Cleanroom Entry System"),
