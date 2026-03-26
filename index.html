@@ -1287,60 +1287,55 @@
               <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto" dangerouslySetInnerHTML={{ __html: t.org_subtitle }}></p>
             </div>
 
-            <div className="max-w-[70rem] mx-auto flex flex-col items-center animate-fade-in-up">
+            <div className="max-w-[70rem] mx-auto flex flex-col items-center animate-fade-in-up w-full px-2">
               <div className="flex flex-col items-center">
-                <div className="bg-brand text-white text-lg md:text-xl font-bold px-12 py-5 rounded-xl shadow-lg border border-brand/20">
+                <div className="bg-[#111] text-white text-base md:text-[17px] font-bold px-16 py-4 rounded-2xl shadow-md tracking-wide">
                   {t.org_ceo}
                 </div>
-                <div className="w-1 h-10 bg-gray-300"></div>
-                <div className="bg-white text-brand border-2 border-brand text-lg font-bold px-10 py-4 rounded-xl z-10 relative">
+                <div className="w-[2px] h-10 bg-gray-300"></div>
+                <div className="bg-white text-brand border border-gray-800 text-base md:text-[17px] font-bold px-14 py-3.5 rounded-2xl shadow-sm z-10 relative tracking-wide">
                   {t.org_vceo}
                 </div>
-                <div className="w-1 h-12 bg-gray-300"></div>
+                <div className="w-[2px] h-10 bg-gray-300"></div>
               </div>
 
-              <div className="relative w-full mt-0">
-                <div className="absolute top-0 left-[10%] right-[10%] h-1 bg-gray-300 hidden lg:block rounded-full"></div>
-                <div className="grid grid-cols-1 lg:grid-cols-5 pt-0 lg:pt-8 text-center gap-4 lg:gap-0">
-                  <div className="relative flex flex-col items-center group px-3">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
-                    <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-5 rounded-xl font-bold text-gray-800 hover:border-accent transition-all z-10 relative">
+              <div className="relative w-full mt-0 max-w-5xl mx-auto">
+                <div className="absolute top-0 left-[12.5%] right-[12.5%] h-[2px] bg-gray-300 hidden lg:block"></div>
+                <div className="grid grid-cols-1 lg:grid-cols-4 pt-0 lg:pt-8 text-center gap-6 lg:gap-0">
+                  <div className="relative flex flex-col items-center px-2 md:px-3">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-[2px] h-8 bg-gray-300 hidden lg:block"></div>
+                    <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)] border border-gray-100/50 w-full rounded-2xl font-bold text-gray-800 text-[15px] z-10 relative h-[60px] flex justify-center items-center">
+                      {t.org_admin}
+                    </div>
+                    <div className="w-full flex flex-col items-center mt-4 space-y-3 relative">
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-4 w-[2px] h-[calc(100%-12px)] bg-gray-300 hidden lg:block"></div>
+                      <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.04)] border border-gray-100/50 w-full py-3.5 rounded-xl font-semibold text-gray-700 text-[14px] z-10 relative flex justify-center items-center">{t.org_acc}</div>
+                      <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.04)] border border-gray-100/50 w-full py-3.5 rounded-xl font-semibold text-gray-700 text-[14px] z-10 relative flex justify-center items-center">{t.org_design}</div>
+                      <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.04)] border border-gray-100/50 w-full py-3.5 rounded-xl font-semibold text-gray-700 text-[14px] z-10 relative flex justify-center items-center">{t.org_clean}</div>
+                    </div>
+                  </div>
+                  <div className="relative flex flex-col items-center px-2 md:px-3">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-[2px] h-8 bg-gray-300 hidden lg:block"></div>
+                    <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)] border border-gray-100/50 w-full rounded-2xl font-bold text-gray-800 text-[15px] z-10 relative h-[60px] flex justify-center items-center">
                       {t.org_rnd}
                     </div>
                   </div>
-                  <div className="relative flex flex-col items-center group px-3">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
-                    <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-5 rounded-xl font-bold text-gray-800 hover:border-accent transition-all z-10 relative">
+                  <div className="relative flex flex-col items-center px-2 md:px-3">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-[2px] h-8 bg-gray-300 hidden lg:block"></div>
+                    <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)] border border-gray-100/50 w-full rounded-2xl font-bold text-gray-800 text-[15px] z-10 relative h-[60px] flex justify-center items-center">
                       {t.org_qc}
                     </div>
                   </div>
-                  <div className="relative flex flex-col items-center px-3">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
-                    <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-5 rounded-xl font-bold text-gray-800 hover:border-accent transition-all z-10 relative">
+                  <div className="relative flex flex-col items-center px-2 md:px-3">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-[2px] h-8 bg-gray-300 hidden lg:block"></div>
+                    <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)] border border-gray-100/50 w-full rounded-2xl font-bold text-gray-800 text-[15px] z-10 relative h-[60px] flex justify-center items-center">
                       {t.org_ops}
                     </div>
-                    <div className="w-full flex flex-col items-center mt-6 space-y-4 relative">
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-6 w-1 h-[calc(100%-20px)] bg-gray-300 hidden lg:block"></div>
-                      <div className="bg-white border-b-4 border-gray-100 shadow-sm w-full py-4 rounded-lg font-bold text-gray-700 z-10 relative">{t.org_mfg}</div>
-                      <div className="bg-white border-b-4 border-gray-100 shadow-sm w-full py-4 rounded-lg font-bold text-gray-700 z-10 relative">{t.org_prod}</div>
-                      <div className="bg-white border-b-4 border-gray-100 shadow-sm w-full py-4 rounded-lg font-bold text-gray-700 z-10 relative">{t.org_logistics}</div>
-                    </div>
-                  </div>
-                  <div className="relative flex flex-col items-center px-3">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
-                    <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-5 rounded-xl font-bold text-gray-800 hover:border-accent transition-all z-10 relative">
-                      {t.org_admin}
-                    </div>
-                    <div className="w-full flex flex-col items-center mt-6 space-y-4 relative">
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-6 w-1 h-[calc(100%-20px)] bg-gray-300 hidden lg:block"></div>
-                      <div className="bg-white border-b-4 border-gray-100 shadow-sm w-full py-4 rounded-lg font-bold text-gray-700 z-10 relative">{t.org_acc}</div>
-                      <div className="bg-white border-b-4 border-gray-100 shadow-sm w-full py-4 rounded-lg font-bold text-gray-700 z-10 relative">{t.org_clean}</div>
-                    </div>
-                  </div>
-                  <div className="relative flex flex-col items-center group px-3">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-1 h-8 bg-gray-300 hidden lg:block"></div>
-                    <div className="bg-white border-b-4 border-gray-200 shadow-sm w-full py-5 rounded-xl font-bold text-gray-800 hover:border-accent transition-all z-10 relative">
-                      {t.org_design}
+                    <div className="w-full flex flex-col items-center mt-4 space-y-3 relative">
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-4 w-[2px] h-[calc(100%-12px)] bg-gray-300 hidden lg:block"></div>
+                      <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.04)] border border-gray-100/50 w-full py-3.5 rounded-xl font-semibold text-gray-700 text-[14px] z-10 relative flex justify-center items-center">{t.org_mfg}</div>
+                      <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.04)] border border-gray-100/50 w-full py-3.5 rounded-xl font-semibold text-gray-700 text-[14px] z-10 relative flex justify-center items-center">{t.org_prod}</div>
+                      <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.04)] border border-gray-100/50 w-full py-3.5 rounded-xl font-semibold text-gray-700 text-[14px] z-10 relative flex justify-center items-center">{t.org_logistics}</div>
                     </div>
                   </div>
                 </div>
