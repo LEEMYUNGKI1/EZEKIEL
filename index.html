@@ -1299,86 +1299,45 @@
                 <div className="w-[2px] h-10 bg-gray-300"></div>
               </div>
 
-              <div className="relative w-full mt-0 max-w-[70rem] mx-auto">
-                <div className="absolute top-0 left-[10%] right-[10%] h-[2px] bg-gray-300 hidden lg:block"></div>
-                <div className="flex flex-col lg:flex-row pt-0 lg:pt-8 text-center gap-8 lg:gap-0">
-                  
-                  {/* R&D (20%) */}
-                  <div className="relative flex flex-col items-center w-full lg:w-[20%] px-3">
+              <div className="relative w-full mt-0 max-w-5xl mx-auto">
+                <div className="absolute top-0 left-[12.5%] right-[12.5%] h-[2px] bg-gray-300 hidden lg:block"></div>
+                <div className="grid grid-cols-1 lg:grid-cols-4 pt-0 lg:pt-8 text-center gap-6 lg:gap-0">
+                  <div className="relative flex flex-col items-center px-2 md:px-3">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-[2px] h-8 bg-gray-300 hidden lg:block"></div>
                     <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)] border border-gray-100/50 w-full rounded-2xl font-bold text-gray-800 text-[15px] z-10 relative h-[60px] flex justify-center items-center">
                       {t.org_rnd}
                     </div>
                   </div>
-
-                  {/* Mgmt (30%) */}
-                  <div className="relative flex flex-col items-center w-full lg:w-[30%] px-3">
+                  <div className="relative flex flex-col items-center px-2 md:px-3">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-[2px] h-8 bg-gray-300 hidden lg:block"></div>
                     <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)] border border-gray-100/50 w-full rounded-2xl font-bold text-gray-800 text-[15px] z-10 relative h-[60px] flex justify-center items-center">
                       {t.org_admin}
                     </div>
-                    
-                    <div className="w-full mt-6 relative">
-                      {/* Vertical line from Management box down to the branch */}
-                      <div className="absolute top-[-24px] left-1/2 -translate-x-1/2 w-[2px] h-[24px] bg-gray-300 hidden lg:block"></div>
-                      {/* Horizontal branch line for the 3 sub-departments */}
-                      <div className="absolute top-0 left-[16.66%] right-[16.66%] h-[2px] bg-gray-300 hidden lg:block"></div>
-                      
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <div className="relative pt-6 md:pt-6">
-                           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-6 bg-gray-300 hidden lg:block"></div>
-                           <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.04)] border border-gray-100/50 w-full py-3 rounded-xl font-semibold text-gray-700 text-[13px] z-10 relative flex justify-center items-center break-keep">{t.org_acc}</div>
-                        </div>
-                        <div className="relative pt-0 md:pt-6">
-                           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-6 bg-gray-300 hidden lg:block"></div>
-                           <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.04)] border border-gray-100/50 w-full py-3 rounded-xl font-semibold text-gray-700 text-[13px] z-10 relative flex justify-center items-center break-keep">{t.org_design}</div>
-                        </div>
-                        <div className="relative pt-0 md:pt-6">
-                           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-6 bg-gray-300 hidden lg:block"></div>
-                           <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.04)] border border-gray-100/50 w-full py-3 rounded-xl font-semibold text-gray-700 text-[13px] z-10 relative flex justify-center items-center break-keep">{t.org_clean}</div>
-                        </div>
-                      </div>
+                    <div className="w-full flex flex-col items-center mt-4 space-y-3 relative">
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-4 w-[2px] h-[calc(100%-12px)] bg-gray-300 hidden lg:block"></div>
+                      <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.04)] border border-gray-100/50 w-full py-3.5 rounded-xl font-semibold text-gray-700 text-[14px] z-10 relative flex justify-center items-center break-keep">{t.org_acc}</div>
+                      <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.04)] border border-gray-100/50 w-full py-3.5 rounded-xl font-semibold text-gray-700 text-[14px] z-10 relative flex justify-center items-center break-keep">{t.org_design}</div>
+                      <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.04)] border border-gray-100/50 w-full py-3.5 rounded-xl font-semibold text-gray-700 text-[14px] z-10 relative flex justify-center items-center break-keep">{t.org_clean}</div>
                     </div>
                   </div>
-
-                  {/* Operations (30%) */}
-                  <div className="relative flex flex-col items-center w-full lg:w-[30%] px-3">
+                  <div className="relative flex flex-col items-center px-2 md:px-3">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-[2px] h-8 bg-gray-300 hidden lg:block"></div>
                     <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)] border border-gray-100/50 w-full rounded-2xl font-bold text-gray-800 text-[15px] z-10 relative h-[60px] flex justify-center items-center">
                       {t.org_ops}
                     </div>
-                    
-                    <div className="w-full mt-6 relative">
-                      {/* Vertical line from Operations box down to the branch */}
-                      <div className="absolute top-[-24px] left-1/2 -translate-x-1/2 w-[2px] h-[24px] bg-gray-300 hidden lg:block"></div>
-                      {/* Horizontal branch line for the 3 sub-departments */}
-                      <div className="absolute top-0 left-[16.66%] right-[16.66%] h-[2px] bg-gray-300 hidden lg:block"></div>
-                      
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <div className="relative pt-6 md:pt-6">
-                           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-6 bg-gray-300 hidden lg:block"></div>
-                           <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.04)] border border-gray-100/50 w-full py-3 rounded-xl font-semibold text-gray-700 text-[13px] z-10 relative flex justify-center items-center break-keep">{t.org_mfg}</div>
-                        </div>
-                        <div className="relative pt-0 md:pt-6">
-                           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-6 bg-gray-300 hidden lg:block"></div>
-                           <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.04)] border border-gray-100/50 w-full py-3 rounded-xl font-semibold text-gray-700 text-[13px] z-10 relative flex justify-center items-center break-keep">{t.org_prod}</div>
-                        </div>
-                        <div className="relative pt-0 md:pt-6">
-                           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-6 bg-gray-300 hidden lg:block"></div>
-                           <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.04)] border border-gray-100/50 w-full py-3 rounded-xl font-semibold text-gray-700 text-[13px] z-10 relative flex justify-center items-center break-keep">{t.org_logistics}</div>
-                        </div>
-                      </div>
+                    <div className="w-full flex flex-col items-center mt-4 space-y-3 relative">
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-4 w-[2px] h-[calc(100%-12px)] bg-gray-300 hidden lg:block"></div>
+                      <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.04)] border border-gray-100/50 w-full py-3.5 rounded-xl font-semibold text-gray-700 text-[14px] z-10 relative flex justify-center items-center break-keep">{t.org_mfg}</div>
+                      <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.04)] border border-gray-100/50 w-full py-3.5 rounded-xl font-semibold text-gray-700 text-[14px] z-10 relative flex justify-center items-center break-keep">{t.org_prod}</div>
+                      <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.04)] border border-gray-100/50 w-full py-3.5 rounded-xl font-semibold text-gray-700 text-[14px] z-10 relative flex justify-center items-center break-keep">{t.org_logistics}</div>
                     </div>
                   </div>
-
-                  {/* QC (20%) */}
-                  <div className="relative flex flex-col items-center w-full lg:w-[20%] px-3">
+                  <div className="relative flex flex-col items-center px-2 md:px-3">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-[2px] h-8 bg-gray-300 hidden lg:block"></div>
                     <div className="bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)] border border-gray-100/50 w-full rounded-2xl font-bold text-gray-800 text-[15px] z-10 relative h-[60px] flex justify-center items-center">
                       {t.org_qc}
                     </div>
                   </div>
-                  
                 </div>
               </div>
             </div>
