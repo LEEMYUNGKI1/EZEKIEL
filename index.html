@@ -1233,12 +1233,12 @@
             <div className="relative border-l-2 border-gray-100 ml-32 md:ml-40 lg:ml-48">
               {historyData.map((data, idx) => (
                 <div key={idx} className="mb-24 relative pl-8 md:pl-16">
-                  {/* Timeline Dot */}
-                  <div className="absolute top-0 -left-[11px] flex items-center justify-center w-[20px] h-[20px] bg-white border-4 border-accent rounded-full z-10 shadow-sm"></div>
+                  {/* Timeline Line */}
+                  <div className="absolute top-0 bottom-0 left-[9px] md:left-[19px] w-[2px] bg-gray-100 z-0"></div>
 
                   {/* Left Side: Year Marker */}
                   <div className="absolute top-0 -left-[140px] md:-left-[180px] w-[110px] md:w-[150px] text-right">
-                    <span className="text-4xl md:text-5xl font-black text-brand tracking-tighter italic leading-none">{data.year}</span>
+                    <span className="text-4xl md:text-5xl font-bold text-brand tracking-tight leading-none">{data.year}</span>
                   </div>
 
                   {/* Right Side: Month & Descriptions */}
