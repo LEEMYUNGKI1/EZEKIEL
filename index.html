@@ -797,14 +797,25 @@
                   <i data-lucide="chevron-down" className="w-5 h-5"></i>
                 </div>
 
-                {/* Language Dropdown */}
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover/lang:opacity-100 group-hover/lang:visible transition-all duration-300 w-24 z-50">
-                  <div className="bg-white/95 backdrop-blur text-brand rounded shadow-lg border border-gray-100 py-2 flex flex-col items-center">
-                    <button className="text-sm py-2 hover:bg-gray-50 hover:text-accent w-full" onClick={() => setLang('KOR')}>KOR</button>
-                    <button className="text-sm py-2 hover:bg-gray-50 hover:text-accent w-full" onClick={() => setLang('ENG')}>ENG</button>
-                    <button className="text-sm py-2 hover:bg-gray-50 hover:text-accent w-full" onClick={() => setLang('CHN')}>中文</button>
+                {/* Mega Menu Dropdown Columns for Desktop Language (Visible when menuOpen) */}
+                <div className={`absolute left-1/2 -translate-x-1/2 transition-all duration-300 w-48 z-[60] pt-6 ${menuOpen ? 'top-full opacity-100 visible pointer-events-auto' : 'top-[calc(100%+15px)] opacity-0 invisible pointer-events-none'}`}>
+                  <div className="flex flex-col items-center py-3">
+                    <button className="text-[15px] font-semibold text-gray-500 hover:text-accent transition-colors w-full px-6 py-2.5 text-center block" onClick={() => setLang('KOR')}>KOR</button>
+                    <button className="text-[15px] font-semibold text-gray-500 hover:text-accent transition-colors w-full px-6 py-2.5 text-center block" onClick={() => setLang('ENG')}>ENG</button>
+                    <button className="text-[15px] font-semibold text-gray-500 hover:text-accent transition-colors w-full px-6 py-2.5 text-center block" onClick={() => setLang('CHN')}>中文</button>
                   </div>
                 </div>
+                
+                {/* Standard Hover Dropdown when Mega Menu is closed */}
+                {!menuOpen && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible pointer-events-none group-hover/lang:opacity-100 group-hover/lang:visible transition-all duration-300 w-48 z-50 lg:group-hover/lang:pointer-events-auto">
+                    <div className="bg-white/95 backdrop-blur-md rounded-xl shadow-xl border border-gray-100 py-3 flex flex-col items-center">
+                      <button className="text-[15px] font-semibold text-brand/80 hover:text-accent hover:bg-gray-50/50 w-full px-6 py-2.5 transition-colors text-center block" onClick={() => setLang('KOR')}>KOR</button>
+                      <button className="text-[15px] font-semibold text-brand/80 hover:text-accent hover:bg-gray-50/50 w-full px-6 py-2.5 transition-colors text-center block" onClick={() => setLang('ENG')}>ENG</button>
+                      <button className="text-[15px] font-semibold text-brand/80 hover:text-accent hover:bg-gray-50/50 w-full px-6 py-2.5 transition-colors text-center block" onClick={() => setLang('CHN')}>中文</button>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Hamburger Icon for "메뉴전체보기" */}
