@@ -787,19 +787,23 @@
             </nav>
 
             {/* Right Group: Language & Hamburger */}
-            <div className="flex items-center space-x-8 relative group/lang">
-              <div className="hidden md:flex items-center space-x-2 cursor-pointer hover:text-accent transition-colors py-4">
-                <i data-lucide="globe" className="w-5 h-5"></i>
-                <span className="text-base font-bold">{t.lang}</span>
-                <i data-lucide="chevron-down" className="w-5 h-5"></i>
-              </div>
+            <div className="flex items-center space-x-8 relative">
+              
+              {/* Language Wrapper */}
+              <div className="relative group/lang">
+                <div className="hidden md:flex items-center space-x-2 cursor-pointer hover:text-accent transition-colors py-4">
+                  <i data-lucide="globe" className="w-5 h-5"></i>
+                  <span className="text-base font-bold">{t.lang}</span>
+                  <i data-lucide="chevron-down" className="w-5 h-5"></i>
+                </div>
 
-              {/* Language Dropdown */}
-              <div className="absolute top-full right-10 pt-2 opacity-0 invisible group-hover/lang:opacity-100 group-hover/lang:visible transition-all duration-300 w-24">
-                <div className="bg-white/95 backdrop-blur text-brand rounded shadow-lg border border-gray-100 py-2 flex flex-col">
-                  <button className="text-sm py-2 hover:bg-gray-50 hover:text-accent" onClick={() => setLang('KOR')}>KOR</button>
-                  <button className="text-sm py-2 hover:bg-gray-50 hover:text-accent" onClick={() => setLang('ENG')}>ENG</button>
-                  <button className="text-sm py-2 hover:bg-gray-50 hover:text-accent" onClick={() => setLang('CHN')}>中文</button>
+                {/* Language Dropdown */}
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover/lang:opacity-100 group-hover/lang:visible transition-all duration-300 w-24 z-50">
+                  <div className="bg-white/95 backdrop-blur text-brand rounded shadow-lg border border-gray-100 py-2 flex flex-col items-center">
+                    <button className="text-sm py-2 hover:bg-gray-50 hover:text-accent w-full" onClick={() => setLang('KOR')}>KOR</button>
+                    <button className="text-sm py-2 hover:bg-gray-50 hover:text-accent w-full" onClick={() => setLang('ENG')}>ENG</button>
+                    <button className="text-sm py-2 hover:bg-gray-50 hover:text-accent w-full" onClick={() => setLang('CHN')}>中文</button>
+                  </div>
                 </div>
               </div>
 
