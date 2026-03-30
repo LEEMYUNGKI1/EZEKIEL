@@ -728,7 +728,7 @@
                     className="hover:text-accent transition-colors py-2 block relative"
                     onClick={(e) => {
                       e.preventDefault();
-                      setMenuOpen(true);
+                      handleNavAction('home', item.key);
                     }}
                   >
                     {item.label}
@@ -759,8 +759,8 @@
             </nav>
 
             {/* Right Group: Language & Hamburger */}
-            <div className="flex items-center space-x-8 relative">
-              <div className="hidden md:flex items-center space-x-2 cursor-pointer hover:text-accent transition-colors py-4 group/lang">
+            <div className="flex items-center space-x-8 relative group/lang">
+              <div className="hidden md:flex items-center space-x-2 cursor-pointer hover:text-accent transition-colors py-4">
                 <i data-lucide="globe" className="w-5 h-5"></i>
                 <span className="text-base font-bold">{t.lang}</span>
                 <i data-lucide="chevron-down" className="w-5 h-5"></i>
