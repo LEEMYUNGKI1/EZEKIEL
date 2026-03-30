@@ -758,10 +758,10 @@
 
                   {/* Mega Menu Dropdown Columns for Desktop (Visible when menuOpen) */}
                   {item.subMenu && (
-                    <div className={`absolute left-0 transition-all duration-300 min-w-max z-[60] pt-6 ${menuOpen ? 'top-full opacity-100 visible pointer-events-auto' : 'top-[calc(100%+15px)] opacity-0 invisible pointer-events-none'}`}>
-                      <div className="flex flex-col items-start space-y-3 text-left pl-3">
+                    <div className={`absolute left-1/2 -translate-x-1/2 transition-all duration-300 w-48 z-[60] pt-6 ${menuOpen ? 'top-full opacity-100 visible pointer-events-auto' : 'top-[calc(100%+15px)] opacity-0 invisible pointer-events-none'}`}>
+                      <div className="flex flex-col items-center py-3">
                         {item.subMenu.map((sub, i) => (
-                          <a key={i} href={sub.link || `#${sub.label}`} target={sub.link ? "_blank" : undefined} className="text-[15px] font-semibold text-gray-500 hover:text-accent transition-colors py-1.5 block whitespace-nowrap" onClick={(e) => { if (sub.link) return; e.preventDefault(); handleNavAction(sub.view, sub.section || sub.label); }}>
+                          <a key={i} href={sub.link || `#${sub.label}`} target={sub.link ? "_blank" : undefined} className="text-[15px] font-semibold text-brand/80 hover:text-accent hover:bg-gray-50/50 w-full px-6 py-2.5 transition-colors text-center block" onClick={(e) => { if (sub.link) return; e.preventDefault(); handleNavAction(sub.view, sub.section || sub.label); }}>
                             {sub.label}
                           </a>
                         ))}
