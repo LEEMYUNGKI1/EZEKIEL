@@ -749,7 +749,7 @@
                     className="hover:text-accent transition-colors py-2 block relative px-3"
                     onClick={(e) => {
                       e.preventDefault();
-                      handleNavAction('home', item.key);
+                      setMenuOpen(!menuOpen);
                     }}
                   >
                     {item.label}
