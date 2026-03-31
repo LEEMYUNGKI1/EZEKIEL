@@ -1482,7 +1482,7 @@
       const { lang, setView } = useContext(AppContext);
       const t = translations[lang];
       return (
-        <section id="기업이념" className="bg-surface relative overflow-hidden pt-28">
+        <section id="기업이념" className="bg-white relative overflow-hidden pt-28">
           <div className="max-w-7xl mx-auto px-6 mt-16 mb-2 flex justify-between items-center">
             <p className="text-gray-400 text-sm font-light">Home &gt; Company &gt; {t.menu_philosophy}</p>
             <button onClick={() => { setView('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-2 text-gray-500 hover:text-brand transition-colors text-sm font-medium">
@@ -1494,7 +1494,7 @@
           <div className="py-12 max-w-7xl mx-auto px-6 mb-24">
 
             <div className="flex justify-center animate-fade-in-up">
-              <img src="./회사이념.png" alt="Company Philosophy" className="w-full max-w-6xl object-contain mix-blend-multiply transition-all duration-700" />
+              <img src="./회사이념.png" alt="Company Philosophy" className="w-full max-w-6xl object-contain transition-all duration-700" />
             </div>
           </div>
         </section>
