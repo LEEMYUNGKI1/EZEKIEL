@@ -1428,9 +1428,6 @@
           </div>
 
           <div className="py-20 max-w-4xl mx-auto px-6 mb-24 bg-white shadow-xl rounded-2xl relative mt-12 border border-gray-100">
-            <div className="absolute top-0 right-10 -translate-y-1/2 w-20 h-20 bg-accent rounded-full flex items-center justify-center shadow-lg">
-              <i data-lucide="quote" className="w-8 h-8 text-white"></i>
-            </div>
 
             <div className="text-center mb-16 px-4 md:px-12 flex flex-col items-center">
               <h2 className="text-3xl md:text-5xl font-bold mb-10 text-brand leading-tight text-center relative z-10 border-b-2 border-accent pb-8 inline-block">
@@ -1492,9 +1489,14 @@
           </div>
 
           <div className="py-12 max-w-7xl mx-auto px-6 mb-24">
+            <div className="text-center mb-20 animate-fade-in-up">
+              <h1 className="text-4xl md:text-5xl font-bold mb-8 text-brand tracking-tight">{t.menu_philosophy}</h1>
+              <div className="w-24 h-1 bg-accent mx-auto mb-10"></div>
+              <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep" dangerouslySetInnerHTML={{ __html: t.phil_vision }}></p>
+            </div>
 
             <div className="flex justify-center animate-fade-in-up">
-              <img src="./회사이념.png" alt="Company Philosophy" className="w-full max-w-6xl object-contain transition-all duration-700" />
+              <img src="./회사이념.png" alt="Company Philosophy" className="w-full max-w-6xl object-contain transition-all duration-700" style={{ clipPath: 'inset(0 2px 0 0)' }} />
             </div>
           </div>
         </section>
