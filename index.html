@@ -1515,9 +1515,34 @@
               <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep" dangerouslySetInnerHTML={{ __html: t.phil_vision }}></p>
             </div>
 
-            <div className="flex justify-center animate-fade-in-up">
-              <img src="./회사이념.png" alt="Company Philosophy" className="w-full max-w-6xl object-contain transition-all duration-700 relative md:-left-1 lg:-left-2" style={{ clipPath: 'inset(0 2px 0 0)' }} />
-            </div>
+            {lang === 'KOR' ? (
+              <div className="flex justify-center animate-fade-in-up">
+                <img src="./회사이념.png" alt="Company Philosophy" className="w-full max-w-6xl object-contain transition-all duration-700 relative md:-left-1 lg:-left-2" style={{ clipPath: 'inset(0 2px 0 0)' }} />
+              </div>
+            ) : (
+              <div className="max-w-5xl mx-auto animate-fade-in-up space-y-12">
+                <div className="grid md:grid-cols-3 gap-8">
+                  <div className="bg-surface p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all text-center flex flex-col items-center">
+                    <div className="w-16 h-16 bg-brand text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">1</div>
+                    <h3 className="text-2xl font-bold text-brand mb-4">{t.phil_new_1_t}</h3>
+                    <p className="text-gray-600 font-light leading-relaxed break-keep">{t.phil_new_1_d}</p>
+                  </div>
+                  <div className="bg-surface p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all text-center flex flex-col items-center">
+                    <div className="w-16 h-16 bg-brand text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">2</div>
+                    <h3 className="text-2xl font-bold text-brand mb-4">{t.phil_new_2_t}</h3>
+                    <p className="text-gray-600 font-light leading-relaxed break-keep">{t.phil_new_2_d}</p>
+                  </div>
+                  <div className="bg-surface p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all text-center flex flex-col items-center">
+                    <div className="w-16 h-16 bg-brand text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">3</div>
+                    <h3 className="text-2xl font-bold text-brand mb-4">{t.phil_new_3_t}</h3>
+                    <p className="text-gray-600 font-light leading-relaxed break-keep">{t.phil_new_3_d}</p>
+                  </div>
+                </div>
+                <div className="bg-gray-50 border border-gray-100 p-8 md:p-12 rounded-2xl text-center">
+                  <p className="text-lg md:text-xl text-gray-700 font-light leading-relaxed break-keep" dangerouslySetInnerHTML={{ __html: t.phil_new_bottom }}></p>
+                </div>
+              </div>
+            )}
           </div>
         </section>
       );
@@ -2215,8 +2240,8 @@
               return (
                 <div key={index} className={`w-full ${isEven ? 'bg-white' : 'bg-surface'}`}>
                   <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-0">
-                    <div className={`h-[400px] md:h-[500px] relative w-full ${isEven ? 'order-1 md:order-1' : 'order-1 md:order-2'}`}>
-                      <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
+                    <div className={`h-[400px] md:h-[500px] relative w-full overflow-hidden ${isEven ? 'order-1 md:order-1' : 'order-1 md:order-2'}`}>
+                      <img src={item.img} alt={item.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                     </div>
                     <div className={`p-12 md:p-24 flex flex-col justify-center text-left ${isEven ? 'order-2 md:order-2' : 'order-2 md:order-1'}`}>
                       <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-2">{t.rnd_label} {index + 1}</h3>
@@ -2411,8 +2436,8 @@
               return (
                 <div key={index} className={`w-full ${isEven ? 'bg-white' : 'bg-surface'}`}>
                   <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-0">
-                    <div className={`h-[400px] md:h-[500px] relative w-full ${isEven ? 'order-1 md:order-1' : 'order-1 md:order-2'}`}>
-                      <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
+                    <div className={`h-[400px] md:h-[500px] relative w-full overflow-hidden ${isEven ? 'order-1 md:order-1' : 'order-1 md:order-2'}`}>
+                      <img src={item.img} alt={item.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                     </div>
                     <div className={`p-12 md:p-24 flex flex-col justify-center text-left ${isEven ? 'order-2 md:order-2' : 'order-2 md:order-1'}`}>
                       <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-2">{t.factory_label} {index + 1}</h3>
@@ -2509,8 +2534,8 @@
               return (
                 <div key={index} className={`w-full ${isEven ? 'bg-white' : 'bg-surface'}`}>
                   <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-0">
-                    <div className={`h-[400px] md:h-[500px] relative w-full ${isEven ? 'order-1 md:order-1' : 'order-1 md:order-2'}`}>
-                      <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
+                    <div className={`h-[400px] md:h-[500px] relative w-full overflow-hidden ${isEven ? 'order-1 md:order-1' : 'order-1 md:order-2'}`}>
+                      <img src={item.img} alt={item.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                     </div>
                     <div className={`p-12 md:p-24 flex flex-col justify-center text-left ${isEven ? 'order-2 md:order-2' : 'order-2 md:order-1'}`}>
                       <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-2">{t.view_label} {index + 1}</h3>
