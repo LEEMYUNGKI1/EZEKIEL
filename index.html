@@ -1515,34 +1515,14 @@
               <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto break-keep" dangerouslySetInnerHTML={{ __html: t.phil_vision }}></p>
             </div>
 
-            {lang === 'KOR' ? (
-              <div className="flex justify-center animate-fade-in-up">
-                <img src="./회사이념.png" alt="Company Philosophy" className="w-full max-w-6xl object-contain transition-all duration-700 relative md:-left-1 lg:-left-2" style={{ clipPath: 'inset(0 2px 0 0)' }} />
-              </div>
-            ) : (
-              <div className="max-w-5xl mx-auto animate-fade-in-up space-y-12">
-                <div className="grid md:grid-cols-3 gap-8">
-                  <div className="bg-surface p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all text-center flex flex-col items-center">
-                    <div className="w-16 h-16 bg-brand text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">1</div>
-                    <h3 className="text-2xl font-bold text-brand mb-4">{t.phil_new_1_t}</h3>
-                    <p className="text-gray-600 font-light leading-relaxed break-keep">{t.phil_new_1_d}</p>
-                  </div>
-                  <div className="bg-surface p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all text-center flex flex-col items-center">
-                    <div className="w-16 h-16 bg-brand text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">2</div>
-                    <h3 className="text-2xl font-bold text-brand mb-4">{t.phil_new_2_t}</h3>
-                    <p className="text-gray-600 font-light leading-relaxed break-keep">{t.phil_new_2_d}</p>
-                  </div>
-                  <div className="bg-surface p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all text-center flex flex-col items-center">
-                    <div className="w-16 h-16 bg-brand text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">3</div>
-                    <h3 className="text-2xl font-bold text-brand mb-4">{t.phil_new_3_t}</h3>
-                    <p className="text-gray-600 font-light leading-relaxed break-keep">{t.phil_new_3_d}</p>
-                  </div>
-                </div>
-                <div className="bg-gray-50 border border-gray-100 p-8 md:p-12 rounded-2xl text-center">
-                  <p className="text-lg md:text-xl text-gray-700 font-light leading-relaxed break-keep" dangerouslySetInnerHTML={{ __html: t.phil_new_bottom }}></p>
-                </div>
-              </div>
-            )}
+            <div className="flex justify-center animate-fade-in-up">
+              <img 
+                 src={lang === 'KOR' ? "./회사이념.png" : (lang === 'ENG' ? "./philosophy_en.png" : "./philosophy_cn.png")} 
+                 alt="Company Philosophy" 
+                 className="w-full max-w-6xl object-contain transition-all duration-700 relative md:-left-1 lg:-left-2" 
+                 style={{ clipPath: 'inset(0 2px 0 0)' }} 
+              />
+            </div>
           </div>
         </section>
       );
