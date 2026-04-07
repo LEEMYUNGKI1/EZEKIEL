@@ -1190,8 +1190,8 @@
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-700"></div>
                   </div>
                   <div className="px-5 py-8 relative">
-                    <div className="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center mb-6 group-hover:bg-brand transition-colors duration-500 absolute -top-10 left-8 border border-gray-50">
-                      <i data-lucide={biz.icon} className="w-7 h-7 text-brand group-hover:text-white transition-colors duration-500"></i>
+                    <div className="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-500 absolute -top-10 left-8 border border-gray-50">
+                      <i data-lucide={biz.icon} className="w-7 h-7 text-accent group-hover:text-white transition-colors duration-500"></i>
                     </div>
                     <div className="pt-4 text-left">
                       <h4 className="text-2xl font-bold mb-4 text-gray-800">{biz.title}</h4>
@@ -1705,7 +1705,7 @@
 
             <div className="grid md:grid-cols-3 gap-8 mb-24 animate-fade-in-up">
               <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
-                <div className="w-16 h-16 bg-brand/5 group-hover:bg-brand text-brand group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
+                <div className="w-16 h-16 bg-accent/5 group-hover:bg-accent text-accent group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
                   <i data-lucide="shield-check" className="w-8 h-8"></i>
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-brand">ETHIC Mind</h3>
@@ -1716,7 +1716,7 @@
               </div>
 
               <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
-                <div className="w-16 h-16 bg-brand/5 group-hover:bg-brand text-brand group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
+                <div className="w-16 h-16 bg-accent/5 group-hover:bg-accent text-accent group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
                   <i data-lucide="flask-conical" className="w-8 h-8"></i>
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-brand">Strong R&D</h3>
@@ -1727,7 +1727,7 @@
               </div>
 
               <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
-                <div className="w-16 h-16 bg-brand/5 group-hover:bg-brand text-brand group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
+                <div className="w-16 h-16 bg-accent/5 group-hover:bg-accent text-accent group-hover:text-white rounded-2xl flex items-center justify-center mb-8 transition-colors duration-300">
                   <i data-lucide="heart-handshake" className="w-8 h-8"></i>
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-brand">Satisfactory Service</h3>
@@ -1747,8 +1747,8 @@
               {overviewData.map((item, idx) => (
                 <div key={idx} className={`bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group ${item.full ? 'md:col-span-2 lg:col-span-3' : ''}`}>
                   <div className="flex items-start space-x-6">
-                    <div className="w-14 h-14 rounded-xl bg-gray-50 flex items-center justify-center shrink-0 group-hover:bg-brand transition-colors">
-                      <i data-lucide={item.icon} className="w-6 h-6 text-brand group-hover:text-white transition-colors"></i>
+                    <div className="w-14 h-14 rounded-xl bg-gray-50 flex items-center justify-center shrink-0 group-hover:bg-accent transition-colors">
+                      <i data-lucide={item.icon} className="w-6 h-6 text-accent group-hover:text-white transition-colors"></i>
                     </div>
                     <div className="flex flex-col flex-1 justify-center min-h-[56px]">
                       <span className="text-sm font-medium text-gray-400 mb-1 tracking-wider">{item.label}</span>
