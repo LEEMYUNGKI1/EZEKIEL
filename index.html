@@ -1219,19 +1219,19 @@
       const { lang } = useContext(AppContext);
       const t = translations[lang];
       return (
-        <section id="R&D" className="bg-brand text-white relative overflow-hidden">
+        <section id="R&D" className="bg-white text-brand relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-0">
             <div className="pr-12 md:pr-24 py-12 flex flex-col justify-center text-left">
               <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.rnd}</h3>
               <h2 className="text-4xl font-bold mb-8 leading-tight" dangerouslySetInnerHTML={{ __html: t.rnd_title }}></h2>
-              <p className="text-gray-400 mb-10 leading-relaxed text-lg">
+              <p className="text-gray-600 mb-10 leading-relaxed text-lg">
                 {t.rnd_desc}
               </p>
               <ul className="space-y-4">
                 {[t.rnd_1, t.rnd_2, t.rnd_3].map((item, i) => (
                   <li key={i} className="flex items-center space-x-3">
                     <i data-lucide="check-circle" className="w-5 h-5 text-accent"></i>
-                    <span className="text-gray-200">{item}</span>
+                    <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -1248,7 +1248,7 @@
       const { lang } = useContext(AppContext);
       const t = translations[lang];
       return (
-        <section id="생산인프라" className="relative bg-brand text-white overflow-hidden">
+        <section id="생산인프라" className="relative bg-white text-brand overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-0">
             <div className="h-[400px] md:h-[600px] order-2 md:order-1 relative w-full">
               <img src="./infra-bg.png" alt="Production Infrastructure" className="w-full h-full object-cover" />
@@ -1256,10 +1256,10 @@
             <div className="p-12 md:p-24 flex flex-col justify-center order-1 md:order-2 text-left">
               <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.infra}</h3>
               <h2 className="text-4xl font-bold mb-8" dangerouslySetInnerHTML={{ __html: t.infra_title }}></h2>
-              <p className="text-gray-300 leading-relaxed text-lg mb-8">
+              <p className="text-gray-600 leading-relaxed text-lg mb-8">
                 {t.infra_desc}
               </p>
-              <div className="grid grid-cols-2 gap-8 mt-4 border-t border-white/10 pt-8">
+              <div className="grid grid-cols-2 gap-8 mt-4 border-t border-gray-100 pt-8">
                 <div>
                   <div className="text-xs uppercase tracking-widest mb-1 text-accent">{t.infra_cap_label}</div>
                   <div className="text-3xl font-light">150M<span className="text-xl">+</span></div>
@@ -1809,9 +1809,9 @@
         }
       };
       return (
-        <section className="py-32 bg-white">
+        <section className="py-32 bg-surface">
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20">
-            <div id="홍보센터">
+            <div id="홍보센터" className="pt-10 md:pt-14">
               <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.company}</h3>
               <h2 className="text-4xl font-bold mb-10">{t.menu_history}</h2>
               <div className="space-y-6">
@@ -1830,9 +1830,9 @@
               </div>
             </div>
 
-            <div id="문의하기" className="bg-surface p-10 md:p-14 rounded-3xl shadow-sm border border-gray-50">
+            <div id="문의하기" className="bg-gray-100 p-10 md:p-14 rounded-3xl shadow-sm border border-gray-100/50">
               <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.contact}</h3>
-              <h2 className="text-3xl font-bold mb-8">{t.contact_title}</h2>
+              <h2 className="text-4xl font-bold mb-10">{t.contact_title}</h2>
               <form className="space-y-5" onSubmit={handleMailSubmit}>
                 <input type="hidden" name="_to" value="ezekielcos@daum.net" />
                 <div>
