@@ -1835,7 +1835,8 @@
               <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.contact}</h3>
               <h2 className="text-4xl font-bold mb-10">{t.contact_title}</h2>
               <form className="space-y-5" onSubmit={handleMailSubmit}>
-                <input type="hidden" name="_to" value="ezekielcos@daum.net" />
+                {/* Formspree endpoint config: https://formspree.io/f/xgonnvep */}
+                <input type="hidden" name="_subject" value="[에스겔코스메틱] 홈페이지 신규 프로젝트 문의" />
                 <div>
                   <input name="name" type="text" placeholder={t.contact_ph1} required className="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all text-sm" />
                 </div>
