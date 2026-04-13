@@ -1791,7 +1791,8 @@
         const formData = new FormData(form);
 
         try {
-          const response = await fetch("https://formspree.io/f/xgonnvep", {
+          // FormSubmit.co를 사용하여 AJAX 전송 (별도 계정 설정 없이 이메일로 즉시 수신 가능)
+          const response = await fetch("https://formsubmit.co/ajax/ezekielcos@daum.net", {
             method: "POST",
             body: formData,
             headers: {
@@ -1799,13 +1800,17 @@
             }
           });
 
-          if (response.ok) {
+          const result = await response.json();
+
+          if (response.ok && result.success === "true") {
             alert(t.contact_success);
             form.reset();
           } else {
+            console.error("FormSubmit Error:", result);
             alert(t.contact_error);
           }
         } catch (error) {
+          console.error("Network Error:", error);
           alert(t.contact_network);
         }
       };
@@ -1835,8 +1840,10 @@
               <h3 className="text-sm font-medium text-accent tracking-widest uppercase mb-4">{t.contact}</h3>
               <h2 className="text-4xl font-bold mb-10">{t.contact_title}</h2>
               <form className="space-y-5" onSubmit={handleMailSubmit}>
-                {/* Formspree endpoint config: https://formspree.io/f/xgonnvep */}
+                {/* FormSubmit config: https://formsubmit.co/ajax/ezekielcos@daum.net */}
                 <input type="hidden" name="_subject" value="[에스겔코스메틱] 홈페이지 신규 프로젝트 문의" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
                 <div>
                   <input name="name" type="text" placeholder={t.contact_ph1} required className="w-full px-5 py-4 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all text-sm" />
                 </div>
