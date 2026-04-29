@@ -1,7 +1,7 @@
 Add-Type -AssemblyName System.Drawing
 
-# Use the latest rounded square image
-$sourcePath = Join-Path $env:USERPROFILE ".gemini\antigravity\brain\2d091c4c-010c-4caf-b088-c4740e000869\media__1777360545338.png"
+# Use the local copy of the provided image
+$sourcePath = "f:\home\input_favicon.jpg"
 
 function Get-MaximizedRoundedImage {
     param($srcImg, $size, $radius)
